@@ -1,0 +1,119 @@
+/*
+Theme Name:     Storefront Child Theme
+Theme URI:      https://github.com/stuartduff/storefront-child-theme
+Author:         Stuart Duff
+Author URI:     http://stuartduff.com
+Template:     	storefront
+Description:  	This is a blank child theme for WooThemes StoreFront theme
+Version:      	1.0.2
+License:      	GNU General Public License v2 or later
+License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  	storefront
+Tags:         	black, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+Storefront is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
+Images License: GNU General Public License v2 or later
+*/
+/*
+ * Add your own custom css below this text.
+ */
+
+
+a:focus, .focus a {
+  outline: none !important; }
+
+@media (min-width: 768px) {
+  .site-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%; } }
+
+@media (min-width: 768px) {
+  .site-header .col-full {
+    display: flex;
+    align-items: center;
+    flex-direction: row; } }
+
+@media (min-width: 768px) {
+  .site-header .site-branding {
+    float: left;
+    margin-bottom: 0; } }
+
+.site-header .site-branding img {
+  max-width: 50px; }
+
+@media (min-width: 768px) {
+  .site-content {
+    padding-top: 70px; } }
+
+@media (min-width: 768px) {
+  .woocommerce-active .site-header .main-navigation {
+    width: auto;
+    float: right;
+    clear: none;
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto; } }
+
+@media (min-width: 768px) {
+  .main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a {
+    padding-top: 0;
+    padding-bottom: 0; } }
+
+@media (min-width: 768px) {
+  .woocommerce-active .site-header .site-header-cart {
+    width: auto;
+    margin-left: 0;
+    padding-left: 1.618em; } }
+
+.site-header-cart .cart-contents {
+  text-align: right;
+  padding: 0 0;
+  padding-right: 15px;display:inline; }
+
+.site-header-cart .cart-contents .amount {
+  display: none; }
+
+@media (min-width: 768px) {
+  .site-header-cart .widget_shopping_cart {
+    width: 300%; } }
+
+@media (min-width: 768px) {
+  .site-header-cart .cart-contents:after {
+    padding-left: 5px; } }
+
+@media (min-width: 768px) {
+  .site-header-cart.focus .widget_shopping_cart, .site-header-cart:hover .widget_shopping_cart {
+    left: -200%; } }
+
+.products {
+  margin-left: 0;
+  flex-wrap: wrap;
+  display: flex;
+  overflow: hidden;
+  float: none; }
+
+@media (min-width: 768px) {
+  .site-main ul.products li.product {
+    width: 29%;
+    margin-right: 4.33%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: none;
+    float: none; } }
+
+ul.products li.product .button {
+  margin-top: auto;
+  width: 100%; }
+
+.site-footer {
+  padding: 0;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
