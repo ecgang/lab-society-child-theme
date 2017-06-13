@@ -1,0 +1,1 @@
+# lab-society-child-theme
