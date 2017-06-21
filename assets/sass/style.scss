@@ -622,6 +622,17 @@ a:focus,.focus a{
 		}
 	}
 }
+
+.category{
+	article{
+		display: flex;
+		margin-bottom: 50px;
+		@media(max-width: 1023px){
+			flex-direction: column;
+		}
+	}
+}
+
 .single-post{
 	.entry-content{
 		float: left !important;

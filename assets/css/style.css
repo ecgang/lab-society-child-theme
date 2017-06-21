@@ -485,6 +485,13 @@ a:focus, .focus a {
     .right-sidebar .content-area {
       width: 100%; } }
 
+.category article {
+  display: flex;
+  margin-bottom: 50px; }
+  @media (max-width: 1023px) {
+    .category article {
+      flex-direction: column; } }
+
 .single-post .entry-content {
   float: left !important; }
 .single-post .entry-meta {
