@@ -57,6 +57,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/assets\/images\/home-slideshow\/executive-short-path-distillation-kit-5l.jpg": {
+		"ft": 16384,
+		"iS": 231261,
+		"oA": 0,
+		"oAP": "\/assets\/images\/home-slideshow\/executive-short-path-distillation-kit-5l.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/assets\/images\/home-slideshow\/lab-society-buy-laboratory-equipment-online.jpg": {
 		"ft": 16384,
 		"iS": 98424,
@@ -373,7 +383,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 518741357,
-	"displayValue": "storefront-child-theme",
+	"displayValue": "lab-society-child-theme",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets_gray"
 	},
