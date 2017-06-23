@@ -657,7 +657,13 @@ a:focus,.focus a{
 		.product{
 			.bundle_form{
 				float: left;
-				.price{display: none;}
+				.price{
+					display: none;
+					margin-top: 0 !important;
+					del{
+						display: none;
+					}
+				}
 				.bundle_price{
 					.price{
 						display: block;
@@ -749,6 +755,7 @@ a:focus,.focus a{
 				.price{
 					position: absolute;
 				    left: 0;
+				    display: block;
 				    margin-top: -35px;
 				    font-weight: 300;
 				    font-size: 1.618em;

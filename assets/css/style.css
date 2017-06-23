@@ -511,7 +511,10 @@ a:focus, .focus a {
   .single-product .content-area .product .bundle_form {
     float: left; }
     .single-product .content-area .product .bundle_form .price {
-      display: none; }
+      display: none;
+      margin-top: 0 !important; }
+      .single-product .content-area .product .bundle_form .price del {
+        display: none; }
     .single-product .content-area .product .bundle_form .bundle_price .price {
       display: block;
       position: absolute !important; }
@@ -589,6 +592,7 @@ a:focus, .focus a {
     .single-product .content-area .product .summary .price {
       position: absolute;
       left: 0;
+      display: block;
       margin-top: -35px;
       font-weight: 300;
       font-size: 1.618em; }
