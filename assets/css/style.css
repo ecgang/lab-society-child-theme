@@ -569,8 +569,7 @@ a:focus, .focus a {
         position: relative;
         background: none; }
         .single-product .content-area .product .summary .cart.variations_form .price {
-          bottom: 0;
-          display: none; }
+          bottom: 0; }
         .single-product .content-area .product .summary .cart.variations_form .woocommerce-variation-price .price {
           display: block;
           font-size: inherit;
@@ -1081,8 +1080,6 @@ a:focus, .focus a {
         top: 0; }
       .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .component {
         padding: 0; }
-.single-product.simple-product form .price {
-  margin-top: 0 !important; }
 @media (max-width: 1023px) {
   .single-product .storefront-handheld-footer-bar {
     display: none; } }

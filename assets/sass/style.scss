@@ -726,7 +726,7 @@ a:focus,.focus a{
 				    	background: none;
 				    	.price{
 				    		bottom: 0;
-				    		display: none;
+				    		
 				    	}
 				    	.woocommerce-variation-price{
 				    		.price{
@@ -1420,13 +1420,7 @@ a:focus,.focus a{
 		}			
 	}
 }
-&.simple-product{
-	form{
-		.price{
-			margin-top: 0 !important;
-		}	
-	}
-}
+
 	.storefront-handheld-footer-bar{
 		@media(max-width: 1023px){
 			display: none;
