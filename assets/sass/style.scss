@@ -697,6 +697,11 @@ a:focus,.focus a{
 					right: 0;
 				}
 			}
+			.single_add_to_cart_button{
+				@media(max-width: 1023px){
+					float: right;
+				}	
+			}
 			.summary{
 				width: 40%;
 				position: relative;
@@ -726,11 +731,11 @@ a:focus,.focus a{
 				    	background: none;
 				    	.price{
 				    		bottom: 0;
-				    		
+				    		display: none ;
 				    	}
 				    	.woocommerce-variation-price{
 				    		.price{
-				    			display: block;
+				    			display: block !important;
 				    			font-size: inherit;
 				    			float: left;
 				    		}
@@ -762,6 +767,7 @@ a:focus,.focus a{
 				    @media(max-width:1023px){
 						color: #fff;
 						left: 10px;
+						margin-top: 0;
 					}
 				}
 				.bundle_price{
@@ -824,6 +830,9 @@ a:focus,.focus a{
 						&.single_variation{
 							display: flex;
 							flex-direction: column-reverse;
+							.price{
+								display: block;
+							}
 						}
 						.woocommerce-variation-description{
 							margin-top: 20px;
