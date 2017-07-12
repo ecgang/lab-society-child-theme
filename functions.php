@@ -605,7 +605,7 @@ function product_accordion(){
                                 if( !empty(get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true ))):
                                     $pdf_download_link = get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true );
                             ?>
-                                    <dt><div class="border-separate"></div><br/><a href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
+                                    <dt><div class="border-separate"></div><br/><a target="_blank" href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
                         <?php endif; ?>
                     </dl>
                 </div> 
@@ -708,7 +708,7 @@ function product_accordion_composite(){
                         if( !empty(get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true ))):
                             $pdf_download_link = get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true );
                     ?>
-                        <dt><div class="border-separate"></div><br/><a href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
+                        <dt><div class="border-separate"></div><br/><a target="_blank" href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
                 <?php endif; ?>
                 </dl>
             </div> 
