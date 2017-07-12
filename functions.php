@@ -601,6 +601,12 @@ function product_accordion(){
                             </div>
                         </dd>
                     <?php endif; ?>
+                        <?php
+                            if( !empty(get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true ))):
+                                $pdf_download_link = get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true );
+                        ?>
+                                <dt><div class="border-separate"></div><br/><a href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
+                            <?php endif; ?>
                     </dl>
                 </div> 
             <?php endif;
@@ -693,6 +699,20 @@ function product_accordion_composite(){
 
                             // Echo the metadata
                             echo $system_certs;
+                            ?>
+                        </div>
+                    </dd>
+                <?php endif; ?>
+                 <?php if( !empty(get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true ))): ?>   
+                    <dt><div class="border-separate"></div><span class="open"></span><small class="right"><span class="down-angle"></span></small><h4>PDF Download</h4></dt>
+                    <dd>
+                        <div class="section">
+                            <?php
+                            // Grab the metadata from the database
+                            $pdf_download_link = get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true );
+
+                            // Echo the metadata
+                            echo $pdf_download_link;
                             ?>
                         </div>
                     </dd>
