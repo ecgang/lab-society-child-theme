@@ -19,16 +19,16 @@ get_header(); ?>
 		<div class="container">
 			<div class="text">
 				<h1>Professional scientific supplies and laboratory equipment manufactured and sourced with diligence.</h1>
-				<a class="button add_to_cart_button" href="/lab-equipment-category/distillation/complete-systems-distillation/">Shop Now</a>
+				<a class="button add_to_cart_button" href="/lab-equipment-category/rotary-evaporators/">Shop Now</a>
 			</div>
 		</div>	
 	</section>
 	<section class="section" id="section1">
 		<div class="text left mobile-top">
-			<h1>Purchase your customized distillation solution now.</h1>
+			<h1>Purchase your custom short path distillation kit online today.</h1>
 			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment/executive-short-path-distillation-kit-5l/">Shop Now</a>
 		</div>
-		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment/executive-short-path-distillation-kit-5l/">Shop Now</a>
+		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
 	</section>
 </div>
 <?php
