@@ -185,6 +185,11 @@ function storefront_primary_navigation() {
         ?>
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <button class="menu-toggle"><?php _e( 'Primary Menu', 'storefront' ); ?></button>
+        <?php
+            if(is_front_page()):
+                wp_nav_menu( array('menu' => 'Home Anchors')); 
+            endif;
+        ?>    
         <?php storefront_product_search(); ?>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         <?php /*storefront_header_cart();*/ ?>

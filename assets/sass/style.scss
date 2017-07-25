@@ -25,6 +25,138 @@ Images License: GNU General Public License v2 or later
  
  */
 
+ @mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+  	  -ms-flex: $values;
+  	      flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+     -moz-box-ordinal-group: $val;     
+  	     -ms-flex-order: $val;     
+  	      -webkit-order: $val;  
+  		      order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+     -moz-flex-grow: $grow;
+      -ms-flex-grow: $grow;
+          flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+     -moz-flex-shrink: $shrink;
+      -ms-flex-shrink: $shrink;
+          flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+     -moz-flex-basis: $width;
+      -ms-flex-basis: $width;
+          flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+     -moz-align-content: $align;
+      -ms-align-content: $align;
+          align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+          align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+     -moz-align-self: $align;
+      -ms-align-self: $align;
+          align-self: $align;
+}
+
 body{
 	font-size: 80%;
 }
@@ -68,7 +200,7 @@ ol{
 }
 
 .site{
-	display: flex;
+	@include flexbox;
 	min-height: 100vh;
 	flex-direction: column;
 }
@@ -112,7 +244,6 @@ ol{
 		background-position: center;
 		background-size: cover;
 		.text{
-			text-align: left;
 			max-width: 33%;
 			position: absolute;
 			top: 50%;
@@ -145,6 +276,33 @@ ol{
 					top: 20%;
 				}
 			}
+			&.wide{
+				max-width: 66%;
+				width: 100%;
+				.columns{
+					@include flexbox;
+					align-items: center;
+					@media (max-width: 1023px){
+						width: 100%;
+						display: block;
+					}
+					.one-third{
+						@include flexbox;
+						align-items: center;
+						flex-direction: column;
+						@media (max-width: 1023px){
+							display: block;
+							width: 100%;
+						}
+						a{
+							position: relative;
+						}
+					}
+				}
+				@media (max-width: 1023px){
+					max-width: 100%;
+				}
+			}
 		}
 		.mobile-absolute-bottom{
 				display: none;
@@ -156,6 +314,7 @@ ol{
     			bottom: 75px;
 			}
 		}
+
 	}
 	#section0{
 		background-image: url("../images/home-slideshow/lab-society-buy-laboratory-equipment-online.jpg");
@@ -176,6 +335,36 @@ ol{
 			bottom: inherit;
 		}
 	}
+}
+.mobile-absolute-bottom-arrow{
+		position: absolute;
+		display: block;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		bottom: 150px;
+		color: #000;
+		&:after{
+			content: "";
+		    border-image-source: initial;
+		    border-image-slice: initial;
+		    border-image-width: initial;
+		    border-image-outset: initial;
+		    border-image-repeat: initial;
+		    display: block;
+		    width: 20px;
+		    height: 20px;
+		    position: absolute;
+		    transform: rotate(45deg);
+		    border-width: 0px 2px 2px 0px;
+		    border-style: solid solid;
+		    border-color: #000 #000;
+		    border-left: 0px;
+		    border-top: 0px;
+		    margin-left: -10px;
+		    left: 50%;
+		    transform: rotate(45deg) translate(-50%, -50%);
+		    bottom: -40px;
+		}
 }
 
 	
@@ -224,13 +413,13 @@ a:focus,.focus a{
 		box-sizing: border-box;
 		padding: 0;
 		@media (min-width: 1023px){
-			display: flex;
+			@include flexbox;
 			align-items: center;
 			flex-direction: row;
 			margin: 0;
 		}
 		@media (max-width: 1023px){
-			display: flex;
+			@include flexbox;
 			align-items: center;
 			flex-direction: row;
 			margin: 0;
@@ -306,13 +495,20 @@ a:focus,.focus a{
 		width: 100%;
 	    text-align: right;
 	    margin-left: auto;
-	    display: flex;
+	    @include flexbox;
 	    float: none !important;
 	    justify-content: flex-end;
 	    align-content: center;
 	    margin-right: 50px !important;
+	    align-items: center;
 	    @media (max-width: 1023px){
 	    	display: none;
+	    }
+	    #menu-home-anchors{
+	    	margin-right: 35px;
+	    	li{
+	    		margin-right: 20px;
+	    	}
 	    }
 	    .nav-menu{
 	    	li{
@@ -395,7 +591,7 @@ a:focus,.focus a{
 	ul.products{
 		margin-left: 0;
 	    flex-wrap: wrap;
-	    display: flex;
+	    @include flexbox;
 	    overflow: hidden;
 	    float: none;
 	    justify-content: center;
@@ -404,12 +600,13 @@ a:focus,.focus a{
 	    }
 		li.product{
 			@media (min-width: 768px) {
-				width:29%;
-				margin-right: 4.33%;
-				display: flex;
+				width:29% !important;
+				margin-right: 4.33% !important;
+				@include flexbox;
 				flex-direction:column;
 				flex-wrap:none;
 				float:none;
+				align-items: center;
 				.price{
 					ins{
 						font-weight: 400;
@@ -417,7 +614,10 @@ a:focus,.focus a{
 				}
 			}
 			&:last-child{
-				margin-right: 0;
+				margin-right: 0 !important;
+			}
+			&.last{
+				margin-right: 0 !important;
 			}
 			@media (max-width: 768px) {
 				width: 100%;
@@ -490,7 +690,7 @@ a:focus,.focus a{
 .site-footer{
 	padding: 20px;
 	text-align: center;
-	display: flex;
+	@include flexbox;
 	@media (max-width: 1023px) {
 		padding-bottom: 100px;
 		flex-direction: column;
@@ -566,7 +766,7 @@ a:focus,.focus a{
 
 .storefront-sorting{
 	margin: 0;
-	display: flex;
+	@include flexbox;
 	flex-direction: column-reverse;
 	align-items: center;
 	.woocommerce-pagination{
@@ -625,7 +825,7 @@ a:focus,.focus a{
 
 .category{
 	article{
-		display: flex;
+		@include flexbox;
 		margin-bottom: 50px;
 		@media(max-width: 1023px){
 			flex-direction: column;
@@ -814,7 +1014,7 @@ a:focus,.focus a{
 					}
 				}
 				.single_variation_wrap{
-					display: flex;
+					@include flexbox;
 					align-content: center;
 					flex-direction: column;
 					position: relative;
@@ -828,7 +1028,7 @@ a:focus,.focus a{
 					}
 					.woocommerce-variation{
 						&.single_variation{
-							display: flex;
+							@include flexbox;
 							flex-direction: column-reverse;
 							.price{
 								display: block;
@@ -953,14 +1153,14 @@ a:focus,.focus a{
 			float: right;
 		}
 		.add_to_cart_container{
-			display: flex;
+			@include flexbox;
 			align-content: center;
 			margin-bottom: 20px;
 			.price{
 				font-size: inherit;	
 			}
 			.qty_and_btn{
-				display: flex;
+				@include flexbox;
 				width: 100%;
 				align-content: center;
 				.variations_form{
@@ -1015,7 +1215,7 @@ a:focus,.focus a{
 		margin-bottom: 0 !important;
 		float: right;
 		main{
-			display: flex;
+			@include flexbox;
 			flex-direction: row-reverse;
 			@media(max-width: 1023px){
 				display:block;
@@ -1078,7 +1278,7 @@ a:focus,.focus a{
 				.summary{
 					right: -27.5%;
 					transition: 0.25s linear;
-					display: flex;
+					@include flexbox;
 					flex-direction: column;
 					width: 27.5%;
 					height: 100vh;
@@ -1234,7 +1434,7 @@ a:focus,.focus a{
 				    }
 				}
 				.composited_product_details_wrapper{
-					display: flex;
+					@include flexbox;
 					flex-direction: column-reverse;
 				}
 			}
@@ -1352,7 +1552,7 @@ a:focus,.focus a{
 							display: none;
 						}
 						.component{
-							display: flex;
+							@include flexbox;
 							align-items: center;
 							.component_inner{
 								margin-left: auto;
@@ -1851,6 +2051,13 @@ dt .right{
 	}
 }
 
+.text-center{
+	text-align: center;
+}
+.one-third{
+	width: 33%;
+	padding: 20px;
+}
 
 /**** PREVIOUS INLINE STYLES *****/
 
