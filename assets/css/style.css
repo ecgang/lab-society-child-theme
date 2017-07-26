@@ -379,6 +379,9 @@ a:focus, .focus a {
   .site-content {
     padding-top: 70px; } }
 
+.page .entry-content {
+  width: 100%; }
+
 .site-main {
   margin-left: 250px;
   padding: 0 !important; }
@@ -388,7 +391,7 @@ a:focus, .focus a {
       margin-left: 0;
       margin-bottom: 0; } }
   .site-main .entry-content {
-    width: 50%; }
+    padding-right: 25px; }
     @media (max-width: 1023px) {
       .site-main .entry-content {
         width: 100%; } }

@@ -574,6 +574,12 @@ a:focus,.focus a{
 
 }
 
+.page{
+	.entry-content{
+		width: 100%
+	}
+}
+
 .site-main{
 	margin-left: 250px;
 	padding: 0 !important;
@@ -583,7 +589,8 @@ a:focus,.focus a{
 		margin-bottom: 0;
 	}
 	.entry-content{
-		width: 50%;
+		padding-right: 25px;
+
 		@media (max-width: 1023px){
 			width: 100%;
 		}
