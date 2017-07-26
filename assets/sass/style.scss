@@ -2059,6 +2059,12 @@ dt .right{
 	padding: 20px;
 }
 
+#fp-nav.right{
+	@media all and (max-width: 1023px){
+		right: 0 !important;
+	}
+}
+
 /**** PREVIOUS INLINE STYLES *****/
 
 

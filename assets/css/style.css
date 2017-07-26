@@ -1516,6 +1516,10 @@ dt .right {
   width: 33%;
   padding: 20px; }
 
+@media all and (max-width: 1023px) {
+  #fp-nav.right {
+    right: 0 !important; } }
+
 /**** PREVIOUS INLINE STYLES *****/
 .main-navigation ul li a,
 .site-title a,

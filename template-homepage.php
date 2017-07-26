@@ -67,7 +67,7 @@ get_header(); ?>
 		<div class="text">
 			<h1>Not sure where to start?</h1>
 			<h2>Contact us today and we’ll help find the custom solution that’s right for you.</h2>
-			<h3>Call us at: <a href="tel:7206846857" name="Lab Society Telephone Number">(720) 684-6857</a></h3>
+			<h3>Call us at: <a href="tel:7206002037" name="Lab Society Telephone Number">(720) 600-2037</a></h3>
 			<p>We are based in Longmont, Colorado, and we serve all of Denver and its surrounding areas. We are proud to ship to countries around the world.</p>
 		</div>	
 	</section>

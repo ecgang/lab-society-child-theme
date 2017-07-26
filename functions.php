@@ -188,6 +188,10 @@ function storefront_primary_navigation() {
         <?php
             if(is_front_page()):
                 wp_nav_menu( array('menu' => 'Home Anchors')); 
+            else:
+
+                ?><div><ul id="menu-home-anchors" class="menu"><li class="menu-item"><a class="call-number" href="tel:7206002037" name='Call Lab Society (720) 600-2037'>Need Help? Call: (720) 600-2037</a></li></ul></div>
+            <?php
             endif;
         ?>    
         <?php storefront_product_search(); ?>
