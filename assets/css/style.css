@@ -675,8 +675,8 @@ a:focus, .focus a {
           z-index: 999;
           background: #4169b2; } }
       .single-product .content-area .product .summary .cart.variations_form {
-        position: relative;
-        background: none; }
+        background: none;
+        position: static; }
         .single-product .content-area .product .summary .cart.variations_form .price {
           bottom: 0;
           display: none; }
@@ -782,7 +782,12 @@ a:focus, .focus a {
       .single-product .content-area .product .summary .single_variation_wrap .variations_button {
         padding-top: 0; }
       .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-add-to-cart {
-        margin-left: auto; }
+        margin-left: auto;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex; }
         @media (max-width: 1023px) {
           .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-add-to-cart {
             position: fixed;
@@ -790,10 +795,20 @@ a:focus, .focus a {
             width: 100%;
             left: 0;
             padding: 10px;
-            background: #4169b2; } }
+            background: #4169b2;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex; } }
+        .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-add-to-cart .quantity {
+          margin-left: auto; }
+          @media (max-width: 1023px) {
+            .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-add-to-cart .quantity {
+              display: none !important; } }
         @media (max-width: 1023px) {
-          .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-add-to-cart .quantity {
-            display: none !important; } }
+          .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-add-to-cart .single_add_to_cart_button {
+            margin-left: auto; } }
       .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-price {
         font-size: 1.618em;
         margin-bottom: 0; }
