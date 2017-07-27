@@ -1115,11 +1115,17 @@ a:focus,.focus a{
 			&.product-type-simple{
 				.cart{
 					width: auto;
+					float: none;
+					@include flexbox;
 					@media(max-width:1023px){
 						width: 100%;
 					}
 					.quantity{
 						margin-right: 5px;
+						margin-left: auto;
+					}
+					.price{
+						margin-top: 0;
 					}
 				}
 				.stock{
