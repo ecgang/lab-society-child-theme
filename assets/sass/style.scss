@@ -204,7 +204,6 @@ ol{
 	min-height: 100vh;
 	flex-direction: column;
 }
-
 .site-content{
 	flex: 1;
 	padding:120px 20px 20px 20px !important;
@@ -232,6 +231,9 @@ ol{
 	}
 	.site-content{
 		padding: 0 !important;
+		.col-full{
+			margin: 0;
+		}
 	}
 	.content-area{
 		margin-bottom: 0;
@@ -2085,6 +2087,13 @@ dt .right{
 		right: 0 !important;
 	}
 }
+.flex-columns{
+	@include flexbox;
+	.one-half{
+		width: 50%;
+	}
+}
+
 
 /**** PREVIOUS INLINE STYLES *****/
 

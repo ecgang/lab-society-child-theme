@@ -83,6 +83,8 @@ ol {
   margin-bottom: 0; }
 .home .site-content {
   padding: 0 !important; }
+  .home .site-content .col-full {
+    margin: 0; }
 .home .content-area {
   margin-bottom: 0;
   width: 100% !important; }
@@ -1546,6 +1548,15 @@ dt .right {
 @media all and (max-width: 1023px) {
   #fp-nav.right {
     right: 0 !important; } }
+
+.flex-columns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+  .flex-columns .one-half {
+    width: 50%; }
 
 /**** PREVIOUS INLINE STYLES *****/
 .main-navigation ul li a,
