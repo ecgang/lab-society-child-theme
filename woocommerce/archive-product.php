@@ -63,9 +63,9 @@ get_header( 'shop' ); ?>
 							<div class="text center-bottom">
 								<h1>End of Summer Sale</h1>
 								<h2>25% Off Select Items!</h2>
-								<a class="button add_to_cart_button" href="/lab-equipment/clearance-section">Shop Now</a>
+								<a class="button add_to_cart_button" href="/lab-equipment-category/clearance-section">Shop Now</a>
 							</div>
-							<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/lab-society-summer-sale.jpg" alt="Lab Society Summer Sale" />
+							<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/lab-society-summer-sale.jpg" alt="Lab Society Clearance Section" />
 						</a>
 					</li>
 				</ul>
@@ -74,13 +74,13 @@ get_header( 'shop' ); ?>
 	<section class="content-section first">
     <div class="flex-columns">
     	<div class="one-half">
-    		<a href="" class="hover-link">
+    		<a href="/lab-equipment-category/short-path-distillation/" class="hover-link">
     			<div class="text"><h3>Short Path Distillation</h3></div>
     			<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/short-path-distillation-head-medium.jpg" alt="Buy Short Path Distillation Products Online" />
     		</a>	
     	</div>
     	<div class="one-half">
-    		<a href="" class="hover-link">
+    		<a href="/lab-equipment-category/rotary-evaporators/" class="hover-link">
     			<div class="text"><h3>Rotary Evaporators</h3></div>
     			<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/buy-rotary-evaportors.jpg" />
     		</a>
