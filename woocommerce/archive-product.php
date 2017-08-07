@@ -214,7 +214,7 @@ get_header( 'shop' ); ?>
 		        	<ul>
 		        	<?php
 		            foreach($sub_cats as $sub_category) {
-		                echo '<li><a class="sub-category" href="'. $sub_category->slug .'">' . $sub_category->name . '</a></li>';
+		                echo '<li><a class="sub-category" href="'. get_term_link($cat->slug, 'product_cat') .'/' . $sub_category->slug .'">' . $sub_category->name . '</a></li>';
 		            } ?>
 		            </ul>
 		            <?php    
