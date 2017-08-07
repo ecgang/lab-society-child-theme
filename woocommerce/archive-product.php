@@ -76,13 +76,13 @@ get_header( 'shop' ); ?>
     	<div class="one-half">
     		<a href="" class="hover-link">
     			<div class="text"><h3>Short Path Distillation</h3></div>
-    			<img src="/wp-content/uploads/2017/07/short-path-distillation-head-medium.jpg" alt="Buy Short Path Distillation Products Online" />
+    			<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/short-path-distillation-head-medium.jpg" alt="Buy Short Path Distillation Products Online" />
     		</a>	
     	</div>
     	<div class="one-half">
     		<a href="" class="hover-link">
     			<div class="text"><h3>Rotary Evaporators</h3></div>
-    			<img src="/wp-content/uploads/2017/07/buy-rotary-evaportors.jpg" alt="Buy Rotary Evaporators Online" />
+    			<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/buy-rotary-evaportors.jpg" />
     		</a>
     	</div>
     </div>
