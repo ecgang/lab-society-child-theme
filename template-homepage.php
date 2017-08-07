@@ -20,7 +20,7 @@ get_header(); ?>
 			<div class="text">
 				<h1>Welcome to Lab Society!</h1>
 				<h2>We offer professional scientific supplies and laboratory equipment, manufactured and sourced with diligence.</h2>
-				<a class="button add_to_cart_button" href="/lab-equipment-category/rotary-evaporators/">Shop Now</a>
+				<a class="button add_to_cart_button" href="/shop">Shop Now</a>
 			</div>
 			<a class="mobile-absolute-bottom-arrow" href="#About"></a>
 		</div>	

@@ -21,9 +21,13 @@ function sf_child_theme_deregister_style() {
     wp_deregister_style( 'storefront-woocommerce-bundles-style' );
     wp_deregister_style( 'wc-bundle-style' );    
     wp_enqueue_style('storefront-child-style-custom', get_stylesheet_directory_uri() . '/assets/css/style.css', false, filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
+    if (function_exists('is_shop')):
+    wp_enqueue_style('flexsider-css', get_stylesheet_directory_uri() . '/assets/css/flexslider.css', false, filemtime(get_stylesheet_directory() . '/assets/css/flexslider.css'));
+    endif;
     wp_enqueue_script('storefront-child-scripts', get_stylesheet_directory_uri() . '/assets/js/app.js', false, filemtime(get_stylesheet_directory() . '/assets/js/app.js'));
-
+    if (function_exists('is_front_page')):
      wp_enqueue_style('fullpage-css', get_stylesheet_directory_uri() . '/assets/css/jquery.fullPage.css', false, filemtime(get_stylesheet_directory() . '/assets/css/jquery.fullPage.css'));
+    endif;
 }
 
 add_filter( 'body_class', 'woo_add_tags_to_body_class' );
@@ -46,8 +50,39 @@ function wc_cp_component_options_hide_incompatible( $hide, $component_id, $compo
 add_action( 'wp_head', 'add_google_fonts', 99 );
 function add_google_fonts() { ?>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" />
-    <?php
+    <script type="text/JavaScript">
+window.zESettings = {
+  webWidget: {
+    position: {
+      horizontal: 'left',
+      vertical: 'top'     
+    }
+  }
+};
+</script> 
+   
+    
+<?php 
 }
+
+add_action('wp_head', 'add_flexslider', 99);
+
+function add_flexslider(){
+    
+    if (function_exists('is_shop')):
+    ?>
+     <script>    
+        jQuery(window).load(function() {
+            jQuery('.flexslider').flexslider({
+                controlNav: false,
+                prevText: '',
+                nextText: ''
+            });
+        });
+    </script>
+    <?php endif;
+}
+
 
 add_filter( 'storefront_credit_link', 'hide_storefront_credit_link', 10, 1 );
 function hide_storefront_credit_link( $bool ){
@@ -63,7 +98,6 @@ function login_show_hide(){
 add_filter( 'storefront_handheld_footer_bar_links', 'jk_remove_handheld_footer_links',99 );
 function jk_remove_handheld_footer_links( $links ) {
     unset( $links['cart'] );
-
     return $links;
 }
 
@@ -74,6 +108,14 @@ function jk_add_home_link( $links ) {
             'priority' => 0,
             'callback' => 'jk_home_link',
         ),
+        'chat' => array(
+            'priority' => 0,
+            'callback' => 'jk_chat_link',
+        ),
+         'phone' => array(
+            'priority' => 0,
+            'callback' => 'jk_phone_link',
+        ),
     );
 
     $links = array_merge( $new_links, $links );
@@ -83,6 +125,12 @@ function jk_add_home_link( $links ) {
 
 function jk_home_link() {
     echo '<a href="#">' . __( 'Menu' ) . '</a>';
+}
+function jk_chat_link(){
+    echo '<a href="javascript:$zopim.livechat.window.show();"></a>';
+}
+function jk_phone_link(){
+    echo '<a href="tel:7206002037"></a>';
 }
 
 add_action( 'init', 'child_remove_parent_functions', 99 );
@@ -160,6 +208,19 @@ function dequeue_woocommerce_styles_scripts() {
 }
 
 
+function themeslug_postmeta_form_keys() {
+    return false;
+}
+add_filter('postmeta_form_keys', 'themeslug_postmeta_form_keys');
+
+
+add_action( 'storefront_loop_post', 'shop_landing_page_content', 99 );
+
+function shop_landing_page_content() {
+    echo 'test';
+}
+
+
 
 function mobile_menu(){
     echo '<div class="mobile_menu_container">';
@@ -190,7 +251,7 @@ function storefront_primary_navigation() {
                 wp_nav_menu( array('menu' => 'Home Anchors')); 
             else:
 
-                ?><div><ul id="menu-home-anchors" class="menu"><li class="menu-item"><a class="call-number" href="tel:7206002037" name='Call Lab Society (720) 600-2037'>Need Help? Call: (720) 600-2037</a></li></ul></div>
+                ?><div><ul id="menu-home-anchors" class="menu"><li class="menu-item"><a class="call-number" href="tel:7206002037" name='Call Lab Society (720) 600-2037'>Need Help? Call: (720) 600-2037</a></li><!--<li class="menu-item"><a href="javascript:$zopim.livechat.window.show();">Live Chat Now!</a></li>--></ul></div>
             <?php
             endif;
         ?>    
@@ -796,5 +857,16 @@ add_filter('woocommerce_available_variation', function ($value, $object = null, 
     }
     return $value;
 }, 10, 3);
+
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+global $post;
+if ( isset( $post ) ) {
+$classes[] = $post->post_type . '-' . $post->post_name;
+}
+return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
 
 ?>
