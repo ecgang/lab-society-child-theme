@@ -2433,6 +2433,32 @@ dt .right{
 	color: #000 !important; 
 }
 
+.table-of-contents{
+	-moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px 0;
+    	ul{
+    		margin: 0;
+    		li{
+			list-style: none;
+			&.section-header{
+				font-size: 18px;
+				margin-top: 10px;
+				&:first-child{
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+
 /**** PREVIOUS INLINE STYLES *****/
 
 

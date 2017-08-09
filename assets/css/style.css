@@ -1809,6 +1809,26 @@ dt .right {
 .dark {
   color: #000 !important; }
 
+.table-of-contents {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 50px 0; }
+  .table-of-contents ul {
+    margin: 0; }
+    .table-of-contents ul li {
+      list-style: none; }
+      .table-of-contents ul li.section-header {
+        font-size: 18px;
+        margin-top: 10px; }
+        .table-of-contents ul li.section-header:first-child {
+          margin-top: 0; }
+
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,
 button.menu-toggle:hover {
