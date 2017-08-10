@@ -50,13 +50,14 @@ get_header( 'shop' ); ?>
 						</a>
 					</li>
 					<li class="slide2">
-						<a href="/lab-equipment-category/scientific-glassware/">
+						
 							<div class="text center-top">
 								<h1>Your Source For Scientific Glassware</h1>
 								<a class="button add_to_cart_button desktop_hidden" href="/lab-equipment-category/scientific-glassware/">Shop Now</a>
 							</div>
-							<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/buy-laboratory-equipment-online.jpg" alt="Buy Scientific Glassware Online" />
-						</a>	
+							<a href="/lab-equipment-category/scientific-glassware/">
+								<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/buy-laboratory-equipment-online.jpg" alt="Buy Scientific Glassware Online" />
+							</a>	
 					</li>
 					<li class="slide3">
 						<a href="/lab-equipment-category/clearance-section/">
