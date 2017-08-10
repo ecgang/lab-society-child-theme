@@ -1832,8 +1832,6 @@ dt .right {
         margin-top: 10px; }
         .table-of-contents ul li.section-header:first-child {
           margin-top: 0; }
-      .table-of-contents ul li.widgettitle {
-        display: none; }
 
 #back-to-top {
   position: fixed;

@@ -179,7 +179,7 @@ $(document).ready(function() {
 	    var newName='name-question-'+i;
 	    $(this).attr('name', newName);
 	});
-	$("h2, h3").each(function() {
+	$(".all-questions h2, .all-questions h3").each(function() {
 	  	el = $(this);
 	  	className = $(this).attr('class');
 	  	title = el.text();
