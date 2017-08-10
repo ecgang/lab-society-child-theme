@@ -271,7 +271,8 @@ a:focus, .focus a {
         margin: 0; } }
     .site-header .col-full h3 {
       max-width: 100%;
-      width: 100%; }
+      float: left;
+      margin-bottom: 0; }
       @media (max-width: 1023px) {
         .site-header .col-full h3 {
           max-width: 100%;
@@ -279,6 +280,9 @@ a:focus, .focus a {
           margin-left: 0;
           margin-bottom: 0;
           display: none; } }
+    @media (max-width: 1023px) {
+      .site-header .col-full .starwrapper {
+        display: none; } }
   .site-header .site-branding {
     width: auto;
     margin-right: 0; }
@@ -1828,6 +1832,8 @@ dt .right {
         margin-top: 10px; }
         .table-of-contents ul li.section-header:first-child {
           margin-top: 0; }
+      .table-of-contents ul li.widgettitle {
+        display: none; }
 
 #back-to-top {
   position: fixed;
@@ -1852,6 +1858,46 @@ dt .right {
 
 #back-to-top.show {
   opacity: 1; }
+
+.starwrapper {
+  position: relative;
+  display: block;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-top: 7px; }
+  .starwrapper .star-rating span {
+    position: relative !important;
+    padding-top: 0; }
+    .starwrapper .star-rating span .rating {
+      overflow: hidden;
+      float: left;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding-top: 7px;
+      padding-left: 10px; }
+
+.summary .woocommerce-product-rating {
+  display: none; }
+  @media (max-width: 1023px) {
+    .summary .woocommerce-product-rating {
+      display: block;
+      margin-top: 20px !important; } }
+
+#reviews .commentlist .comment_container {
+  background-color: #f8f8f8;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: 7px 10px; }
+  #reviews .commentlist .comment_container p {
+    margin: 0 !important; }
+  #reviews .commentlist .comment_container img {
+    margin-right: 20px; }
+  #reviews .commentlist .comment_container .comment-text {
+    width: 100% !important; }
 
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,

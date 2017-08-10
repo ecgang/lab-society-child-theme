@@ -422,15 +422,45 @@ function header_title(){
                 </p>
             <?php endif;?>
             <?php
-                if(is_product()):
-    global $product, $woocommerce, $post;
-    $product = wc_get_product( $post->ID );
-    ?>
-    <h3><?php echo $product->get_price_html();?></h3>
-    
-    <?php
-    endif;?>
+            if(is_product()):
+                global $product, $woocommerce, $post;
+                $product = wc_get_product( $post->ID );
+                ?>
+                <h3><?php echo $product->get_price_html();?></h3>
+                <?php 
 
+                    global $wpdb;
+                    global $post;
+                    $count = $wpdb->get_var("
+                    SELECT COUNT(meta_value) FROM $wpdb->commentmeta
+                    LEFT JOIN $wpdb->comments ON $wpdb->commentmeta.comment_id = $wpdb->comments.comment_ID
+                    WHERE meta_key = 'rating'
+                    AND comment_post_ID = $post->ID
+                    AND comment_approved = '1'
+                    AND meta_value > 0
+                ");
+
+                $rating = $wpdb->get_var("
+                    SELECT SUM(meta_value) FROM $wpdb->commentmeta
+                    LEFT JOIN $wpdb->comments ON $wpdb->commentmeta.comment_id = $wpdb->comments.comment_ID
+                    WHERE meta_key = 'rating'
+                    AND comment_post_ID = $post->ID
+                    AND comment_approved = '1'
+                ");
+
+                if ( $count > 0 ) {
+
+                    $average = number_format($rating / $count, 2);
+
+                    echo '<div class="starwrapper" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">';
+
+                    echo '<span class="star-rating" title="'.sprintf(__('Rated %s out of 5', 'woocommerce'), $average).'"><span style="width:'.($average*16).'px"><span itemprop="ratingValue" class="rating">'.$average.'</span> </span></span>';
+
+                    echo '</div>';
+                    }
+
+                ?>
+            <?php endif;?>
         </div>
     <?php 
     
@@ -671,12 +701,23 @@ function product_accordion(){
                             </div>
                         </dd>
                         <?php endif; ?>
+                        <?php if ( comments_open() ): ?>
                             <?php
                                 if( !empty(get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true ))):
                                     $pdf_download_link = get_post_meta( get_the_ID(), '_cmb2_pdf_download_link', true );
                             ?>
                                     <dt><div class="border-separate"></div><br/><a target="_blank" href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
                         <?php endif; ?>
+                        <dt><div class="border-separate"></div><span class="open"></span><small class="right"><span class="down-angle"></span></small><h4>Customer Reviews</h4></dt>
+                        <dd>
+                            <div class="section">
+                                <?php
+                                comments_template();
+                                ?>
+                            </div>
+                        </dd>
+                    <?php endif; ?>
+
                     </dl>
                 </div> 
             <?php endif;
@@ -867,6 +908,8 @@ $classes[] = $post->post_type . '-' . $post->post_name;
 return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+
 
 
 ?>
