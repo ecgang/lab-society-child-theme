@@ -367,6 +367,9 @@ a:focus, .focus a {
       @media (max-width: 1023px) {
         .site-header .title-and-breadcrumbs h1 {
           padding-left: 5px; } }
+      .site-header .title-and-breadcrumbs h1 .term-description p {
+        margin-bottom: 0;
+        font-size: 14px !important; }
     .site-header .title-and-breadcrumbs del {
       display: none; }
     .site-header .title-and-breadcrumbs ins {

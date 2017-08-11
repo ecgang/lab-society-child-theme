@@ -551,6 +551,12 @@ a:focus,.focus a{
 			@media(max-width: 1023px){
 				padding-left: 5px;
 			}	
+			.term-description{
+				p{
+					margin-bottom: 0;
+					font-size: 14px !important;
+				}
+			}
 		}
 		del{
 			display: none;

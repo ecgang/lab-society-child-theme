@@ -158,6 +158,8 @@ function child_remove_parent_functions() {
     add_action('storefront_after_footer', 'mobile_menu');
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+    remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );
+    
     remove_action( 'homepage', 'storefront_best_selling_products', 70 );
     remove_action( 'homepage', 'storefront_product_categories', 20 );
 	remove_action( 'homepage', 'storefront_recent_products', 30 );
@@ -403,6 +405,8 @@ function header_title(){
                 <?php
                     if (is_product_category()):
                         single_term_title();
+                        woocommerce_taxonomy_archive_description();
+                        
                     elseif (is_search()):
                         echo 'Results for: ' . get_search_query();
                     elseif (is_product()):
