@@ -1259,7 +1259,8 @@ a:focus, .focus a {
             margin-left: 0; }
             .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .composite_wrap .composite_button .composite_price .price {
               margin: 0;
-              margin-bottom: 0; }
+              margin-bottom: 0;
+              position: relative; }
             .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .composite_wrap .composite_button .composite_price del {
               display: none; }
             .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .composite_wrap .composite_button .composite_price ins {
