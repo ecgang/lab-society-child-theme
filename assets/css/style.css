@@ -1901,6 +1901,9 @@ dt .right {
   #reviews .commentlist .comment_container .comment-text {
     width: 100% !important; }
 
+.woocommerce-Reviews-title {
+  display: none; }
+
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,
 button.menu-toggle:hover {

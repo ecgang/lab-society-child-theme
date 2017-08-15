@@ -914,6 +914,76 @@ return $classes;
 add_filter( 'body_class', 'add_slug_body_class' );
 
 
-
+/**
+ * Add lightspeed_custom_sku, lightspeed_upc, lightspeed_ean, lightspeed_manufacturer, lightspeed_manufacturer_sku, and lightspeed_vendor to product search
+ */
+ 
+// hook into wp pre_get_posts
+add_action('pre_get_posts', 'argoworks_woo_search_pre_get_posts');
+ 
+/**
+ * Add custom join and where statements to product search query
+ * @param  mixed $q query object
+ * @return void
+ */
+function argoworks_woo_search_pre_get_posts($q){
+ 
+    if ( is_search() ) {
+        add_filter( 'posts_join', 'argoworks_search_post_join' );
+        add_filter( 'posts_where', 'argoworks_search_post_excerpt' );
+    }
+}
+ 
+/**
+ * Add Custom Join Code for wp_mostmeta table
+ * @param  string $join
+ * @return string
+ */
+function argoworks_search_post_join($join = ''){
+ 
+    global $wp_the_query;
+ 
+    // escape if not woocommerce searcg query
+    if ( empty( $wp_the_query->query_vars['wc_query'] ) || empty( $wp_the_query->query_vars['s'] ) )
+            return $join;
+ 
+    $join .= "INNER JOIN wp_postmeta AS jcmt1 ON (wp_posts.ID = jcmt1.post_id) ";
+    return $join;
+}
+ 
+/**
+ * Add custom where statement to product search query
+ * @param  string $where
+ * @return string
+ */
+function argoworks_search_post_excerpt($where = ''){
+ 
+    global $wp_the_query, $pagenow, $wpdb, $wp;
+    // escape if not woocommerce search query
+    if ( empty( $wp_the_query->query_vars['wc_query'] ) || empty( $wp_the_query->query_vars['s'] ) )
+            return $where;
+    $search_ids = array();
+    $term = wc_clean($wp_the_query->query_vars['s']);
+    $temp_where = "((pm.meta_key = 'lightspeed_custom_sku' AND CAST(pm.meta_value AS CHAR) LIKE '%%".$term."%%')
+                OR (pm.meta_key = 'lightspeed_upc' AND CAST(pm.meta_value AS CHAR) LIKE '%%".$term."%%')
+                OR (pm.meta_key = 'lightspeed_ean' AND CAST(pm.meta_value AS CHAR) LIKE '%%".$term."%%')
+                OR (pm.meta_key = 'lightspeed_manufacturer' AND CAST(pm.meta_value AS CHAR) LIKE '%%".$term."%%')
+                OR (pm.meta_key = 'lightspeed_manufacturer_sku' AND CAST(pm.meta_value AS CHAR) LIKE '%%".$term."%%')
+                OR (pm.meta_key = 'lightspeed_vendor' AND CAST(pm.meta_value AS CHAR) LIKE '%%".$term."%%'))";
+    $query = "SELECT p.post_parent as post_id FROM {$wpdb->posts} as p join {$wpdb->postmeta} pm on p.ID = pm.post_id where p.post_parent <> 0 AND ".$temp_where." group by p.post_parent";
+    $search_ids = $wpdb->get_col($query);
+    $search_ids = array_filter(array_map('absint', $search_ids));
+    $where = preg_replace("/post_title LIKE ('%[^%]+%')/", "post_title LIKE $1)
+                OR (jcmt1.meta_key = 'lightspeed_custom_sku' AND CAST(jcmt1.meta_value AS CHAR) LIKE $1)
+                OR (jcmt1.meta_key = 'lightspeed_upc' AND CAST(jcmt1.meta_value AS CHAR) LIKE $1)
+                OR (jcmt1.meta_key = 'lightspeed_ean' AND CAST(jcmt1.meta_value AS CHAR) LIKE $1)
+                OR (jcmt1.meta_key = 'lightspeed_manufacturer' AND CAST(jcmt1.meta_value AS CHAR) LIKE $1)
+                OR (jcmt1.meta_key = 'lightspeed_manufacturer_sku' AND CAST(jcmt1.meta_value AS CHAR) LIKE $1)
+                OR (jcmt1.meta_key = 'lightspeed_vendor' AND CAST(jcmt1.meta_value AS CHAR) LIKE $1 ", $where);
+    if (sizeof($search_ids) > 0) {
+        $where = str_replace(')))', ") OR ({$wpdb->posts}.ID IN (" . implode(',', $search_ids) . "))))", $where);
+    }
+    return $where;
+}
 
 ?>
