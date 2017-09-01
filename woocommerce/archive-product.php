@@ -38,6 +38,9 @@ get_header( 'shop' ); ?>
 			<div class="flexslider">
 				<ul class="slides">
 					<li class="slide1">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/shop-page/labor-day-sale.jpg" alt="Lab Society - Labor Day Sale - 10% Off Everything" />
+					</li>
+					<li class="slide2">
 						<div class="text right">
 							<h1>Lab Society</h1>
 							<h2><a href="/lab-equipment/buy-terpene-distillation-kit/">Buy a Terpene Distillation Kit Online</h2>
@@ -49,7 +52,7 @@ get_header( 'shop' ); ?>
 							
 						</a>
 					</li>
-					<li class="slide2">
+					<li class="slide3">
 						
 							<div class="text center-top">
 								<h1>Your Source For Scientific Glassware</h1>
@@ -59,7 +62,7 @@ get_header( 'shop' ); ?>
 								<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/buy-laboratory-equipment-online.jpg" alt="Buy Scientific Glassware Online" />
 							</a>	
 					</li>
-					<li class="slide3">
+					<li class="slide4">
 						<a href="/lab-equipment-category/clearance-section/">
 							<div class="text center-bottom">
 								<h1>End of Summer Sale</h1>
