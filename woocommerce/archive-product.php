@@ -149,7 +149,7 @@ get_header( 'shop' ); ?>
 
 		$bandproduct_args = array(
 			'post_type'           => 'product',
-			'product_tag'		  => 'Complete Kit',
+			'product_tag'		  => 'complete-kit',
 			'post_status'         => 'publish',
 			'posts_per_page'      => 3,
 			'orderby'             => 'modified',
