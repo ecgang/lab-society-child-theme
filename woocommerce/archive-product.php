@@ -37,8 +37,17 @@ get_header( 'shop' ); ?>
 		<header class="woocommerce-products-header">
 			<div class="flexslider">
 				<ul class="slides">
-					<li class="slide1">
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/shop-page/labor-day-sale.jpg" alt="Lab Society - Labor Day Sale - 10% Off Everything" />
+					<li class="slide2">
+						<div class="text right">
+							<h1>FRESH FROM THE LAB</h1>
+							<h2><a href="/lab-equipment/buy-terpene-distillation-kit/">Upgraded Packable Distillation Head<br/>(LS-PDH-1A)</h2>
+							<a class="button add_to_cart_button" href="/lab-equipment/distillation-head/">Shop Now</a>
+						</div>
+						<a href="/lab-equipment/distillation-head/">
+							<img class="mobile_hidden" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/shop-page/pdh-1a-packable-distillation-head-and-structured-packing.jpg" alt="Buy a PDH-1A Packable Distillation Head and Structured Packing" />
+							<img class="desktop_hidden" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/shop-page/buy-pdh-1a-and-structured-packing-mobile-square.jpg" alt="Buy a PDH-1A Packable Distillation Head and Structured Packing" />
+							
+						</a>
 					</li>
 					<li class="slide2">
 						<div class="text right">

@@ -479,23 +479,31 @@ a:focus,.focus a{
     	clear: none;
     	padding: 0;
     	font-size: inherit;
+    	position: relative;
     	
     /* border-radius: 0; */
 		.widget_product_search{
-			input[type='search'].search-field{
+			position: absolute;
+			width: 500px;
+			right: 0;
+			
+			bottom: 50%;
+			transform: translateY(50%);
+			input[type='search']{
 			    padding: 2px 0 2px 20px;
 			    background: none;
 			    border: 0;
 			    box-shadow: none;
-			    border-bottom: 1px solid #000;
+			    border-bottom: 2px solid #000 !important;
 			    border-radius: 0;
+			    box-sizing: border-box;
 			    &:focus{
 			    	background-color: #fff;
 			    }
 			}
 			form{
 				&:before{
-					top: 4px;
+					top: 2px;
 					left: 0;
 				}
 			}
@@ -1847,8 +1855,46 @@ a:focus,.focus a{
 
 		}
 	}
-}		
+	&.search-selected{
+		top: 60px;
+		#ajaxsearchpro1_2{
+			width: 100%;
+			.asp_text_button{
+				display: none;
+			}
+			.innericon{
+				display: none;
+			}
+			.proclose{
+				position: absolute;
+				right: 10px;
+			}
+			.proloading{
+				position:absolute;
+				right: 10px;
+			}
+		}
+		.columns-5{
+			position: fixed;
+    		bottom: 0;
+    		width: 100%;
+    		.site-search{
+    			position: fixed;
+			    top: 60px;
+			    height: 100%;
+			    bottom: 60px !important;
+			    .probox{
+			    	width: 100% !important;
+			    }
 
+    		}
+		}
+	}
+}		
+body.search-selected{
+	overflow: hidden;
+	position: fixed;
+}
 .live-chat{
 	margin-left:5px;
 	color: #fff !important;
@@ -1874,18 +1920,57 @@ a:focus,.focus a{
 
 .mobile_menu_open{
 	overflow: hidden;
+	position: fixed;
+	.site-search{
+		position: fixed !important;
+	    top: 60px !important;
+	    height: 48px !important;
+	    bottom: 60px !important;
+	}
+	.columns-5{
+		position: fixed;
+    	bottom: 0;
+    	width: 100%;
+	}
+    #ajaxsearchpro1_2{
+    	width: 100%;
+    	.probox{
+    		width: 100% !important;
+    	}
+    	.asp_text_button{
+			display: none;
+		}
+		.innericon{
+			display: none;
+		}
+		.proclose{
+			position: absolute;
+			right: 10px;
+		}
+		.proloading{
+			position:absolute;
+			right: 10px;
+		}
+    }
 	.mobile_menu_container{
-		height: 100vh;
+		height: calc(100% - 55px);
 		background: #333;
 		position: fixed;
 		width: 100%;
 		z-index: 999;
-		top: 130px;
+		top: 60px;
 		display:block;
 		overflow: scroll;
+		padding-top: 48px;
+		.widget_text{
+			display: none;
+		}
 		.widget_product_categories{
+			.widget-title{
+				display: none;
+			}
 			ul.product-categories{
-				padding-bottom: 100px;
+				
 				li{
 					margin: 0;
 					text-align: center;
@@ -1949,8 +2034,7 @@ a:focus,.focus a{
         -o-transition: max-height 0.5s ease-in-out;
         transition: max-height 0.5s ease-in-out;
 		position: fixed;
-	    bottom: inherit;
-	    top:75px;
+	    bottom: 0;
 	    left: 0;
 	    right: 0;
 	    .site-search{
@@ -2550,7 +2634,86 @@ dt .right{
 }
 .woocommerce-Reviews-title{
 	display: none;
+	margin-top: 5px;
 }
+
+#ajaxsearchpro1_1.ajaxsearchpro{
+	background: none;
+	@media all and (max-width: 1023px){
+		height: calc(100% - 165px) !important;
+    	margin-top: 109px !important;
+	}
+	.probox{
+		background: none;
+	    .proinput{
+	    	background: #fff;
+	    	form{
+	    		&:before{
+					content: '' !important;
+				}
+			}
+	    	input[type="search"].orig{
+	    		border: 0 !important;
+    			padding-left: 0 !important;
+    			border-bottom: 2px solid #000 !important;
+			}
+			.autocomplete{
+				display: none;
+			}
+
+	    }
+		.proclose, .proloading{
+		}
+	}
+}
+.proinput{
+	form{
+		&:before{
+			content: '' !important;
+		}
+	}
+}
+#ajaxsearchprores1_2.ajaxsearchpro{
+	position: fixed !important;
+	bottom: 55px;
+	@media all and (max-width: 1023px){
+		height: calc(100% - 165px) !important;
+	}	
+    .results{
+    	@media all and (max-width: 1023px){
+    	height: calc(100% - 40px) !important;
+    	}
+    }
+}
+
+.category-header{
+	max-width: 75%;
+	text-align: center;
+	margin: 50px auto;
+	@media all and (max-width: 1023px){
+    	max-width: 100%;
+    }
+}
+
+
+.woocommerce-cart-tab-container {
+	@media (max-width: 767px) {
+		display: block !important;
+	}
+}
+
+
+.woocommerce-cart-tab-container .widget_shopping_cart ul.product_list_widget {
+	@media (max-width: 767px) {
+	height: 200px !important; width:95% !important;overflow: scroll;
+	}
+}
+.woocommerce-cart-tab-container .widget_shopping_cart .total{
+	@media (max-width: 767px) {
+		text-align:right !important;
+	}
+}
+
 
 /**** PREVIOUS INLINE STYLES *****/
 

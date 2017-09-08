@@ -256,8 +256,10 @@ function storefront_primary_navigation() {
                 ?><div><ul id="menu-home-anchors" class="menu"><li class="menu-item"><a class="call-number" href="tel:7206002037" name='Call Lab Society (720) 600-2037'>Need Help? Call: (720) 600-2037</a></li><!--<li class="menu-item"><a href="javascript:$zopim.livechat.window.show();">Live Chat Now!</a></li>--></ul></div>
             <?php
             endif;
-        ?>    
+        ?>
+        <div class="search-container">
         <?php storefront_product_search(); ?>
+        </div>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         <?php /*storefront_header_cart();*/ ?>
     </nav>
@@ -395,6 +397,36 @@ function isa_woocommerce_all_pa(){
     }
 }
 
+add_action('woocommerce_before_shop_loop','category_description_and_banner',99);
+
+function category_description_and_banner(){
+    global $wp_query, $product;
+    $cat = $wp_query->get_queried_object();
+    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+    $image = wp_get_attachment_url( $thumbnail_id );
+    if (is_product_category()):
+        $image = wp_get_attachment_url( $thumbnail_id );
+        if ( $image ) {
+            echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
+        }
+        ?>
+        <section class="content-section category-header">
+        <h2>
+        <?php
+        if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subtitle', true ))):
+            $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subtitle', true );
+            echo $cat_subtitle;
+
+        endif; ?>
+        </h2>
+        <?php
+
+        woocommerce_taxonomy_archive_description();
+        ?>
+        </section>
+        <?php
+    endif;
+}
 
 add_action('storefront_header','header_title',39);
 function header_title(){
@@ -405,8 +437,6 @@ function header_title(){
                 <?php
                     if (is_product_category()):
                         single_term_title();
-                        woocommerce_taxonomy_archive_description();
-                        
                     elseif (is_search()):
                         echo 'Results for: ' . get_search_query();
                     elseif (is_product()):
@@ -497,6 +527,33 @@ function cmb2_sample_metaboxes() {
     /**
      * Initiate the metabox
      */
+
+    $cmb_cat = new_cmb2_box( array(
+        'id'            => 'cat_metabox',
+        'title'         => __( 'Extra Category Fields', 'category_metabox' ),
+        'object_types' => array('term'),
+        'taxonomies' => array('product_cat'),
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    $cmb_cat->add_field( array(
+        'name'       => __( 'Category Subtitle', 'category_metabox' ),
+        'desc'       => __( '(optional)', 'category_metabox' ),
+        'id'         => $prefix . 'cat_subtitle',
+        'type'       => 'text',
+         // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+
+
+
     $cmb = new_cmb2_box( array(
         'id'            => 'accordion_metabox',
         'title'         => __( 'Product Accordion', 'cmb2' ),
@@ -608,6 +665,8 @@ function cmb2_sample_metaboxes() {
         'type' => 'file',
         // 'repeatable' => true,
     ) );
+
+    
 }
 
 add_action('woocommerce_single_product_summary','product_description',20);
@@ -617,7 +676,13 @@ function product_description(){
     ?>
     <h3>Product Information</h3>
     <div class="description">
-        <?php echo the_content(); ?>
+        <?php echo the_content();
+        $_text_field = get_post_meta( get_the_ID(),'lightspeed_custom_sku');
+        if(!empty( $_text_field)){
+            echo 'SKU: ' . get_post_meta( get_the_ID(),'lightspeed_custom_sku', true);
+        }
+        ?>
+
     </div>
     <?php
     endif;
