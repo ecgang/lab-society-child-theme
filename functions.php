@@ -399,8 +399,6 @@ function isa_woocommerce_all_pa(){
 
 add_action('woocommerce_after_shop_loop','category_description_footer',99);
 add_action('woocommerce_before_shop_loop','category_description_header',99);
-//add_action('woocommerce_before_shop_loop','category_banner',99);
-
 
 function category_description_header(){
     global $wp_query, $product;
@@ -408,24 +406,27 @@ function category_description_header(){
     $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
     if (is_product_category()):
+        if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true ))):
         ?>
         <section class="content-section category-header">
             <h2>
             <?php
-            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true ))):
+            
                 $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true );
                 echo $cat_subtitle;
 
-            endif; ?>
+            ?>
             </h2>
             <?php
             if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true ))):
                 $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true );
                 echo $cat_subtitle;
+                endif;
+             ?>
 
-            endif; ?>
         </section>
         <?php
+        endif;
     endif;
 }
 
@@ -435,43 +436,36 @@ function category_description_footer(){
     $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
     if (is_product_category()):
-        ?>
+       
+    if ( $image ) { ?>
     <div class="col left category-banner">
         <?php
-            if ( $image ) {
                 echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
-            }
-        ?> 
+        ?>
         </div>
+           <?php  }
+         if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true ))):    
+        ?> 
         <section class="content-section category-footer">
         
         <div class="col right">
             <h2>
             <?php
-            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true ))):
+           
                 $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true );
                 echo $cat_subtitle;
-
-            endif; ?>
+                ?>
+           
             </h2>
             <?php woocommerce_taxonomy_archive_description(); ?>
         </div>
         </section>
+
         <?php
+         endif;
     endif;
 }
 
-function category_banner(){
-    global $wp_query, $product;
-    $cat = $wp_query->get_queried_object();
-    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-    $image = wp_get_attachment_url( $thumbnail_id );
-    if (is_product_category()):
-        if ( $image ) {
-            echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
-        }
-    endif;
-}
 
 add_action('storefront_header','header_title',39);
 function header_title(){
