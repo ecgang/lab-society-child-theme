@@ -606,7 +606,7 @@ a:focus,.focus a{
 }
 
 .site-main{
-	margin-left: 250px;
+	margin-left: 275px;
 	padding: 0 !important;
 	@media (max-width: 1023px){
 		padding-bottom: 55px !important;
@@ -2685,13 +2685,34 @@ dt .right{
     	}
     }
 }
-
-.category-header{
-	max-width: 75%;
-	text-align: center;
-	margin: 50px auto;
+.category-banner{
+	max-width: 100%;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding: 10px 10px 0 10px;
+	background: #fafafa;
+}
+.category-footer{
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 50px;
+	display: flex;
+	background: #fafafa;
 	@media all and (max-width: 1023px){
     	max-width: 100%;
+    	padding: 20px;
+    }
+}
+
+.category-header{
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 50px;
+	background: #fafafa;
+	@media all and (max-width: 1023px){
+    	max-width: 100%;
+    	padding: 20px;
     }
 }
 

@@ -397,34 +397,79 @@ function isa_woocommerce_all_pa(){
     }
 }
 
-add_action('woocommerce_before_shop_loop','category_description_and_banner',99);
+add_action('woocommerce_after_shop_loop','category_description_footer',99);
+add_action('woocommerce_before_shop_loop','category_description_header',99);
+//add_action('woocommerce_before_shop_loop','category_banner',99);
 
-function category_description_and_banner(){
+
+function category_description_header(){
     global $wp_query, $product;
     $cat = $wp_query->get_queried_object();
     $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
     if (is_product_category()):
-        $image = wp_get_attachment_url( $thumbnail_id );
+        ?>
+        <section class="content-section category-header">
+            <h2>
+            <?php
+            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true ))):
+                $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true );
+                echo $cat_subtitle;
+
+            endif; ?>
+            </h2>
+            <?php
+            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true ))):
+                $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true );
+                echo $cat_subtitle;
+
+            endif; ?>
+        </section>
+        <?php
+    endif;
+}
+
+function category_description_footer(){
+    global $wp_query, $product;
+    $cat = $wp_query->get_queried_object();
+    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+    $image = wp_get_attachment_url( $thumbnail_id );
+    if (is_product_category()):
+        ?>
+    <div class="col left category-banner">
+        <?php
+            if ( $image ) {
+                echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
+            }
+        ?> 
+        </div>
+        <section class="content-section category-footer">
+        
+        <div class="col right">
+            <h2>
+            <?php
+            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true ))):
+                $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true );
+                echo $cat_subtitle;
+
+            endif; ?>
+            </h2>
+            <?php woocommerce_taxonomy_archive_description(); ?>
+        </div>
+        </section>
+        <?php
+    endif;
+}
+
+function category_banner(){
+    global $wp_query, $product;
+    $cat = $wp_query->get_queried_object();
+    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+    $image = wp_get_attachment_url( $thumbnail_id );
+    if (is_product_category()):
         if ( $image ) {
             echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
         }
-        ?>
-        <section class="content-section category-header">
-        <h2>
-        <?php
-        if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subtitle', true ))):
-            $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subtitle', true );
-            echo $cat_subtitle;
-
-        endif; ?>
-        </h2>
-        <?php
-
-        woocommerce_taxonomy_archive_description();
-        ?>
-        </section>
-        <?php
     endif;
 }
 
@@ -541,9 +586,32 @@ function cmb2_sample_metaboxes() {
     ) );
 
     $cmb_cat->add_field( array(
-        'name'       => __( 'Category Subtitle', 'category_metabox' ),
+        'name'       => __( 'Category Footer Subtitle', 'category_metabox' ),
         'desc'       => __( '(optional)', 'category_metabox' ),
-        'id'         => $prefix . 'cat_subtitle',
+        'id'         => $prefix . 'cat_subfooter_title',
+        'type'       => 'text',
+         // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+
+     $cmb_cat->add_field( array(
+        'name'       => __( 'Category Header Subtitle', 'category_metabox' ),
+        'desc'       => __( '(optional)', 'category_metabox' ),
+        'id'         => $prefix . 'cat_subheader',
+        'type'       => 'text',
+         // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+      $cmb_cat->add_field( array(
+        'name'       => __( 'Category Header Content', 'category_metabox' ),
+        'desc'       => __( '(optional)', 'category_metabox' ),
+        'id'         => $prefix . 'cat_subheader_content',
         'type'       => 'text',
          // function should return a bool value
         // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
