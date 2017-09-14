@@ -647,13 +647,32 @@ a:focus, .focus a {
   .single-product .content-area .product .bundle_form {
     float: left; }
     .single-product .content-area .product .bundle_form .price {
-      display: none;
+      display: none !important;
       margin-top: 0 !important; }
       .single-product .content-area .product .bundle_form .price del {
         display: none; }
-    .single-product .content-area .product .bundle_form .bundle_price .price {
-      display: block;
-      position: absolute !important; }
+    .single-product .content-area .product .bundle_form .bundle_price {
+      position: relative; }
+      .single-product .content-area .product .bundle_form .bundle_price .price {
+        display: block !important;
+        position: absolute !important;
+        top: 8px; }
+    .single-product .content-area .product .bundle_form .stock.out-of-stock {
+      margin-top: 8px;
+      right: 200px; }
+    .single-product .content-area .product .bundle_form .bundled_product_summary {
+      padding-left: 100px; }
+      .single-product .content-area .product .bundle_form .bundled_product_summary .bundled_product_images {
+        margin-left: -100px; }
+      .single-product .content-area .product .bundle_form .bundled_product_summary .single_variation_wrap .stock {
+        position: relative;
+        right: auto;
+        top: auto; }
+      .single-product .content-area .product .bundle_form .bundled_product_summary .variations select {
+        margin-right: 0; }
+      .single-product .content-area .product .bundle_form .bundled_product_summary .variations .reset_variations {
+        position: absolute;
+        right: 0; }
   @media (max-width: 1023px) {
     .single-product .content-area .product {
       float: none;
@@ -758,6 +777,7 @@ a:focus, .focus a {
         display: none !important; } }
     .single-product .content-area .product .summary .variations .label {
       padding-left: 0;
+      padding-right: 0;
       float: left; }
     .single-product .content-area .product .summary .variations .value {
       float: right; }
@@ -2032,6 +2052,10 @@ dt .right {
 @media (max-width: 767px) {
   .woocommerce-cart-tab-container {
     display: block !important; } }
+
+.read-more {
+  margin-bottom: 20px;
+  display: block; }
 
 @media (max-width: 767px) {
   .woocommerce-cart-tab-container .widget_shopping_cart ul.product_list_widget {

@@ -738,15 +738,15 @@ function product_description(){
     ?>
     <h3>Product Information</h3>
     <div class="description">
-        <?php echo the_content();
-        $_text_field = get_post_meta( get_the_ID(),'lightspeed_custom_sku');
+        <?php echo the_content(); ?>
+
+    </div>
+    <?php 
+    $_text_field = get_post_meta( get_the_ID(),'lightspeed_custom_sku');
         if(!empty( $_text_field)){
             echo 'SKU: ' . get_post_meta( get_the_ID(),'lightspeed_custom_sku', true);
         }
-        ?>
-
-    </div>
-    <?php
+    
     endif;
 }
 
