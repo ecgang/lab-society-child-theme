@@ -132,7 +132,7 @@
   			$('#ajaxsearchpro1_2 .probox').attr('width','auto');
   			$('#ajaxsearchpro1_2').attr('max-width','100%');
   			$('#ajaxsearchpro1_2 div').removeClass('hiddend');
-			event.preventDefault();
+			
 		});
 	});
 
