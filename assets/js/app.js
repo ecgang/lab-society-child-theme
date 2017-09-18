@@ -126,7 +126,6 @@
 			event.preventDefault();
 		});
 		$(".search a, .mobile_menu a").click(function(event) {
-			console.log('here!');
   			$('#ajaxsearchpro1_2').attr('asp-compact','open');
   			$('#ajaxsearchpro1_2').attr('width','100%');
   			$('#ajaxsearchpro1_2 .probox').attr('width','auto');
@@ -134,6 +133,12 @@
   			$('#ajaxsearchpro1_2 div').removeClass('hiddend');
 			
 		});
+
+		$(".promagnifier").click(function(event) {
+  			$('.widget_product_search').toggleClass('active');
+		});
+
+		
 	});
 
 	$(document).on('touchstart click','.options-button',function(){

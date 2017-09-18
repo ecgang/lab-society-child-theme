@@ -316,10 +316,14 @@ a:focus, .focus a {
     /* border-radius: 0; */ }
     .site-header .site-search .widget_product_search {
       position: absolute;
-      width: 500px;
       right: 0;
       bottom: 50%;
       transform: translateY(50%); }
+      .site-header .site-search .widget_product_search.active {
+        width: 500px; }
+        @media (max-width: 1023px) {
+          .site-header .site-search .widget_product_search.active {
+            width: 100%; } }
       .site-header .site-search .widget_product_search input[type='search'] {
         padding: 2px 0 2px 20px;
         background: none;
@@ -1393,7 +1397,10 @@ a:focus, .focus a {
   .storefront-handheld-footer-bar.search-selected {
     top: 60px; }
     .storefront-handheld-footer-bar.search-selected #ajaxsearchpro1_2 {
-      width: 100%; }
+      width: 500px; }
+      @media all and (max-width: 1023px) {
+        .storefront-handheld-footer-bar.search-selected #ajaxsearchpro1_2 {
+          width: 100%; } }
       .storefront-handheld-footer-bar.search-selected #ajaxsearchpro1_2 .asp_text_button {
         display: none; }
       .storefront-handheld-footer-bar.search-selected #ajaxsearchpro1_2 .innericon {
@@ -1449,7 +1456,10 @@ body.search-selected {
     bottom: 0;
     width: 100%; }
   .mobile_menu_open #ajaxsearchpro1_2 {
-    width: 100%; }
+    width: 500px; }
+    @media all and (max-width: 1023px) {
+      .mobile_menu_open #ajaxsearchpro1_2 {
+        width: 100%; } }
     .mobile_menu_open #ajaxsearchpro1_2 .probox {
       width: 100% !important; }
     .mobile_menu_open #ajaxsearchpro1_2 .asp_text_button {

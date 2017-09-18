@@ -484,11 +484,16 @@ a:focus,.focus a{
     /* border-radius: 0; */
 		.widget_product_search{
 			position: absolute;
-			width: 500px;
 			right: 0;
-			
 			bottom: 50%;
 			transform: translateY(50%);
+			&.active{
+				width: 500px;
+				@media (max-width: 1023px){
+					width: 100%;
+				}
+
+			}
 			input[type='search']{
 			    padding: 2px 0 2px 20px;
 			    background: none;
@@ -1889,7 +1894,10 @@ a:focus,.focus a{
 	&.search-selected{
 		top: 60px;
 		#ajaxsearchpro1_2{
-			width: 100%;
+			width: 500px;
+			@media all and (max-width: 1023px){
+				width: 100%;
+			}
 			.asp_text_button{
 				display: none;
 			}
@@ -1964,7 +1972,10 @@ body.search-selected{
     	width: 100%;
 	}
     #ajaxsearchpro1_2{
-    	width: 100%;
+    	width: 500px;
+		@media all and (max-width: 1023px){
+			width: 100%;
+		}
     	.probox{
     		width: 100% !important;
     	}
