@@ -237,8 +237,11 @@ a:focus, .focus a {
       width: 100%;
       background: transparent; } }
   .site-header.active {
-    background: #ffffff;
-    top: 0 !important; }
+    top: 0 !important;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1); }
   @media (min-width: 768px) {
     .site-header {
       padding-top: 10px;

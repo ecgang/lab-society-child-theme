@@ -406,8 +406,11 @@ a:focus,.focus a{
 		background: transparent;
   	}
 	&.active{
-			background: #ffffff;
 			top:0 !important;
+			background: #fff;
+			-webkit-box-shadow: 0 0 .625rem 0 rgba(0, 0, 0, .1);
+			-moz-box-shadow: 0 0 .625rem 0 rgba(0, 0, 0, .1);
+			box-shadow: 0 0 .625rem 0 rgba(0, 0, 0, .1);
 		}
 	@media (min-width: 768px){
 		padding-top:10px;
