@@ -65,6 +65,23 @@ window.zESettings = {
 <?php 
 }
 
+
+add_action( 'init', 'storefront_custom_logo' );
+function storefront_custom_logo() {
+    remove_action( 'storefront_header', 'storefront_site_branding', 20 );
+    add_action( 'storefront_header', 'storefront_display_custom_logo', 20 );
+}
+
+function storefront_display_custom_logo() {
+?>
+<div class="site-branding">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link" rel="home">
+        <img class="custom-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lab-society-logo.png" alt="Lab Society - Buy Lab Equipment Online - Laboratory Supply Co." />
+    </a>
+    </div>
+<?php
+}
+
 add_action('wp_head', 'add_flexslider', 99);
 
 function add_flexslider(){
