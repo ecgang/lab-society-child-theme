@@ -39,7 +39,7 @@ ol {
       margin-left: 2em; }
 
 .add_to_cart_button {
-  background: #4169b2; }
+  background: #1b2e84; }
 
 .white {
   color: #fff; }
@@ -50,8 +50,8 @@ ol {
   font-size: 60%;
   font-weight: 600;
   position: relative;
-  left: 2px;
-  color: #4169b2; }
+  left: 0;
+  color: #1b2e84; }
   @media (max-width: 1023px) {
     .custom-logo-link:after {
       display: none; } }
@@ -366,7 +366,7 @@ a:focus, .focus a {
       font-weight: 300;
       padding: 0; }
     .site-header .main-navigation .nav-menu li.current-menu-item a {
-      color: #4169b2; }
+      color: #1b2e84; }
   .site-header .title-and-breadcrumbs {
     padding-left: 30px;
     white-space: nowrap; }
@@ -508,7 +508,7 @@ a:focus, .focus a {
 .product-categories .cat-item.current-cat-parent .children {
   display: block; }
 .product-categories .cat-item:hover a {
-  color: #4169b2; }
+  color: #1b2e84; }
 
 .hentry {
   margin-bottom: 0; }
@@ -596,7 +596,7 @@ a:focus, .focus a {
       background-color: transparent !important; }
       .storefront-sorting .woocommerce-pagination .page-numbers .current {
         border-radius: 50px;
-        background-color: #4169b2 !important; }
+        background-color: #1b2e84 !important; }
 
 .storefront-primary-navigation {
   margin: 0;
@@ -615,7 +615,7 @@ a:focus, .focus a {
     .right-sidebar .widget-area {
       display: none; } }
   .right-sidebar .widget-area .current-cat a {
-    color: #4169b2; }
+    color: #1b2e84; }
 .right-sidebar .content-area {
   width: 100%;
   float: right;
@@ -729,7 +729,7 @@ a:focus, .focus a {
           padding: 10px;
           margin: 0;
           z-index: 999;
-          background: #4169b2; } }
+          background: #1b2e84; } }
       .single-product .content-area .product .summary .cart.variations_form {
         background: none;
         position: static; }
@@ -852,7 +852,7 @@ a:focus, .focus a {
             width: 100%;
             left: 0;
             padding: 10px;
-            background: #4169b2;
+            background: #1b2e84;
             display: -webkit-box;
             display: -moz-box;
             display: -ms-flexbox;
@@ -924,7 +924,7 @@ a:focus, .focus a {
     display: block;
     clear: both;
     margin-bottom: 20px;
-    background-color: #4169b2; }
+    background-color: #1b2e84; }
     @media (max-width: 1023px) {
       .single-product .accordion-container .options-button {
         display: none; } }
@@ -1144,7 +1144,7 @@ a:focus, .focus a {
           .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_wrap .composite_button {
             float: left;
             width: 100%;
-            background: #4169b2;
+            background: #1b2e84;
             padding: 10px; }
           .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_wrap .composite_availability {
             display: none !important; }
@@ -1285,7 +1285,7 @@ a:focus, .focus a {
           @media (max-width: 1023px) {
             .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .composite_wrap .composite_button {
               position: fixed;
-              background: #4169b2;
+              background: #1b2e84;
               bottom: 0;
               padding: 10px;
               left: 0; } }
@@ -1386,10 +1386,10 @@ a:focus, .focus a {
   display: block !important; }
 
 .storefront-handheld-footer-bar {
-  background: #4169b2;
+  background: #1b2e84;
   box-shadow: none; }
   .storefront-handheld-footer-bar ul li a {
-    background-color: #4169b2;
+    background-color: #1b2e84;
     color: #fff !important; }
   .storefront-handheld-footer-bar ul li.mobile_menu a:before {
     content: '\f0c9'; }
@@ -1533,7 +1533,7 @@ body.search-selected {
 
 .woocommerce-demo-store .woocommerce-store-notice {
   position: relative;
-  background-color: #4169b2;
+  background-color: #1b2e84;
   z-index: 9999;
   display: block;
   bottom: inherit; }
@@ -1710,7 +1710,7 @@ dt .right {
       z-index: 1; }
       .flex-columns .one-half .text h3 {
         padding: 3px 5px;
-        color: #4169b2;
+        color: #1b2e84;
         white-space: nowrap;
         background: #fff;
         margin: 0; }
@@ -1857,7 +1857,7 @@ dt .right {
     opacity: 0.8; }
   .hover-link:hover .text h3 {
     color: #fff;
-    background: #4169b2;
+    background: #1b2e84;
     transition: background .2s ease-out;
     -moz-transition: background .2s ease-out;
     -webkit-transition: background .2s ease-out;
@@ -1886,7 +1886,7 @@ dt .right {
     .category-listing li a {
       color: #000; }
       .category-listing li a:hover {
-        color: #4169b2; }
+        color: #1b2e84; }
 
 .full {
   position: relative; }
@@ -2143,11 +2143,11 @@ button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
-  outline-color: #4169b2; }
+  outline-color: #1b2e84; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget a.button, .site-header-cart .widget_shopping_cart a.button {
-  background-color: #4169b2;
-  border-color: #4169b2;
+  background-color: #1b2e84;
+  border-color: #1b2e84;
   color: #ffffff; }
 
 button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
@@ -2217,11 +2217,11 @@ p.stars a:hover:after,
 p.stars a:after,
 .star-rating span:before,
 #payment .payment_methods li input[type=radio]:first-child:checked + label:before {
-  color: #4169b2; }
+  color: #1b2e84; }
 
 .widget_price_filter .ui-slider .ui-slider-range,
 .widget_price_filter .ui-slider .ui-slider-handle {
-  background-color: #4169b2; }
+  background-color: #1b2e84; }
 
 #reviews .commentlist li .comment_container {
   background-color: #f8f8f8; }
@@ -2245,10 +2245,10 @@ p.stars.selected a.active:before,
 p.stars:hover a:before,
 p.stars.selected a:not(.active):before,
 p.stars.selected a.active:before {
-  color: #4169b2; }
+  color: #1b2e84; }
 
 .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
-  background-color: #4169b2;
+  background-color: #1b2e84;
   color: #ffffff; }
 
 .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:hover {

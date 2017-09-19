@@ -76,7 +76,7 @@ function storefront_display_custom_logo() {
 ?>
 <div class="site-branding">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link" rel="home">
-        <img class="custom-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lab-society-logo.png" alt="Lab Society - Buy Lab Equipment Online - Laboratory Supply Co." />
+        <img class="custom-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/buy-lab-equipment-online-laboratory-supply-co.svg" alt="Lab Society - Buy Lab Equipment Online - Laboratory Supply Co." />
     </a>
     </div>
 <?php
