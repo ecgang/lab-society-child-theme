@@ -249,6 +249,7 @@
 			console.log(this);
 	    	var num = this.id.split('link-question-')[1];
 	    	scrollToAnchor('name-question-' + num);
+	    	e.preventDefault();
 		});
 
 		if ($('#back-to-top').length) {

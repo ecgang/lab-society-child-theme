@@ -444,7 +444,7 @@ function category_description_footer(){
         ?>
         </div>
            <?php  }
-         if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true ))):    
+         if(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true )):    
         ?> 
         <section class="content-section category-footer">
         
@@ -457,7 +457,8 @@ function category_description_footer(){
                 ?>
            
             </h2>
-            <?php woocommerce_taxonomy_archive_description(); ?>
+            <?php echo '<div class="term-description">' . apply_filters( 'the_content', term_description()) . '</div>';?>
+
         </div>
         </section>
 
