@@ -180,12 +180,15 @@ ol {
       position: relative;
       bottom: inherit; } }
 
+.fp-tableCell .container {
+  position: relative !important; }
+
 .mobile-absolute-bottom-arrow {
   position: absolute;
   display: block;
   left: 50%;
   transform: translate(-50%, 0%);
-  bottom: 150px;
+  bottom: -170px;
   color: #000; }
   .mobile-absolute-bottom-arrow:after {
     content: "";
