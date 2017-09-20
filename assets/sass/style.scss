@@ -252,7 +252,7 @@ ol{
 			left: 50%;
 			transform: translate(-50%, -50%);
 			.button{
-				float: left;
+				
 				width: auto;
 				@media (max-width: 1023px){
 					float: none;
@@ -322,9 +322,9 @@ ol{
 		background-image: url("../images/home-slideshow/lab-society-buy-laboratory-equipment-online.jpg");
 	}
 	#section1{
-		background-image: url("../images/home-slideshow/lab-society-scientific-lab-equipment.jpg");
+		background-image: url("../images/home-slideshow/buy-lab-society-scientific-lab-equipment.jpg");
 		@media (max-width: 1023px){
-			background-image: url("../images/home-slideshow/short-path-distillation-kit.jpg");
+			background-image: url("../images/home-slideshow/Buy-G2-Executive-Short-Path-Distillation-Kit-12.jpg");
 		}
 	}
 	footer{
@@ -2268,7 +2268,7 @@ dt .right{
 }
 
 .mobile_hidden{
-	display: block !important;
+	
 	@media all and (max-width: 1023px){
 		display: none !important;
 	}
@@ -2358,6 +2358,10 @@ dt .right{
 
 		&.right{
 			transform: translate(0%, -50%);	
+		}
+		&.left{
+			transform: translate(0%, -50%);	
+			left: 25px;
 		}
 		&.center-top{
 			transform: translate(-50%, -225%);
