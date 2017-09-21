@@ -73,7 +73,7 @@ ol {
       padding-top: 80px !important; } }
 
 .home .site-header {
-  background: transparent; }
+  background: rgba(255, 255, 255, 0.5); }
   @media (max-width: 1023px) {
     .home .site-header .site-branding {
       background: transparent; } }
@@ -2082,6 +2082,18 @@ dt .right {
 @media (max-width: 767px) {
   .woocommerce-cart-tab-container .widget_shopping_cart .total {
     text-align: right !important; } }
+
+.bg-overlay-link {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  cursor: pointer;
+  height: 50%;
+  transform: translate(-5%, -50%); }
+  @media all and (max-width: 1023px) {
+    .bg-overlay-link {
+      width: 100%;
+      transform: translate(-5%, -50%); } }
 
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,

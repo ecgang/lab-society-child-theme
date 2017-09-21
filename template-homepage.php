@@ -19,19 +19,20 @@ get_header(); ?>
 		<div class="container">
 			<div class="text text-center">
 				<h1>Welcome to Lab Society!</h1>
-				<h2>We offer professional scientific supplies and laboratory equipment.<br/>American made and manufactured </h2>
+				<h2>We offer professional scientific supplies and laboratory equipment.<br/><strong>American made and manufactured</strong></h2>
 				<a class="button add_to_cart_button" href="/shop">Shop Now</a>
 			</div>
 			<a class="mobile-absolute-bottom-arrow" href="#About"></a>
 		</div>	
 	</section>
 	<section class="section" id="section1">
+	<a class="bg-overlay-link" href="/lab-equipment/executive-short-path-distillation-kit-12l/"></a>
 		<div class="text left mobile-top text-center">
 			<h1>Purchase your custom short path distillation kit online today.</h1>
-			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
+			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
 		</div>
 		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Catalog"></a>-->
-		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
+		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
 	</section>
 	<section class="section">
 		<div class="text">
