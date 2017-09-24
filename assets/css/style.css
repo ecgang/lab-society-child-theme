@@ -2095,6 +2095,11 @@ dt .right {
       width: 100%;
       transform: translate(-5%, -50%); } }
 
+.all-questions ol {
+  list-style: decimal; }
+  .all-questions ol li {
+    margin-bottom: 10px; }
+
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,
 button.menu-toggle:hover {
