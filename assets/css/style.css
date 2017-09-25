@@ -75,6 +75,9 @@ ol {
 .home .site-header {
   background: rgba(255, 255, 255, 0.75); }
   @media (max-width: 1023px) {
+    .home .site-header {
+      background: transparent; } }
+  @media (max-width: 1023px) {
     .home .site-header .site-branding {
       background: transparent; } }
   .home .site-header.active {
