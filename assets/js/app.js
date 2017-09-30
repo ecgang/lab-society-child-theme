@@ -109,7 +109,7 @@
 	$(function() {
 	    $('body').removeClass('fade-out');
 	    setTimeout(function(){
-		    
+		    $(".woocommerce-message").fadeOut(1000);
 		},3000);
 	});
 
