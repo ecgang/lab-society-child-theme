@@ -923,8 +923,8 @@ a:focus, .focus a {
         margin: 0;
         padding-left: 0;
         position: absolute;
-        top: 8px;
-        right: 200px; }
+        top: 10px;
+        right: 210px; }
         @media (max-width: 1023px) {
           .single-product .content-area .product .summary .single_variation_wrap .stock {
             position: fixed;
