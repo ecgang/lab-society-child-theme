@@ -188,11 +188,7 @@ ol{
 
 
 
-#chimpy_popup_submit{
-	margin-top: 8px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
+
 
 .white{
 	color: #fff;
@@ -3171,6 +3167,12 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 		-webkit-transform: scale(1.1);
 		transform: scale(1.1);
 	}
+}
+
+#chimpy_popup_submit{
+	margin-top: 8px;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
 }
 
 /**** PREVIOUS INLINE STYLES *****/
