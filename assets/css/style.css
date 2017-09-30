@@ -1141,8 +1141,6 @@ a:focus, .focus a {
       margin: 0; }
 .single-product.page-template-template-fullwidth-php header {
   background: transparent; }
-  .single-product.page-template-template-fullwidth-php header.active {
-    background: #ffffff; }
 .single-product.page-template-template-fullwidth-php .site-content {
   flex: 1;
   padding: 0 !important; }
