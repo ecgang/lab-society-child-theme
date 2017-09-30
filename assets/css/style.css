@@ -759,8 +759,8 @@ a:focus, .focus a {
         position: absolute !important;
         top: 8px; }
     .single-product .content-area .product .bundle_form .stock.out-of-stock {
-      margin-top: 8px;
-      right: 200px; }
+      margin-top: 10px;
+      right: 210px; }
     .single-product .content-area .product .bundle_form .bundled_product_summary {
       padding-left: 100px; }
       .single-product .content-area .product .bundle_form .bundled_product_summary .bundled_product_images {
