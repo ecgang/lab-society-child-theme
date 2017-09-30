@@ -188,7 +188,7 @@ $(document).ready(function(){
 		$('#fullPage').fullpage({
 			navigation: true,
 			navigationPosition: 'right',
-			anchors:['Home', 'About', 'Short-Path-Distillation', 'Catalog', 'Need-Help'],
+			anchors:['Home', 'Short-Path-Distillation', 'About', 'Catalog', 'Need-Help'],
 			scrollOverflow: true
 		});
 		// Hide all panels

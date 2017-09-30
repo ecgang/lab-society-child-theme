@@ -257,8 +257,9 @@ ol {
     padding: 25px 0; }
 .home #section2 .text {
   margin-top: 10px; }
-  .home #section2 .text .desktop_hidden {
-    display: inline !important; }
+  @media (max-width: 1023px) {
+    .home #section2 .text .desktop_hidden {
+      display: inline !important; } }
 .home footer {
   position: fixed;
   bottom: 0;

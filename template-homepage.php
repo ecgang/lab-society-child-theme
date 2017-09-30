@@ -42,8 +42,7 @@ get_header(); ?>
 			<p>Our goal is to be your #1 laboratory equipment supplier — and you can be sure that you are getting the best deals on industry-leading equipment.</p>	
 		</div>
 		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Short-Path-Distillation"></a>-->
-	</section>
-	
+	</section>	
 	<section class="section">
 		<div class="text wide text-center">
 			<h1>Browse our catalog</h1>

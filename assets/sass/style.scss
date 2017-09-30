@@ -429,8 +429,10 @@ ol{
 	#section2{
 		.text{
 			margin-top: 10px;
-			.desktop_hidden{
-				display:inline !important;
+			@media (max-width: 1023px){
+				.desktop_hidden{
+					display:inline !important;
+				}
 			}
 		}
 	}
