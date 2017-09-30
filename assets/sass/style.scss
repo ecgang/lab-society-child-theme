@@ -1179,31 +1179,29 @@ a:focus,.focus a{
 				    	background: none;
 				    	position: static;
 				    	.price{
-				    		bottom: 0;
-				    		display: none ;
+				    		display: none;
+				    		@media(max-width: 1023px){
+				    			bottom: 0;
+				    		}
 				    	}
 				    	.woocommerce-variation-price{
 				    		.price{
+				    			position: absolute;
+				    			top: 10px;
 				    			display: block !important;
 				    			font-size: inherit;
 				    			float: left;
-				    			position: absolute;
-    							top: 5px;
+				    			@media(max-width: 1023px){
+				    				top: inherit;
+				    			}
 				    		}
 				    	}
-				    }
-				}
-				.stock{
-
-				    @media(max-width: 1023px){
-				    	
 				    }
 				}
 				.price{
 					position: absolute;
 				    left: 0;
-				    display: block;
-				    margin-top: -35px;
+				    display: block;	
 				    font-weight: 300;
 				    font-size: 1.618em;
 				    @media(max-width:1023px){
@@ -1270,7 +1268,6 @@ a:focus,.focus a{
 					.woocommerce-variation-price{
 						float: left;
 						.price{
-							top: 35px;
 				    		color: #000;
 						}
 					}
@@ -1305,6 +1302,7 @@ a:focus,.focus a{
 						    left: 0;
 						    padding: 7.5px;
 						    background: $blue-color;
+						    z-index: 9999;
 						    @include flexbox;
 						}
 						.quantity{
@@ -1324,18 +1322,16 @@ a:focus,.focus a{
 						margin-bottom: 0;
 						.price{
 							position: relative;
-							top: -35px;
 							margin-bottom: 0;
 							margin-top: 0;
 							font-weight: 300;
 							@media(max-width:1023px){
-								top: -10px;
 								color: #fff;
 							}
 						}
 						@media(max-width:1023px){
 							position: fixed;
-						    bottom: 0;
+						    bottom: 10px;
 						    left: 10px;
 						    z-index: 9999;
 						    color: #fff;

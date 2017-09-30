@@ -841,19 +841,23 @@ a:focus, .focus a {
         background: none;
         position: static; }
         .single-product .content-area .product .summary .cart.variations_form .price {
-          bottom: 0;
           display: none; }
+          @media (max-width: 1023px) {
+            .single-product .content-area .product .summary .cart.variations_form .price {
+              bottom: 0; } }
         .single-product .content-area .product .summary .cart.variations_form .woocommerce-variation-price .price {
+          position: absolute;
+          top: 10px;
           display: block !important;
           font-size: inherit;
-          float: left;
-          position: absolute;
-          top: 5px; }
+          float: left; }
+          @media (max-width: 1023px) {
+            .single-product .content-area .product .summary .cart.variations_form .woocommerce-variation-price .price {
+              top: inherit; } }
     .single-product .content-area .product .summary .price {
       position: absolute;
       left: 0;
       display: block;
-      margin-top: -35px;
       font-weight: 300;
       font-size: 1.618em; }
       @media (max-width: 1023px) {
@@ -907,7 +911,6 @@ a:focus, .focus a {
       .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-price {
         float: left; }
         .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-price .price {
-          top: 35px;
           color: #000; }
       .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation.single_variation {
         display: -webkit-box;
@@ -937,6 +940,7 @@ a:focus, .focus a {
             left: 0;
             padding: 7.5px;
             background: #1b2e84;
+            z-index: 9999;
             display: -webkit-box;
             display: -moz-box;
             display: -ms-flexbox;
@@ -955,18 +959,16 @@ a:focus, .focus a {
         margin-bottom: 0; }
         .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-price .price {
           position: relative;
-          top: -35px;
           margin-bottom: 0;
           margin-top: 0;
           font-weight: 300; }
           @media (max-width: 1023px) {
             .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-price .price {
-              top: -10px;
               color: #fff; } }
         @media (max-width: 1023px) {
           .single-product .content-area .product .summary .single_variation_wrap .woocommerce-variation-price {
             position: fixed;
-            bottom: 0;
+            bottom: 10px;
             left: 10px;
             z-index: 9999;
             color: #fff; } }
