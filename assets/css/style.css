@@ -367,9 +367,7 @@ a:focus, .focus a {
           padding: 10px;
           border: 2px solid #000;
           background: rgba(255, 255, 255, 0.9);
-          -webkit-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1);
-          -moz-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.1); }
+          box-shadow: 1px 1px 5px #ddd; }
           @supports (-webkit-backdrop-filter: initial) or (backdrop-filter: initial) {
             .site-header .site-search .widget_product_search.active #ajaxsearchpro1_1.ajaxsearchpro {
               -webkit-backdrop-filter: saturate(180%) blur(5px);
@@ -2163,7 +2161,7 @@ dt .right {
     height: 8px;
     left: 0;
     right: 0;
-    z-index: 9999; }
+    z-index: 99; }
 
 .category-footer {
   position: relative;
