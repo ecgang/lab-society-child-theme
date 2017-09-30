@@ -115,6 +115,7 @@ get_header( 'shop' ); ?>
     	</div>
     </div>
     </section>
+    <?php /* ?>
     <section class="content-section">
     	<h2>New Arrivals</h2>
     	<ul class="products">
@@ -147,6 +148,7 @@ get_header( 'shop' ); ?>
 	?>
 	</ul>
 	</section>
+	<?php */ ?>
 	<section class="content-section">
     	<h2>Complete Kits</h2>
     	<ul class="products">
