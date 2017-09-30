@@ -669,6 +669,7 @@ a:focus,.focus a{
 					  transition: all .5s;
 	    			}
 	    			&:hover{
+	    				color: $blue-color;
 	    				&:after{
 	    					width: 100%;
 	    				}
@@ -3083,6 +3084,14 @@ nav{
 	    	}
 
 	    }
+
+	}
+	.current-cat{
+		a{
+			&:after{
+			width: 100%;
+			}
+		}
 	}
 }
 

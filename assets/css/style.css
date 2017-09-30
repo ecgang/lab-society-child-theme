@@ -455,8 +455,10 @@ a:focus, .focus a {
         background: #1b2e84;
         height: 1px;
         transition: all .5s; }
-      .site-header .main-navigation .nav-menu li a:hover:after {
-        width: 100%; }
+      .site-header .main-navigation .nav-menu li a:hover {
+        color: #1b2e84; }
+        .site-header .main-navigation .nav-menu li a:hover:after {
+          width: 100%; }
     .site-header .main-navigation .nav-menu li.current-menu-item a {
       color: #1b2e84; }
     .site-header .main-navigation .nav-menu li.add_to_cart_button a {
@@ -2293,6 +2295,8 @@ nav .section-header a {
     margin-left: 0.25rem; }
     .product-categories a:hover:after {
       width: 100%; }
+.product-categories .current-cat a:after {
+  width: 100%; }
 
 .quantity input {
   height: 100%; }
