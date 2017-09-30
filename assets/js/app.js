@@ -165,6 +165,20 @@
 		$(this).find('span').text($(this).find('span').text() == 'Sign Up' ? 'Login' : 'Sign Up');
 	});
 	
+	$('').bind("keypress", function(e) {
+	  if (e.keyCode == 13) {               
+	    e.preventDefault();
+	    return false;
+	  }
+	});
+
+$('#chimpy_popup_1').on('keyup keypress', function(e) {
+	var keyCode = e.keyCode || e.which;
+	if (keyCode === 13) { 
+	e.preventDefault();
+	return false;
+	}
+});
 
 
 $(document).ready(function(){
