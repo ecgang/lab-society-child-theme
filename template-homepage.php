@@ -28,15 +28,15 @@ get_header(); ?>
 	<section class="section" id="section1">
 	<a class="bg-overlay-link" href="/lab-equipment/executive-short-path-distillation-kit-12l/"></a>
 		<div class="text left mobile-top text-center">
-			<h1>Purchase your custom short path distillation kit online today.</h1>
+			<h1><span class="mobile_hidden">Purchase your custom </span>Short Path Distillation<span class="mobile_hidden"> kit online today.</span></h1>
 			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
 		</div>
 		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Catalog"></a>-->
 		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
 	</section>
-	<section class="section">
+	<section class="section" id="section2">
 		<div class="text">
-			<h2>Lab Society is your industry-leading science equipment supplier and laboratory supply co.</h2><br/>
+			<h2><span class="mobile_hidden">Lab Society is your</span> <span class="desktop_hidden">I</span><span class="mobile_hidden">i</span>ndustry-leading science equipment supplier and laboratory supply co.</h2>
 			<p>At Lab Society, we constantly strive to manufacture and source the highest quality and most affordable scientific equipment on the market. We’ve done all of the hard work for you, so you can shop with confidence.</p>
 			<p>We’ve got a wide selection of <a href="/lab-equipment-category/vacuum-pumps/" name="Lab Society Vacuum Pumps Lab Equipment Category">vacuum pump products</a>, <a href="/lab-equipment-category/rotary-evaporators/" name="Lab Society rotovap (Rotary Evaporators) Lab Equipment Category">rotovaps (rotary evaporators)</a>, extraction tools, and complete systems.</p>
 			<p>Our goal is to be your #1 laboratory equipment supplier — and you can be sure that you are getting the best deals on industry-leading equipment.</p>	

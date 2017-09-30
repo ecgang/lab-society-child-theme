@@ -169,6 +169,7 @@ function child_remove_parent_functions() {
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
     remove_action( 'wp_footer', 'woocommerce_demo_store' );
     add_action( 'storefront_before_header', 'woocommerce_demo_store' );
+    add_action('storefront_before_header','page_load_script');
     add_action('woocommerce_single_variation','woocommerce_single_variation', 50);
     add_action( 'storefront_single_post', 'storefront_post_meta',40);
     add_action( 'storefront_before_content', 'wc_print_notices' );
@@ -194,6 +195,13 @@ function child_remove_parent_functions() {
 
 
 add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_styles_scripts', 99 );
+
+
+function page_load_script(){
+    ?>
+    <script>document.body.className += ' fade-out';</script>
+<?php
+}
 
 function dequeue_woocommerce_styles_scripts() {
     if ( function_exists( 'is_woocommerce' ) ) {
@@ -265,19 +273,22 @@ function storefront_primary_navigation() {
         ?>
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <button class="menu-toggle"><?php _e( 'Primary Menu', 'storefront' ); ?></button>
+        
         <?php
             if(is_front_page()):
                 wp_nav_menu( array('menu' => 'Home Anchors')); 
             else:
-
-                ?><div><ul id="menu-home-anchors" class="menu"><li class="menu-item"><a class="call-number" href="tel:7206002037" name='Call Lab Society (720) 600-2037'>Need Help? Call: (720) 600-2037</a></li><!--<li class="menu-item"><a href="javascript:$zopim.livechat.window.show();">Live Chat Now!</a></li>--></ul></div>
+                ?><ul id="menu-home-anchors" class="menu"><li class="menu-item">Need Help? Call: <a class="call-number" href="tel:7206002037" name='Call Lab Society (720) 600-2037'><strong>(720) 600-2037</strong></a></li>
+                <li class="menu-item"><a href="/my-account" name='Call Lab Society (720) 600-2037'>Log in</a></li>
+                <li class="menu-item"><a href="/shop" class="add_to_cart_button" name='Call Lab Society (720) 600-2037'>Shop</a></li>
+                <!--<li class="menu-item"><a href="javascript:$zopim.livechat.window.show();">Live Chat Now!</a></li>--></ul>
             <?php
             endif;
         ?>
         <div class="search-container">
         <?php storefront_product_search(); ?>
         </div>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        <?php/* wp_nav_menu( array( 'theme_location' => 'primary' ) ); */?>
         <?php /*storefront_header_cart();*/ ?>
     </nav>
     <?php
@@ -689,7 +700,17 @@ function cmb2_sample_metaboxes() {
         // 'on_front'        => false, // Optionally designate a field to wp-admin only
         // 'repeatable'      => true,
     ) );
-
+  $cmb->add_field( array(
+        'name'       => __( 'Product Information Header Replace', 'cmb2' ),
+        'desc'       => __( '(optional)', 'cmb2' ),
+        'id'         => $prefix . 'product_infomation_header',
+        'type'       => 'text',
+        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
 
     // Regular text field
     $cmb->add_field( array(
@@ -703,6 +724,8 @@ function cmb2_sample_metaboxes() {
         // 'on_front'        => false, // Optionally designate a field to wp-admin only
         // 'repeatable'      => true,
     ) );
+
+   
 
     // URL text field
     $cmb->add_field( array(
@@ -754,7 +777,16 @@ function product_description(){
       global $product;
       if(is_product() && !$product -> is_type('composite')):
     ?>
-    <h3>Product Information</h3>
+     <?php if( !empty(get_post_meta( get_the_ID(), '_cmb2_product_infomation_header', true ))): ?>
+                <h2>
+                <?php
+                $specs = get_post_meta( get_the_ID(), '_cmb2_product_infomation_header', true );
+                echo $specs;
+                ?>
+                </h2>
+            <?php else: ?>
+                <h3>Product Information</h3>
+            <?php endif; ?>
     <div class="description">
         <?php echo the_content(); ?>
 
@@ -886,7 +918,16 @@ function product_accordion_composite(){
         <div class="accordion-container">
 
         <dl class="accordion store-accordion">
-            <h3>Product Information</h3>
+            <?php if( !empty(get_post_meta( get_the_ID(), '_cmb2_product_infomation_header', true ))): ?>
+                <h2>
+                <?php
+                $specs = get_post_meta( get_the_ID(), '_cmb2_product_infomation_header', true );
+                echo $specs;
+                ?>
+                </h2>
+            <?php else: ?>
+                <h3>Product Information</h3>
+            <?php endif; ?>
             <div class="description">
                 <?php echo the_content(); ?>
             </div>

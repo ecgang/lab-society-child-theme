@@ -39,7 +39,7 @@ get_header( 'shop' ); ?>
 				<ul class="slides">
 					<li class="slide1">
 						<div class="text left">
-							<h1>More Output. Less Time.</h1>
+							<h1 class="no-wrap-mobile">More Output. Less Time.</h1>
 							<h2><a href="/lab-equipment/executive-short-path-distillation-kit-12l/">G2 Executive Short Path<br>Distillation Kit (12L)</h2>
 							<a class="button add_to_cart_button" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
 						</div>
@@ -51,8 +51,8 @@ get_header( 'shop' ); ?>
 					</li>
 					<li class="slide2">
 						<div class="text right">
-							<h1>FRESH FROM THE LAB</h1>
-							<h2><a href="/lab-equipment/distillation-head/">Upgraded Packable Distillation Head<br/>(LS-PDH-1A)</h2>
+							<h1>Fresh From The Lab</h1>
+							<h2><a href="/lab-equipment/distillation-head/">Upgraded Packable Distillation Head</h2>
 							<a class="button add_to_cart_button" href="/lab-equipment/distillation-head/">Shop Now</a>
 						</div>
 						<a href="/lab-equipment/distillation-head/">
@@ -73,6 +73,7 @@ get_header( 'shop' ); ?>
 							
 						</a>
 					</li>
+
 					<li class="slide4">
 						
 							<div class="text center-top">
@@ -83,6 +84,7 @@ get_header( 'shop' ); ?>
 								<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/buy-laboratory-equipment-online.jpg" alt="Buy Scientific Glassware Online" />
 							</a>	
 					</li>
+					<!--
 					<li class="slide4">
 						<a href="/lab-equipment-category/clearance-section/">
 							<div class="text center-bottom">
@@ -93,6 +95,7 @@ get_header( 'shop' ); ?>
 							<img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/lab-society-summer-sale.jpg" alt="Lab Society Clearance Section" />
 						</a>
 					</li>
+					-->
 				</ul>
 			</div>
 	    </header>
@@ -112,6 +115,38 @@ get_header( 'shop' ); ?>
     	</div>
     </div>
     </section>
+    <section class="content-section">
+    	<h2>New Arrivals</h2>
+    	<ul class="products">
+		<?php 
+
+		$bandproduct_args = array(
+			'post_type'           => 'product',
+			'product_cat'		  => 'new-arrivals',
+			'post_status'         => 'publish',
+			'posts_per_page'      => 5,
+			'orderby'             => 'modified',
+			'order'               => 'DESC'
+		);
+		$loop = new WP_Query( $bandproduct_args );
+	    while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>	    
+	       <li class="product">    
+	            <a class="woocommerce-LoopProduct-link" href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
+
+	                <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
+
+	                <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
+	                <h3><?php the_title(); ?></h3>
+	                <span class="price"><?php echo $product->get_price_html(); ?></span>                    
+	            </a>
+	            <?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+	        </li>
+	<?php 
+	    endwhile;
+	    wp_reset_query(); 
+	?>
+	</ul>
+	</section>
 	<section class="content-section">
     	<h2>Complete Kits</h2>
     	<ul class="products">
