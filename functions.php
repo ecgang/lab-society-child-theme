@@ -174,7 +174,7 @@ function child_remove_parent_functions() {
     remove_action( 'storefront_single_post', 'storefront_post_header',10);
     remove_action( 'storefront_single_post', 'storefront_post_meta',20);
     remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
-    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );  
+    //remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );  
     remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
