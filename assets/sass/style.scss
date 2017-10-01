@@ -623,8 +623,10 @@ a:focus,.focus a{
 	    @media (max-width: 1023px){
 	    	display: none;
 	    }
+
 	    #menu-home-anchors{
-	    	margin-right: 35px;
+	    	padding-right: 35px;
+	    	width: 100%;
 	    	li{
 	    		color: #000;
 	    		margin-right: 20px;

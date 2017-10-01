@@ -417,7 +417,8 @@ a:focus, .focus a {
       .site-header .main-navigation {
         display: none; } }
     .site-header .main-navigation #menu-home-anchors {
-      margin-right: 35px; }
+      padding-right: 35px;
+      width: 100%; }
       .site-header .main-navigation #menu-home-anchors li {
         color: #000;
         margin-right: 20px;

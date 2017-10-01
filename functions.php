@@ -19,7 +19,7 @@ function sf_child_theme_deregister_style() {
     wp_deregister_style( 'wc-composite-single-css' );
     wp_deregister_style( 'storefront-woocommerce-composite-products-style' );
     wp_deregister_style( 'storefront-woocommerce-bundles-style' );
-    wp_deregister_style( 'wc-bundle-style' );    
+    wp_deregister_style( 'wc-bundle-style' );
     wp_enqueue_style('storefront-child-style-custom', get_stylesheet_directory_uri() . '/assets/css/style.css', false, filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
     if (function_exists('is_shop')):
     wp_enqueue_style('flexsider-css', get_stylesheet_directory_uri() . '/assets/css/flexslider.css', false, filemtime(get_stylesheet_directory() . '/assets/css/flexslider.css'));
@@ -29,6 +29,12 @@ function sf_child_theme_deregister_style() {
      wp_enqueue_style('fullpage-css', get_stylesheet_directory_uri() . '/assets/css/jquery.fullPage.css', false, filemtime(get_stylesheet_directory() . '/assets/css/jquery.fullPage.css'));
     endif;
 }
+
+add_filter('asp_custom_fonts', 'asp_null_css');
+function asp_null_css($css_arr) {
+    return array();
+}
+
 
 add_filter( 'body_class', 'woo_add_tags_to_body_class' );
 function woo_add_tags_to_body_class( $classes ){
@@ -49,17 +55,24 @@ function wc_cp_component_options_hide_incompatible( $hide, $component_id, $compo
 
 add_action( 'wp_head', 'add_google_fonts', 99 );
 function add_google_fonts() { ?>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" />
+    <script type="text/javascript">
+          WebFontConfig = {
+            google: { families: [ 'Montserrat:300,400,700,300italic,400italic,700italic' ] }
+          };
+          (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+          })();
+      </script>
+    
     <script type="text/JavaScript">
-window.zESettings = {
-  webWidget: {
-    position: {
-      horizontal: 'left',
-      vertical: 'top'     
-    }
-  }
-};
-</script> 
+        
+    </script> 
    
     
 <?php 
