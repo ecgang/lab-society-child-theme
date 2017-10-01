@@ -2212,7 +2212,6 @@ body.search-selected{
     					margin-left: 10px;
     					padding-bottom: 0;
     					li{
-    						border-bottom: 1px solid #303030;
     					}
     				}
     				&.current-cat{
@@ -2229,13 +2228,18 @@ body.search-selected{
 						}
 					}		
 					&.cat-parent{
-						margin-bottom: 0;
-						.current-cat{
+						
+						&.current-cat{
+							margin-bottom: 0;
 							a{
 								font-weight: 600;
 							}
 						}
+						&.current-cat-parent{
+							margin-bottom: 0;
+						}
 						.children{
+							margin-bottom: 1em;
 							li{
 								a{
 									font-weight: 300;
@@ -2245,6 +2249,9 @@ body.search-selected{
 									a{
 										font-weight:600;
 									}
+								}
+								&:last-child{
+									margin-bottom: 5px;
 								}
 							}
 							
@@ -2947,7 +2954,7 @@ dt .right{
     }
     @media all and (max-width: 1023px){
     	max-width: 100%;
-    	margin: 0;
+    	margin: 25px 0 0 0;
     	
     }
 }

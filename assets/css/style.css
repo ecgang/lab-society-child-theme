@@ -1617,22 +1617,26 @@ body.search-selected {
         .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li .children {
           margin-left: 10px;
           padding-bottom: 0; }
-          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li .children li {
-            border-bottom: 1px solid #303030; }
         .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat a {
           font-weight: 600; }
           .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat a:after {
             background-color: #fff; }
         .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat li a {
           font-weight: 300; }
-        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent {
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent.current-cat {
           margin-bottom: 0; }
-          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .current-cat a {
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent.current-cat a {
             font-weight: 600; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent.current-cat-parent {
+          margin-bottom: 0; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children {
+          margin-bottom: 1em; }
           .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li a {
             font-weight: 300; }
           .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li.current-cat a {
             font-weight: 600; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li:last-child {
+            margin-bottom: 5px; }
   .mobile_menu_open .storefront-handheld-footer-bar {
     -webkit-transition: max-height 0.5s ease-in-out;
     -moz-transition: max-height 0.5s ease-in-out;
@@ -2181,7 +2185,7 @@ dt .right {
   @media all and (max-width: 1023px) {
     .category-banner {
       max-width: 100%;
-      margin: 0; } }
+      margin: 25px 0 0 0; } }
 
 .category-footer {
   position: relative;
