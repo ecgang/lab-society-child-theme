@@ -374,7 +374,7 @@ a:focus, .focus a {
               backdrop-filter: saturate(180%) blur(5px); } }
           @media all and (max-width: 1023px) {
             .site-header .site-search .widget_product_search.active #ajaxsearchpro1_1.ajaxsearchpro {
-              height: calc(100% - 165px) !important;
+              height: calc(100% - 185px) !important;
               margin-top: 109px !important; } }
           .site-header .site-search .widget_product_search.active #ajaxsearchpro1_1.ajaxsearchpro .probox {
             background: none; }
@@ -1572,9 +1572,11 @@ body.search-selected {
     width: 500px; }
     @media all and (max-width: 1023px) {
       .mobile_menu_open #ajaxsearchpro1_2 {
-        width: 100%; } }
+        width: 100%;
+        border-radius: 2px; } }
     .mobile_menu_open #ajaxsearchpro1_2 .probox {
-      width: 100% !important; }
+      width: 100% !important;
+      padding: 10px 0; }
     .mobile_menu_open #ajaxsearchpro1_2 .asp_text_button {
       display: none; }
     .mobile_menu_open #ajaxsearchpro1_2 .innericon {
@@ -1599,33 +1601,38 @@ body.search-selected {
       display: none; }
     .mobile_menu_open .mobile_menu_container .widget_product_categories .widget-title {
       display: none; }
-    .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li {
-      margin: 0;
-      text-align: center;
-      border-bottom: 1px solid #303030;
-      padding: 10px 0; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li a {
-        color: #fff;
-        font-weight: 300; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li .children {
-        margin-left: 0;
-        padding-left: 0;
-        background: #222;
-        padding-bottom: 0; }
-        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li .children li {
-          border-bottom: 1px solid #303030; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat a {
-        font-weight: 600; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat li a {
-        font-weight: 300; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent a {
-        font-weight: 600 !important; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .current-cat a {
-        font-weight: 600; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li a {
-        font-weight: 300; }
-      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li.current-cat a {
-        font-weight: 600; }
+    .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories {
+      margin-top: 20px; }
+      .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li {
+        padding: 5px 15px;
+        font-size: 15px; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li a {
+          color: #fff;
+          font-weight: 300; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li a:after {
+            background: #fff; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li a:hover:after {
+            background-color: #fff;
+            width: 100%; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li .children {
+          margin-left: 10px;
+          padding-bottom: 0; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li .children li {
+            border-bottom: 1px solid #303030; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat a {
+          font-weight: 600; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat a:after {
+            background-color: #fff; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.current-cat li a {
+          font-weight: 300; }
+        .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent {
+          margin-bottom: 0; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .current-cat a {
+            font-weight: 600; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li a {
+            font-weight: 300; }
+          .mobile_menu_open .mobile_menu_container .widget_product_categories ul.product-categories li.cat-parent .children li.current-cat a {
+            font-weight: 600; }
   .mobile_menu_open .storefront-handheld-footer-bar {
     -webkit-transition: max-height 0.5s ease-in-out;
     -moz-transition: max-height 0.5s ease-in-out;
@@ -2141,7 +2148,7 @@ dt .right {
   bottom: 55px; }
   @media all and (max-width: 1023px) {
     #ajaxsearchprores1_2.ajaxsearchpro {
-      height: calc(100% - 165px) !important; } }
+      height: calc(100% - 185px) !important; } }
   @media all and (max-width: 1023px) {
     #ajaxsearchprores1_2.ajaxsearchpro .results {
       height: calc(100% - 40px) !important; } }
@@ -2171,6 +2178,10 @@ dt .right {
     left: 0;
     right: 0;
     z-index: 99; }
+  @media all and (max-width: 1023px) {
+    .category-banner {
+      max-width: 100%;
+      margin: 0; } }
 
 .category-footer {
   position: relative;
@@ -2191,7 +2202,8 @@ dt .right {
   @media all and (max-width: 1023px) {
     .category-footer {
       max-width: 100%;
-      padding: 20px; } }
+      padding: 20px;
+      margin: 0; } }
 
 .category-header {
   max-width: 100%;
@@ -2211,7 +2223,8 @@ dt .right {
   @media all and (max-width: 1023px) {
     .category-header {
       max-width: 100%;
-      padding: 20px; } }
+      padding: 20px;
+      margin: 0 0 25px 0; } }
   @media all and (min-width: 1023px) {
     .category-header:focus {
       -webkit-box-shadow: 0 20px 30px 0 #e5e5e5;

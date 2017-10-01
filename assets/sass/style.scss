@@ -561,7 +561,7 @@ a:focus,.focus a{
 			        	
 			    	}
 					@media all and (max-width: 1023px){
-						height: calc(100% - 165px) !important;
+						height: calc(100% - 185px) !important;
 				    	margin-top: 109px !important;
 					}
 					.probox{
@@ -2152,9 +2152,11 @@ body.search-selected{
     	width: 500px;
 		@media all and (max-width: 1023px){
 			width: 100%;
+			border-radius: 2px;
 		}
     	.probox{
     		width: 100% !important;
+    		padding: 10px 0;
     	}
     	.asp_text_button{
 			display: none;
@@ -2189,20 +2191,25 @@ body.search-selected{
 				display: none;
 			}
 			ul.product-categories{
-				
+				margin-top: 20px;
 				li{
-					margin: 0;
-					text-align: center;
-					border-bottom: 1px solid #303030;
-    				padding: 10px 0;
+    				padding: 5px 15px;
+    				font-size: 15px;
     				a{
     					color: #fff;
     					font-weight: 300;
+    					&:after{
+    						background: #fff;
+    					}
+    					&:hover{
+    						&:after{
+							    background-color: #fff;
+							    width: 100%;
+							}
+    					}
     				}
     				.children{
-    					margin-left: 0;
-    					padding-left: 0;
-    					background: #222;
+    					margin-left: 10px;
     					padding-bottom: 0;
     					li{
     						border-bottom: 1px solid #303030;
@@ -2211,6 +2218,9 @@ body.search-selected{
     				&.current-cat{
 						a{
 							font-weight: 600;
+							&:after{
+							    background-color: #fff;
+							}
 						}
 						li{
 							a{
@@ -2219,9 +2229,7 @@ body.search-selected{
 						}
 					}		
 					&.cat-parent{
-						a{
-							font-weight: 600 !important;
-						}
+						margin-bottom: 0;
 						.current-cat{
 							a{
 								font-weight: 600;
@@ -2903,7 +2911,7 @@ dt .right{
 	position: fixed !important;
 	bottom: 55px;
 	@media all and (max-width: 1023px){
-		height: calc(100% - 165px) !important;
+		height: calc(100% - 185px) !important;
 	}	
     .results{
     	@media all and (max-width: 1023px){
@@ -2937,6 +2945,11 @@ dt .right{
     	right: 0;
     	z-index: 99;
     }
+    @media all and (max-width: 1023px){
+    	max-width: 100%;
+    	margin: 0;
+    	
+    }
 }
 .category-footer{
 	position: relative;
@@ -2958,6 +2971,7 @@ dt .right{
 	@media all and (max-width: 1023px){
     	max-width: 100%;
     	padding: 20px;
+    	margin: 0;
     	
     }
     
@@ -2981,6 +2995,7 @@ dt .right{
 	@media all and (max-width: 1023px){
     	max-width: 100%;
     	padding: 20px;
+    	margin: 0 0 25px 0;
     }
      @media all and (min-width: 1023px){
     	&:focus{
