@@ -430,6 +430,9 @@ a:focus, .focus a {
           color: #fff; }
         .site-header .main-navigation #menu-home-anchors li .call-number {
           display: inline; }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+          .site-header .main-navigation #menu-home-anchors li:first-child {
+            display: none; } }
     .site-header .main-navigation .nav-menu li a {
       color: #000;
       font-weight: 300;
@@ -467,11 +470,19 @@ a:focus, .focus a {
         white-space: normal;
         flex: 1 0 auto;
         max-width: 300px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .site-header .title-and-breadcrumbs {
+        max-width: 60%; } }
     .site-header .title-and-breadcrumbs h1 {
       margin: 0; }
       @media (max-width: 1023px) {
         .site-header .title-and-breadcrumbs h1 {
           padding-left: 5px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .site-header .title-and-breadcrumbs h1 {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; } }
       .site-header .title-and-breadcrumbs h1 .term-description p {
         margin-bottom: 0;
         font-size: 14px !important; }
@@ -492,6 +503,10 @@ a:focus, .focus a {
   @media (max-width: 1023px) {
     .site-content .col-full {
       margin: 0; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .site-content .col-full {
+      margin-left: 0;
+      margin-right: 0; } }
 @media (min-width: 768px) {
   .site-content {
     padding-top: 70px; } }
@@ -507,6 +522,9 @@ a:focus, .focus a {
       padding-bottom: 55px !important;
       margin-left: 0;
       margin-bottom: 0; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .site-main {
+      margin-left: 225px; } }
   .site-main .entry-content {
     padding-right: 25px; }
     @media (max-width: 1023px) {
@@ -1099,6 +1117,9 @@ a:focus, .focus a {
             width: 100% !important;
             margin-top: 0;
             transform: none; } }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+          .single-product.page-template-template-fullwidth-php .content-area main .product .woocommerce-product-gallery {
+            right: -25px; } }
         .single-product.page-template-template-fullwidth-php .content-area main .product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
           right: 20px; }
         .single-product.page-template-template-fullwidth-php .content-area main .product .woocommerce-product-gallery .flex-viewport {
@@ -1125,6 +1146,9 @@ a:focus, .focus a {
           margin-top: 20px;
           margin-left: 0;
           padding: 0 20px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .single-product.page-template-template-fullwidth-php .content-area main .accordion-container {
+          max-width: 47%; } }
     .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite {
       overflow: visible; }
       .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary {
@@ -1879,8 +1903,14 @@ dt .right {
       @media all and (max-width: 1023px) {
         .flexslider .text.left {
           left: auto; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .flexslider .text.left {
+          left: 0; } }
     .flexslider .text.center-top {
       transform: translate(-50%, -225%); }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .flexslider .text.center-top {
+          transform: translate(-50%, -125%); } }
     .flexslider .text.center-bottom {
       transform: translate(-50%, 80%); }
     @media all and (max-width: 1023px) {

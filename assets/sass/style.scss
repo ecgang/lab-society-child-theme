@@ -627,6 +627,7 @@ a:focus,.focus a{
 	    #menu-home-anchors{
 	    	padding-right: 35px;
 	    	width: 100%;
+	    	
 	    	li{
 	    		color: #000;
 	    		margin-right: 20px;
@@ -640,6 +641,11 @@ a:focus,.focus a{
 	    		}
 	    		.call-number{
 	    			display: inline;
+	    		}
+	    		&:first-child{
+	    			@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+						display: none;
+					}
 	    		}
 	    	}
 	    }
@@ -696,11 +702,19 @@ a:focus,.focus a{
     		flex: 1 0 auto;
     		max-width: 300px;
 		}
+		@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+			 max-width: 60%;
+		}
 		h1{
 			margin: 0;
 			@media(max-width: 1023px){
 				padding-left: 5px;
-			}	
+			}
+			@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+				  white-space: nowrap;
+				  overflow: hidden;
+				  text-overflow: ellipsis;
+			}
 			.term-description{
 				p{
 					margin-bottom: 0;
@@ -734,6 +748,10 @@ a:focus,.focus a{
 		@media (max-width: 1023px){
 			margin: 0;
  		}
+ 		@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
  	@media (min-width: 768px){
 		padding-top: 70px;
@@ -754,6 +772,9 @@ a:focus,.focus a{
 		padding-bottom: 55px !important;
 		margin-left: 0;
 		margin-bottom: 0;
+	}
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+		margin-left: 225px;
 	}
 	.entry-content{
 		padding-right: 25px;
@@ -1486,6 +1507,9 @@ a:focus,.focus a{
 						margin-top: 0;
 						transform: none;
 					}	
+					@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+						right: -25px;
+					}
 					.woocommerce-product-gallery__trigger{
 						right: 20px;
 					}
@@ -1521,6 +1545,9 @@ a:focus,.focus a{
 					margin-top: 20px;
 					margin-left: 0;
 					padding: 0 20px;
+				}
+				@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+					max-width: 47%;
 				}
 			}
 			.product-type-composite{
@@ -2553,10 +2580,16 @@ dt .right{
 			@media all and (max-width: 1023px){
 				left: auto;
 			}
+			@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+				left: 0;
+			}
 
 		}
 		&.center-top{
 			transform: translate(-50%, -225%);
+			@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+				 transform: translate(-50%, -125%);
+			}
 		}
 		&.center-bottom{
 			transform: translate(-50%, 80%);
