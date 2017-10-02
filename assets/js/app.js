@@ -201,6 +201,7 @@ $(document).ready(function(){
 		$('.site-search').children(".close").remove();
 
 	});
+	
 
 });
 

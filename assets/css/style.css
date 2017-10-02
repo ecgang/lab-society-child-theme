@@ -2506,7 +2506,7 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
     opacity: 0.75;
     background: #1b2e84 !important;
     color: #fff !important; }
-  .variation_button.active {
+  .variation_button.select-active {
     opacity: 0.75;
     background: #1b2e84 !important;
     color: #fff !important; }
@@ -2719,5 +2719,22 @@ p.stars.selected a.active:before {
   .site-header-cart .widget_shopping_cart,
   .site-header .product_list_widget li .quantity {
     color: #9aa0a7; } }
+.vmk-table table {
+  width: 800px; }
+.vmk-table thead {
+  width: 100%; }
+.vmk-table td {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 20%; }
+.vmk-table table table, .vmk-table table tbody {
+  width: 100%; }
+.vmk-table table table td {
+  width: 33%; }
+.vmk-table .inner-table-3-5 {
+  width: 60%; }
+.vmk-table tr:nth-child(2) {
+  background: #fbfbfb; }
 
 /*# sourceMappingURL=style.css.map */

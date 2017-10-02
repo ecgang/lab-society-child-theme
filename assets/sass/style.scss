@@ -3365,7 +3365,7 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 		background: $blue-color !important;
 		color: #fff !important;
 	}
-	&.active{
+	&.select-active{
 		opacity: 0.75;
 		background: $blue-color !important;
 		color: #fff !important;
@@ -3645,4 +3645,32 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 				}
 			}
 
+
+.vmk-table{
+	table{
+		width: 800px;
+	}
+	thead{
+		width: 100%;
+	}
+	td{
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		width: 20%;
+	}
+	table table, table tbody{
+		width: 100%;
+	}
+	table table td{
+		width: 33%;
+	}
+	.inner-table-3-5{
+		width: 60%;
+	}
+	tr:nth-child(2){
+		background:#fbfbfb;
+	}
+
+}
 

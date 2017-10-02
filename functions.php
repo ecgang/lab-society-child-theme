@@ -201,6 +201,7 @@ function child_remove_parent_functions() {
     add_action( 'storefront_header', 'storefront_primary_navigation', 98);
     add_action( 'storefront_footer', 'custom_storefront_footer', 30);
     add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close',100);
+    //add_action( 'woocommerce_after_add_to_cart_form', 'add_variation_selection_js', 100);
     remove_theme_support( 'wc-product-gallery-zoom' ); 
 }
 
@@ -243,6 +244,13 @@ function dequeue_woocommerce_styles_scripts() {
             wp_dequeue_script( 'jqueryui' );
         }
     }
+}
+
+function add_variation_selection_js() {
+    if (function_exists('is_product')): ?>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/assets/js/woocombinator-for-composite.js' ?>"></script>
+    <?php
+    endif;
 }
 
 
