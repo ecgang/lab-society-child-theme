@@ -2262,6 +2262,8 @@ dt .right {
   transition-property: -webkit-transform, -webkit-box-shadow;
   transition-property: transform, box-shadow;
   transition-property: transform, box-shadow, -webkit-transform, -webkit-box-shadow; }
+  .category-header h3 {
+    border-top: 0; }
   @media all and (max-width: 1023px) {
     .category-header {
       max-width: 100%;
