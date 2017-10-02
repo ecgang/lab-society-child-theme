@@ -647,7 +647,8 @@ function cmb2_sample_metaboxes() {
         'name'       => __( 'Category Header Content', 'category_metabox' ),
         'desc'       => __( '(optional)', 'category_metabox' ),
         'id'         => $prefix . 'cat_subheader_content',
-        'type'       => 'text',
+        'type'       => 'wysiwyg',
+        'show_on_cb' => 'cmb2_hide_if_no_cats', 
          // function should return a bool value
         // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
         // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter

@@ -154,9 +154,32 @@
 		$('body').toggleClass('options-open');
 		$(this).find('span').text($(this).find('span').text() == 'Show Options' ? 'Hide Options' : 'Show Options');
 	});
+/*
+	$(document).on('touchstart click','.component_data .variation_button',function(){
+		$(this).toggleClass('woocombo-active, active');
+	
+	});
+*/
+
+	
 
 	$(document).on('touchstart click','.woocommerce-product-gallery__image, .pswp__scroll-wrap',function(e){
-		$('body').toggleClass('gallery-open');
+		$('body').addClass('gallery-open');
+		if(!$('.pswp').hasClass('pswp--open')){
+			$('body').toggleClass('gallery-open');
+		}
+		else if ($('.pswp').hasClass('pswp--open')){
+				
+		}
+		else{
+			$('body').removeClass('gallery-open');	
+		}
+		
+	});
+
+	$(document).on('click touchstart','.pswp__button--close',function(e){
+		console.log('in close!');
+		$('body').removeClass('gallery-open');
 	});
 
 	$(document).on('click','.login-toggle',function(e){

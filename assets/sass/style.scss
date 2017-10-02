@@ -1270,9 +1270,13 @@ a:focus,.focus a{
 						padding-left: 0;
 						padding-right: 0;
 						float: left;
+						width: 100%;
+						label{
+							font-weight: 600;
+						}
 					}
 					.value{
-						float: right;
+						float: left;
 						@media(max-width: 1023px){
 							text-align: right !important;
 							margin-bottom: 0 !important;
@@ -1281,7 +1285,7 @@ a:focus,.focus a{
 					.reset_variations{
 						display: block;
 						clear: both;
-						text-align: right;
+						text-align: left;
 					}
 				}
 				.single_variation_wrap{
@@ -1925,9 +1929,17 @@ a:focus,.focus a{
 		@media(max-width: 1023px){
 			display: none;
 		}
+
 	}
 
 }
+
+.storefront-handheld-footer-bar{
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+		display: block !important;
+	}
+}
+
 
 .woocommerce-store-notice__dismiss-link{
 	display: none !important;
@@ -3252,7 +3264,7 @@ nav{
 	}
 }
 
-li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_add_to_cart_button,.options-button,button,.button,#chimpy_popup_submit{
+li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_add_to_cart_button,.options-button,.button,#chimpy_popup_submit{
 	background: $blue-color;
 	margin: 0;
 	min-height: 12px; 
@@ -3324,6 +3336,37 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 		-webkit-transform: scale(1.1);
 		transform: scale(1.1);
 	}
+}
+
+.variation_button{
+	margin: 0;
+	font-weight: 400;
+	cursor: pointer;
+	position: relative;
+	font-family: inherit;
+	padding: 6px 20px !important;
+	font-size:12px;
+	background: transparent;
+	color: #333 !important;
+	border-radius: 2px;
+	border: 1px solid #333;
+	-webkit-transition: all 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+	transition: all 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	display: block;
+	
+	&:hover{
+		opacity: 0.75;
+		background: $blue-color !important;
+		color: #fff !important;
+	}
+	&.active{
+		opacity: 0.75;
+		background: $blue-color !important;
+		color: #fff !important;
+	}
+	
 }
 
 #chimpy_popup_submit{
