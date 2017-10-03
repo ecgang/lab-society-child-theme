@@ -2524,7 +2524,7 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
 .woocommerce-variation-add-to-cart-enabled .wc-forward {
   display: none; }
 
-#ajaxsearchprores1_1 .results .item .asp_content h3 a, #ajaxsearchprores1_2 .results .item .asp_content h3 a, div.ajaxsearchpro[id*="ajaxsearchprores1_"] .results .item .asp_content h3 a, div.ajaxsearchpro[id*='ajaxsearchpro'] .probox .proinput form, #ajaxsearchpro1_2 .probox .proinput form, #ajaxsearchpro1_1 .probox .proinput form, #ajaxsearchpro1_2 .probox .proinput, #ajaxsearchpro1_1 .probox .proinput, #ajaxsearchpro1_1 .probox .proinput input.orig, #ajaxsearchpro1_2 .probox .proinput input.orig, div.ajaxsearchpro[id*="ajaxsearchpro1_"] .probox .proinput input.orig {
+#ajaxsearchprores1_1 .results .item .asp_content h3 a, #ajaxsearchprores1_2 .results .item .asp_content h3 a, div.ajaxsearchpro[id*="ajaxsearchprores1_"] .results .item .asp_content h3 a, div.ajaxsearchpro[id*='ajaxsearchpro'] .probox .proinput form, #ajaxsearchpro1_2 .probox .proinput form, #ajaxsearchpro1_1 .probox .proinput form, #ajaxsearchpro1_2 .probox .proinput, #ajaxsearchpro1_1 .probox .proinput, #ajaxsearchpro1_1 .probox .proinput input.orig, #ajaxsearchpro1_2 .probox .proinput input.orig, div.ajaxsearchpro[id*="ajaxsearchpro1_"] .probox .proinput input.orig, .asp_content, .showmore {
   font-family: 'Montserrat', sans-serif !important; }
 
 .probox .proinput input.orig::-webkit-input-placeholder {
