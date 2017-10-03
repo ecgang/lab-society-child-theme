@@ -453,27 +453,36 @@ function category_description_header(){
     $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
     if (is_product_category()):
-        if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true ))):
-        ?>
-        <section class="content-section category-header">
-            <h2>
-            <?php
-            
-                $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true );
-                echo $cat_subtitle;
-
+        
+        // get current page we are on. If not set we can assume we are on page 1.
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        // are we on page one?
+        if(1 == $paged) :
+            //true
+        
+        
+            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true ))):
             ?>
-            </h2>
-            <?php
-            if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true ))):
-                $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true );
-                echo $cat_subtitle;
-                endif;
-             ?>
+            <section class="content-section category-header">
+                <h2>
+                <?php
+                
+                    $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader', true );
+                    echo $cat_subtitle;
 
-        </section>
-        <?php
-        endif;
+                ?>
+                </h2>
+                <?php
+                if( !empty(get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true ))):
+                    $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subheader_content', true );
+                    echo $cat_subtitle;
+                    endif;
+                 ?>
+
+            </section>
+            <?php
+            endif;
+        endif;    
     endif;
 }
 
@@ -483,35 +492,41 @@ function category_description_footer(){
     $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
     if (is_product_category()):
+        // get current page we are on. If not set we can assume we are on page 1.
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        // are we on page one?
+        if(1 == $paged) :
+            //true
        
-    if ( $image ) { ?>
-    <div class="col left category-banner">
-        <?php
-                echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
-        ?>
-        <div class="shadow-hide"></div>
-        </div>
-           <?php  }
-         if(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true )):    
-        ?> 
-        <section class="content-section category-footer">
-        
-        <div class="col right">
-            <h2>
-            <?php
-           
-                $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true );
-                echo $cat_subtitle;
+            if ( $image ) { ?>
+            <div class="col left category-banner">
+                <?php
+                        echo '<img src="' . $image . '" alt="' . $cat->name . '" width="100%" />';
                 ?>
-           
-            </h2>
-            <?php echo '<div class="term-description">' . apply_filters( 'the_content', term_description()) . '</div>';?>
+                <div class="shadow-hide"></div>
+                </div>
+                   <?php  }
+                 if(get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true )):    
+                ?> 
+                <section class="content-section category-footer">
+                
+                <div class="col right">
+                    <h2>
+                    <?php
+                   
+                        $cat_subtitle = get_term_meta( get_queried_object_id(), '_cmb2_cat_subfooter_title', true );
+                        echo $cat_subtitle;
+                        ?>
+                   
+                    </h2>
+                    <?php echo '<div class="term-description">' . apply_filters( 'the_content', term_description()) . '</div>';?>
 
-        </div>
-        </section>
+                </div>
+                </section>
 
-        <?php
-         endif;
+                <?php
+                 endif;
+            endif;     
     endif;
 }
 
