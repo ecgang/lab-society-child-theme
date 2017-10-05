@@ -808,7 +808,7 @@ a:focus, .focus a {
         margin-bottom: 20px;
         padding: 0; } }
     .single-product .content-area .product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-nav.flex-control-thumbs {
-      margin: 50px 0;
+      margin: 25px 0;
       align-items: space-between; }
       .single-product .content-area .product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-nav.flex-control-thumbs li {
         float: none !important;

@@ -1047,6 +1047,14 @@ function product_accordion_composite(){
                     ?>
                         <dt><div class="border-separate"></div><br/><a target="_blank" href="<?php echo $pdf_download_link; ?>">Download the Data Sheet</a></dt>
                 <?php endif; ?>
+                <dt><div class="border-separate"></div><span class="open"></span><small class="right"><span class="down-angle"></span></small><h4>Customer Reviews</h4></dt>
+                        <dd>
+                            <div class="section">
+                                <?php
+                                comments_template();
+                                ?>
+                            </div>
+                        </dd>
                 </dl>
             </div> 
         <?php
