@@ -26,13 +26,13 @@ get_header(); ?>
 		</div>	
 	</section>
 	<section class="section" id="section1">
-	<a class="bg-overlay-link" href="/lab-equipment/executive-short-path-distillation-kit-12l/"></a>
+	<a class="bg-overlay-link" href="/lab-equipment-category/short-path-distillation/"></a>
 		<div class="text left mobile-top text-center">
 			<h1><span class="mobile_hidden">Purchase your custom </span>Short Path Distillation<span class="mobile_hidden"> kit online today.</span></h1>
-			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
+			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
 		</div>
 		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Catalog"></a>-->
-		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment/executive-short-path-distillation-kit-12l/">Shop Now</a>
+		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
 	</section>
 	<section class="section" id="section2">
 		<div class="text">
