@@ -2376,7 +2376,6 @@ p a {
   transition: all 250ms; }
   p a:before {
     content: "";
-    z-index: -1;
     width: 100%;
     height: 0%;
     background: rgba(48, 78, 213, 0.16);

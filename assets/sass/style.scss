@@ -3190,7 +3190,6 @@ p{
 	  
 	  &:before{
 	    content:"";
-	    z-index:-1;
 	    width:100%;
 	    height:0%;
 	    background:rgba(lighten($blue-color,20%),.16);
