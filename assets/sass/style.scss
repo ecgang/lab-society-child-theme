@@ -1387,7 +1387,7 @@ a:focus,.focus a{
 						width: 100%;
 					}
 					.quantity{
-						margin-right: 5px;
+						margin-right: .875em;
 						margin-left: auto;
 					}
 					.price{
@@ -3495,6 +3495,17 @@ iframe{
 	display: block;
 }
 
+.download-link{
+	padding: 15px 0;
+    margin: 0;
+    display: block;
+    line-height: 1em;
+    &:before{
+    	font-family: 'FontAwesome';
+    	content: '\f1c1';
+    	padding-right: 10px;
+    }
+}
 
 /**** PREVIOUS INLINE STYLES *****/
 

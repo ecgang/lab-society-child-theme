@@ -1012,7 +1012,7 @@ a:focus, .focus a {
       .single-product .content-area .product.product-type-simple .cart {
         width: 100%; } }
     .single-product .content-area .product.product-type-simple .cart .quantity {
-      margin-right: 5px;
+      margin-right: .875em;
       margin-left: auto; }
     .single-product .content-area .product.product-type-simple .cart .price {
       margin-top: 5px; }
@@ -2604,6 +2604,16 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
 iframe {
   margin: 0 auto;
   display: block; }
+
+.download-link {
+  padding: 15px 0;
+  margin: 0;
+  display: block;
+  line-height: 1em; }
+  .download-link:before {
+    font-family: 'FontAwesome';
+    content: '\f1c1';
+    padding-right: 10px; }
 
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,
