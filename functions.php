@@ -85,6 +85,25 @@ function storefront_custom_logo() {
     add_action( 'storefront_header', 'storefront_display_custom_logo', 20 );
 }
 
+
+/*
+add_action( 'storefront_page_after', 'iframe_css' );
+function iframe_css() {
+    if (is_page( 9686 ) ):
+    ?>
+        <script>
+            jQuery(document).ready(function(){
+               $('iframe').load( function() {
+                $('iframe').contents().find("head").append($("<style type='text/css'>  input{display:none;}</style>"));
+                });
+                console.log('hello');
+            });
+        </script>
+    <?php
+    endif;
+}
+*/
+
 function storefront_display_custom_logo() {
 ?>
 <div class="site-branding">
