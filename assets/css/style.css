@@ -800,7 +800,7 @@ a:focus, .focus a {
       width: 100%; } }
   .single-product .content-area .product .woocommerce-product-gallery {
     margin: 0;
-    padding: 75px 50px;
+    padding: 120px 100px 75px 50px;
     margin-bottom: 100px;
     position: fixed;
     right: 20px; }
