@@ -272,7 +272,7 @@ a:focus, .focus a {
       padding-top: 10px;
       padding-bottom: 10px;
       width: 100%;
-      background: #fff; } }
+      background-color: rgba(255, 255, 255, 0.7); } }
   .site-header .col-full {
     max-width: 100%;
     box-sizing: border-box;
@@ -753,12 +753,15 @@ a:focus, .focus a {
   margin-left: 5.8823529412% !important;
   margin-right: 0 !important; }
 
+.single-product .site-main {
+  margin-bottom: 0; }
 .single-product .widget-area {
   float: left; }
 .single-product .content-area {
   width: 100%;
   float: right;
-  margin-right: 0; }
+  margin-right: 0;
+  margin-bottom: 0; }
   @media (max-width: 1023px) {
     .single-product .content-area {
       width: 100%; } }
@@ -797,7 +800,7 @@ a:focus, .focus a {
       width: 100%; } }
   .single-product .content-area .product .woocommerce-product-gallery {
     margin: 0;
-    padding: 50px;
+    padding: 75px 50px;
     margin-bottom: 100px;
     position: fixed;
     right: 20px; }
@@ -877,9 +880,10 @@ a:focus, .focus a {
           @media (max-width: 1023px) {
             .single-product .content-area .product .summary .cart.variations_form .woocommerce-variation-price .price {
               top: inherit; } }
+    .single-product .content-area .product .summary .form {
+      position: relative; }
     .single-product .content-area .product .summary .price {
       position: absolute;
-      left: 7.5px;
       display: block;
       font-weight: 300;
       font-size: 1.618em; }
@@ -1021,8 +1025,7 @@ a:focus, .focus a {
 .single-product .accordion-container {
   float: left;
   display: block;
-  width: 100%;
-  margin-bottom: 100px; }
+  width: 100%; }
   @media (max-width: 1023px) {
     .single-product .accordion-container {
       position: relative;
@@ -1111,7 +1114,7 @@ a:focus, .focus a {
         .single-product.page-template-template-fullwidth-php .content-area main .product {
           width: 100%; } }
       .single-product.page-template-template-fullwidth-php .content-area main .product .woocommerce-product-gallery {
-        width: 50%;
+        width: 48%;
         right: 0;
         margin-bottom: 0;
         top: 50%;
@@ -2229,6 +2232,7 @@ dt .right {
 .category-footer {
   position: relative;
   max-width: 100%;
+  border-radius: 2px;
   margin: 0 25px;
   padding: 50px;
   display: flex;
@@ -2250,6 +2254,7 @@ dt .right {
 
 .category-header {
   max-width: 100%;
+  border-radius: 2px;
   margin: 0 25px;
   margin-bottom: 50px;
   padding: 50px;
@@ -2282,12 +2287,36 @@ dt .right {
       -webkit-transform: translate3d(0, -3px, 0);
       transform: translate3d(0, -3px, 0); } }
 
+.product-type-variable .summary, .product-type-simple .summary, .accordion-container.composite {
+  max-width: 100%;
+  border-radius: 2px;
+  margin-bottom: 50px;
+  padding: 50px !important;
+  background: #fafafa;
+  border: 1px solid rgba(204, 204, 204, 0.15);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.5);
+  box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.5);
+  -webkit-transition: .22s ease-out;
+  transition: .22s ease-out;
+  -webkit-transition-property: -webkit-transform, -webkit-box-shadow;
+  transition-property: -webkit-transform, -webkit-box-shadow;
+  transition-property: transform, box-shadow;
+  transition-property: transform, box-shadow, -webkit-transform, -webkit-box-shadow; }
+  .product-type-variable .summary h3, .product-type-simple .summary h3, .accordion-container.composite h3 {
+    border-top: 0; }
+  @media all and (max-width: 1023px) {
+    .product-type-variable .summary, .product-type-simple .summary, .accordion-container.composite {
+      max-width: 100%;
+      padding: 20px;
+      margin: 0 0 25px 0; } }
+
 .hover-card {
   max-width: 100%;
   margin: 0 25px;
   margin-bottom: 50px;
   padding: 50px;
   background: #fafafa;
+  border-radius: 2px;
   border: 1px solid rgba(204, 204, 204, 0.15);
   -webkit-box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.5);
   box-shadow: 0 2px 10px 0 rgba(204, 204, 204, 0.5);
@@ -2393,7 +2422,6 @@ p a {
   position: relative; }
   .section-header a:before {
     content: "";
-    z-index: -1;
     width: 100%;
     height: 0%;
     background: rgba(48, 78, 213, 0.16);
@@ -2540,7 +2568,7 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
     opacity: 0.75;
     background: #1b2e84 !important;
     color: #fff !important; }
-  .variation_button.select-active {
+  .variation_button.active {
     opacity: 0.75;
     background: #1b2e84 !important;
     color: #fff !important; }

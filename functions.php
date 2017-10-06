@@ -970,7 +970,7 @@ function product_accordion_composite(){
         endif;
         if(is_product()): ?>
         
-        <div class="accordion-container">
+        <div class="accordion-container composite">
 
         <dl class="accordion store-accordion">
             <?php if( !empty(get_post_meta( get_the_ID(), '_cmb2_product_infomation_header', true ))): ?>
