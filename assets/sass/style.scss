@@ -186,10 +186,6 @@ ol{
 	}
 }
 
-
-
-
-
 .white{
 	color: #fff;
 }
@@ -965,6 +961,7 @@ a:focus,.focus a{
 }
 
 .widget_product_categories{
+	margin-bottom: 15px;
 	ul{
 		li{
 			padding-left: 5px;
@@ -1065,6 +1062,11 @@ a:focus,.focus a{
 .single-product{
 	.site-main{
 		margin-bottom: 0;
+		@include flexbox;
+		flex-direction: row-reverse;
+		@media(max-width: 1023px){
+			display:block;
+		}
 	}
 	.widget-area{
 		float: left;		
@@ -1078,6 +1080,7 @@ a:focus,.focus a{
 			width: 100%;
 		}
 		.product{
+			overflow: visible;
 			.bundle_form{
 				float: left;
 				.price{
@@ -1135,9 +1138,13 @@ a:focus,.focus a{
 				right: 0;
 			    top: 50%;
 			    width: 47%;
+			    height: 100vh;
+			    -webkit-box-flex: 1;
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1; 
 			    transform: translateY(-50%);
-			    height: 100%;
-			    display: flex;
+			    @include flexbox;
 			    align-items: center;
   				align-content: center;
   				flex-direction: column;
@@ -1147,17 +1154,30 @@ a:focus,.focus a{
 					right: inherit;
 					margin-bottom:20px;
 					padding: 0;
+					height: auto;
+					transform: none;
 				}
 				.flex-viewport{
 					margin-top: auto;
 					margin-bottom: 0 !important;
-					
+					-webkit-box-flex: 1;
+					-webkit-flex: 1;
+					-ms-flex: 1;
+					flex: 1; 
+					overflow: visible;
+					width: 100%;
+					@media(max-width: 1023px){
+						flex: none;
+						margin-top: 0;
+					}
 				}
 				&.woocommerce-product-gallery--columns-4{
 					.flex-control-nav{
 						&.flex-control-thumbs{
-							margin: 25px 0 auto 0;
+							margin: 0;
 							align-items: space-between;
+							position:relative;
+							top: 5px;
 							li{
 								float: none !important;
 						    	margin-right: 0 !important;
@@ -1204,6 +1224,7 @@ a:focus,.focus a{
 					margin-left: 0;
 					border-left: 0;
 					width: 100%;
+					margin-top: 25px;
 				}
 				.cart{
 					float: right;
@@ -1521,16 +1542,7 @@ a:focus,.focus a{
 					width: 100%;
 				}
 				.woocommerce-product-gallery{
-					width: 43%;
-					right: 2%;
-					margin-bottom: 0;
-					top: 50%;
-  					transform: translateY(-50%);
-  					height: 100%;
-  					display: flex;
-  					align-items: center;
-  					align-content: center;
-  					flex-direction: column;
+
 					@media(max-width: 1023px){
 						width: 100% !important;
 						margin-top: 0;
@@ -1543,15 +1555,13 @@ a:focus,.focus a{
 						right: 20px;
 					}
 					.flex-viewport{
-						margin-bottom: 0;
 						margin-top: auto;
-					}
-					.flex-control-nav{
-						&.flex-control-thumbs{
-							margin: 25px 0 auto 0;
-							align-items: space-between;
+						margin-bottom: 0 !important;
+						@media(max-width: 1023px){
+							margin-top: 0;
 						}
-					}		
+					}
+							
 					img{
 						
 						@media(max-width: 1023px){
@@ -3137,6 +3147,31 @@ dt .right{
 
 }
 
+.bordered-button{
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	border-color: transparent;
+	background: transparent;
+	font-weight: 300 !important;
+	cursor: pointer;
+	position: relative;
+	font-size: 14px;
+	font-family: inherit;
+	padding: 5px 12px;
+	overflow: hidden;
+	border: 1px solid rgba(47,71,221,0.7) !important;
+	border-radius: 2px;
+	background: transparent;
+	color: rgba(47,71,221,0.7) !important;
+	-webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+	transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+	:hover{
+		border: 1px solid rgba(47,71,221,1) !important;
+		color: rgba(255,255,255,1) !important;
+	}
+}
+
 .hover-card{
 	max-width: 100%;
 	margin: 0 25px;
@@ -3393,6 +3428,9 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.18), 0 1px 5px 0 rgba(0,0,0,0.15);
 	-webkit-transform: translate3d(0, 0, 0);
 	-webkit-backface-visibility: hidden;
+	&.bordered-button{
+		color: rgba(47,71,221,0.7) !important;
+	}
 	&:before{
 		position: absolute;
 		top: 0;
@@ -3534,6 +3572,10 @@ iframe{
     	content: '\f1c1';
     	padding-right: 10px;
     }
+}
+
+.widget_text{
+	margin-left: 5px;
 }
 
 /**** PREVIOUS INLINE STYLES *****/
