@@ -777,7 +777,8 @@ a:focus, .focus a {
     .single-product .content-area {
       width: 100%; } }
   .single-product .content-area .product {
-    overflow: visible; }
+    overflow: visible;
+    width: 100%; }
     .single-product .content-area .product .bundle_form {
       float: left; }
       .single-product .content-area .product .bundle_form .price {
