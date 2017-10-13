@@ -1134,12 +1134,11 @@ a:focus,.focus a{
 			}
 			.woocommerce-product-gallery{
 				margin: 0;
-				padding: 120px 50px 75px 50px;
+				padding: 120px 50px 100px 50px;
 				position: fixed;
 				right: 0;
 			    top: 50%;
 			    width: 47%;
-			    height: 100vh;
 			    -webkit-box-flex: 1;
 				-webkit-flex: 1;
 				-ms-flex: 1;
@@ -1178,7 +1177,7 @@ a:focus,.focus a{
 							margin: 0;
 							align-items: space-between;
 							position:relative;
-							top: 5px;
+							top: 0;
 							li{
 								float: none !important;
 						    	margin-right: 0 !important;

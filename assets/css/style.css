@@ -814,12 +814,11 @@ a:focus, .focus a {
         width: 100%; } }
     .single-product .content-area .product .woocommerce-product-gallery {
       margin: 0;
-      padding: 120px 50px 75px 50px;
+      padding: 120px 50px 100px 50px;
       position: fixed;
       right: 0;
       top: 50%;
       width: 47%;
-      height: 100vh;
       -webkit-box-flex: 1;
       -webkit-flex: 1;
       -ms-flex: 1;
@@ -859,7 +858,7 @@ a:focus, .focus a {
         margin: 0;
         align-items: space-between;
         position: relative;
-        top: 5px; }
+        top: 0; }
         .single-product .content-area .product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-nav.flex-control-thumbs li {
           float: none !important;
           margin-right: 0 !important;
