@@ -778,7 +778,7 @@ a:focus, .focus a {
       width: 100%; } }
   .single-product .content-area .product {
     overflow: visible;
-    width: 100%; }
+    width: 100% !important; }
     .single-product .content-area .product .bundle_form {
       float: left; }
       .single-product .content-area .product .bundle_form .price {
