@@ -2691,6 +2691,9 @@ iframe {
 .widget_text {
   margin-left: 5px; }
 
+.disabled {
+  pointer-events: none; }
+
 /**** PREVIOUS INLINE STYLES *****/
 button.menu-toggle,
 button.menu-toggle:hover {
