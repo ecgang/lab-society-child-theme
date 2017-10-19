@@ -860,6 +860,9 @@ a:focus,.focus a{
 						display: none;
 					}
 				}
+				.woocommerce-variation-description{
+					display: none;
+				}
 			}
 			@media (max-width: 768px) {
 				width: 46%;

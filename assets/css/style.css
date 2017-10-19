@@ -598,6 +598,8 @@ a:focus, .focus a {
         display: none; }
       .site-main ul.products li.product.product-type-variable .variations_form .stock {
         display: none; }
+    .site-main ul.products li.product.product-type-variable .woocommerce-variation-description {
+      display: none; }
     @media (max-width: 768px) {
       .site-main ul.products li.product {
         width: 46%;

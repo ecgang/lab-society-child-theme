@@ -1233,12 +1233,4 @@ function argoworks_search_post_excerpt($where = ''){
     return $where;
 }
 
-
-
-
-
-
-
-
-
 ?>
