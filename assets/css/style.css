@@ -1401,20 +1401,6 @@ a:focus, .focus a {
     .single-product.page-template-template-fullwidth-php.composite-variant .accordion-container {
       width: 100% !important;
       max-width: 100% !important; } }
-.single-product.page-template-template-fullwidth-php.composite-variant .woocommerce-product-gallery {
-  right: 20px !important;
-  margin-bottom: 0;
-  top: inherit;
-  margin-top: -40px;
-  width: 40% !important;
-  top: 120px; }
-  @media (max-width: 1023px) {
-    .single-product.page-template-template-fullwidth-php.composite-variant .woocommerce-product-gallery {
-      position: relative !important;
-      width: 100% !important;
-      top: 0 !important;
-      right: 0 !important;
-      margin-top: 0; } }
 .single-product.page-template-template-fullwidth-php.composite-variant .content-area main {
   flex-direction: column-reverse; }
   .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite {
@@ -1469,7 +1455,8 @@ a:focus, .focus a {
         left: 0; }
         .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .composite_wrap .composite_button {
           background: transparent;
-          padding: 0; }
+          padding: 0;
+          border-left: 0; }
           @media (max-width: 1023px) {
             .single-product.page-template-template-fullwidth-php.composite-variant .content-area main .product-type-composite .summary .composite_wrap .composite_button {
               position: fixed;

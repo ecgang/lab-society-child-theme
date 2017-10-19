@@ -1873,22 +1873,6 @@ a:focus,.focus a{
 				max-width: 100% !important;
 			}
 		}
-		.woocommerce-product-gallery{
-    		right: 20px !important;
-    		margin-bottom: 0;
-   			top: inherit;
-   			margin-top: -40px;
-   			width: 40% !important;
-			top: 120px;
-   			@media(max-width: 1023px){
-				position: relative !important;
-				width: 100% !important;
-				top: 0 !important;
-				right: 0 !important;
-				margin-top: 0;
-			}
-
-		}
 		.content-area{
 			main{
 			flex-direction: column-reverse;
@@ -1951,6 +1935,7 @@ a:focus,.focus a{
 							.composite_button{
 								background: transparent;
 								padding: 0;
+								border-left: 0;
 								@media (max-width: 1023px){
 									position: fixed;
 									background: $blue-color;
