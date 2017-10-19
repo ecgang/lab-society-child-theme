@@ -570,13 +570,27 @@ a:focus, .focus a {
             .site-main ul.products li.product .woocommerce-LoopProduct-link .price ins {
               font-weight: 400;
               margin-left: 0; } }
+    @media (max-width: 1023px) {
+      .site-main ul.products li.product .woocommerce-LoopProduct-link {
+        display: flex;
+        flex-direction: column;
+        min-height: 260px; }
+        .site-main ul.products li.product .woocommerce-LoopProduct-link img {
+          margin-bottom: 0.75rem; }
+        .site-main ul.products li.product .woocommerce-LoopProduct-link .price {
+          margin-top: auto;
+          margin-bottom: 5px !important; }
+        .site-main ul.products li.product .woocommerce-LoopProduct-link h2 {
+          font-size: 0.9rem; } }
     .site-main ul.products li.product:last-child {
       margin-right: 0 !important; }
     .site-main ul.products li.product.last {
       margin-right: 0 !important; }
     @media (max-width: 768px) {
       .site-main ul.products li.product {
-        width: 100%; } }
+        width: 50%;
+        display: flex;
+        flex-direction: column; } }
     .site-main ul.products li.product .button {
       margin-top: auto;
       width: auto;
@@ -2573,6 +2587,10 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden; }
+  @media all and (max-width: 1023px) {
+    li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .single_add_to_cart_button, .options-button, .button, #chimpy_popup_submit {
+      font-size: 12px;
+      padding: 6px 20px; } }
   li.add_to_cart_button a.bordered-button, button.add_to_cart_button.bordered-button, a.add_to_cart_button.bordered-button, .single_add_to_cart_button.bordered-button, .options-button.bordered-button, .button.bordered-button, #chimpy_popup_submit.bordered-button {
     color: rgba(47, 71, 221, 0.7) !important; }
   li.add_to_cart_button a:before, button.add_to_cart_button:before, a.add_to_cart_button:before, .single_add_to_cart_button:before, .options-button:before, .button:before, #chimpy_popup_submit:before {
