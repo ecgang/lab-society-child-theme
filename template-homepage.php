@@ -36,7 +36,7 @@ get_header(); ?>
 	</section>
 	<section class="section" id="section2">
 		<div class="text">
-			<h2><span class="mobile_hidden">Lab Society is your</span> <span class="desktop_hidden">I</span><span class="mobile_hidden">i</span>ndustry-leading science equipment supplier and laboratory supply co.</h2>
+			<h2><span class="mobile_hidden">Lab Society is your</span> <span class="desktop_hidden">I</span><span class="mobile_hidden">i</span>ndustry-leading laboratory glassware supplier and laboratory supply co.</h2>
 			<p>At Lab Society, we constantly strive to manufacture and source the highest quality and most affordable scientific equipment on the market. We’ve done all of the hard work for you, so you can shop with confidence.</p>
 			<p>We’ve got a wide selection of <a href="/lab-equipment-category/vacuum-pumps/" name="Lab Society Vacuum Pumps Lab Equipment Category">vacuum pump products</a>, <a href="/lab-equipment-category/rotary-evaporators/" name="Lab Society rotovap (Rotary Evaporators) Lab Equipment Category">rotovaps (rotary evaporators)</a>, extraction tools, and complete systems.</p>
 			<p>Our goal is to be your #1 laboratory equipment supplier — and you can be sure that you are getting the best deals on industry-leading equipment.</p>	
