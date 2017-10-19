@@ -133,10 +133,15 @@
   			$('body').toggleClass('mobile_menu_open');
 			$(this).parent().addClass('open');
 			event.preventDefault();
+			$('body').removeClass('search-selected');
+			$('.storefront-handheld-footer-bar').removeClass('search-selected');
+			$('.storefront-handheld-footer-bar .search').removeClass('active');
+
 		});
-		$(".search a, .mobile_menu a").click(function(event) {
+		$(document).on("click",".search a, .mobile_menu a", function(event) {
   			$('#ajaxsearchpro1_2').attr('asp-compact','open');
   			$('#ajaxsearchpro1_2').attr('width','100%');
+  			$('#ajaxsearchpro1_2 .proinput').removeClass('hiddend');
   			$('#ajaxsearchpro1_2 .probox').attr('width','auto');
   			$('#ajaxsearchpro1_2').attr('max-width','100%');
   			$('#ajaxsearchpro1_2 div').removeClass('hiddend');
@@ -197,7 +202,7 @@ $(document).ready(function(){
     $(document).on('click','#page',function(e){
 		$('.widget_product_search').removeClass('active');
 		$('#ajaxsearchpro1_1').attr('asp-compact', 'closed');
-		$('.proinput').addClass('hiddend');
+		$('header .proinput').addClass('hiddend');
 		$('.site-search').children(".close").remove();
 
 	});

@@ -2222,7 +2222,7 @@ body.search-selected{
 }
 
 
-.mobile_menu_open{
+.mobile_menu_open,.search-selected{
 	overflow: hidden;
 	position: fixed;
 	.site-search{
@@ -3507,12 +3507,14 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 		background: $blue-color !important;
 		color: #fff !important;
 	}
-	&.woocombo-active{
-		opacity: 0.75;
-		background: $blue-color !important;
-		color: #fff !important;
-	}
 	
+	
+}
+
+.woocombo-active{
+	opacity: 0.75;
+	background: $blue-color !important;
+	color: #fff !important;
 }
 
 #chimpy_popup_submit{
