@@ -586,6 +586,18 @@ a:focus, .focus a {
       margin-right: 0 !important; }
     .site-main ul.products li.product.last {
       margin-right: 0 !important; }
+    .site-main ul.products li.product.product-type-variable .quantity {
+      display: none !important; }
+    .site-main ul.products li.product.product-type-variable .variations {
+      display: none; }
+    .site-main ul.products li.product.product-type-variable .woocommerce-variation {
+      display: none; }
+    .site-main ul.products li.product.product-type-variable .variations_form {
+      margin-bottom: 0; }
+      .site-main ul.products li.product.product-type-variable .variations_form .price {
+        display: none; }
+      .site-main ul.products li.product.product-type-variable .variations_form .stock {
+        display: none; }
     @media (max-width: 768px) {
       .site-main ul.products li.product {
         width: 46%;

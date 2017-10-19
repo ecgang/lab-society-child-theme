@@ -841,6 +841,26 @@ a:focus,.focus a{
 			&.last{
 				margin-right: 0 !important;
 			}
+			&.product-type-variable{
+				.quantity{
+					display: none !important;
+				}
+				.variations{
+					display:none;
+				}
+				.woocommerce-variation{
+					display: none;
+				}
+				.variations_form{
+					margin-bottom: 0;
+					.price{
+						display: none;
+					}
+					.stock{
+						display: none;
+					}
+				}
+			}
 			@media (max-width: 768px) {
 				width: 46%;
 				padding: 0 2%;
