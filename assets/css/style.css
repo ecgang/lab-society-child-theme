@@ -2668,6 +2668,11 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
   background: #1b2e84 !important;
   color: #fff !important; }
 
+.woocombo-disabled {
+  opacity: 0.75;
+  background: #ccc;
+  color: #fff !important; }
+
 #chimpy_popup_submit {
   margin-top: 8px;
   padding-top: 2px !important;

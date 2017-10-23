@@ -3553,6 +3553,11 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 	background: $blue-color !important;
 	color: #fff !important;
 }
+.woocombo-disabled{
+	opacity: 0.75;
+	background: #ccc;
+	color: #fff !important;
+}
 
 #chimpy_popup_submit{
 	margin-top: 8px;
