@@ -805,7 +805,24 @@ a:focus,.focus a{
 						.variations{
 							display: none;	
 						}
-						
+						.quantity{
+							display: none !important;
+						}
+						.variations{
+							display:none;
+						}
+						.woocommerce-variation{
+							display: none;
+						}
+						.variations_form{
+							margin-bottom: 0;
+							.price{
+								display: none;
+							}
+							.stock{
+								display: none;
+							}
+						}
 					}
 				}
 
