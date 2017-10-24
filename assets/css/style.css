@@ -561,7 +561,7 @@ a:focus, .focus a {
         align-items: center; }
         .site-main ul.products li.product.one-fifth {
           width: 15% !important; }
-          .site-main ul.products li.product.one-fifth .variations_form {
+          .site-main ul.products li.product.one-fifth .variations_form .variations {
             display: none; }
         .site-main ul.products li.product .woocommerce-LoopProduct-link {
           display: flex;

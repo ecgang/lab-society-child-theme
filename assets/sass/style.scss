@@ -802,7 +802,10 @@ a:focus,.focus a{
 				&.one-fifth{
 					width: 15% !important;
 					.variations_form{
-						display: none;
+						.variations{
+							display: none;	
+						}
+						
 					}
 				}
 
