@@ -565,16 +565,12 @@ a:focus, .focus a {
             display: none; }
           .site-main ul.products li.product.one-fifth .variations_form .quantity {
             display: none !important; }
-          .site-main ul.products li.product.one-fifth .variations_form .variations {
-            display: none; }
           .site-main ul.products li.product.one-fifth .variations_form .woocommerce-variation {
+            display: none !important; }
+          .site-main ul.products li.product.one-fifth .variations_form .price {
             display: none; }
-          .site-main ul.products li.product.one-fifth .variations_form .variations_form {
-            margin-bottom: 0; }
-            .site-main ul.products li.product.one-fifth .variations_form .variations_form .price {
-              display: none; }
-            .site-main ul.products li.product.one-fifth .variations_form .variations_form .stock {
-              display: none; }
+          .site-main ul.products li.product.one-fifth .variations_form .stock {
+            display: none; }
         .site-main ul.products li.product .woocommerce-LoopProduct-link {
           display: flex;
           flex-direction: column;

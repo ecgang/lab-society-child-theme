@@ -808,20 +808,14 @@ a:focus,.focus a{
 						.quantity{
 							display: none !important;
 						}
-						.variations{
-							display:none;
-						}
 						.woocommerce-variation{
-							display: none;
+							display: none !important;
 						}
-						.variations_form{
-							margin-bottom: 0;
-							.price{
+						.price{
 								display: none;
 							}
-							.stock{
-								display: none;
-							}
+						.stock{
+							display: none;
 						}
 					}
 				}
