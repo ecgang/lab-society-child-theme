@@ -561,6 +561,8 @@ a:focus, .focus a {
         align-items: center; }
         .site-main ul.products li.product.one-fifth {
           width: 15% !important; }
+          .site-main ul.products li.product.one-fifth .variations_form {
+            display: none; }
         .site-main ul.products li.product .woocommerce-LoopProduct-link {
           display: flex;
           flex-direction: column;
@@ -2280,6 +2282,9 @@ dt .right {
   transition-property: -webkit-transform, -webkit-box-shadow;
   transition-property: transform, box-shadow;
   transition-property: transform, box-shadow, -webkit-transform, -webkit-box-shadow; }
+  .category-banner img {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
   .category-banner .shadow-hide {
     position: absolute;
     bottom: -4px;
@@ -2669,9 +2674,7 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
   color: #fff !important; }
 
 .woocombo-disabled {
-  opacity: 0.75;
-  background: #ccc;
-  color: #fff !important; }
+  opacity: 0.3; }
 
 #chimpy_popup_submit {
   margin-top: 8px;
