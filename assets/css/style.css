@@ -632,6 +632,8 @@ a:focus, .focus a {
   @media (max-width: 1023px) {
     .woocommerce-checkout .entry-content {
       width: 100%; } }
+.woocommerce-checkout .woocommerce .woocommerce-info:first-child {
+  display: none; }
 
 .woocommerce-breadcrumb {
   padding: 10px 20px;

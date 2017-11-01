@@ -1233,4 +1233,153 @@ function argoworks_search_post_excerpt($where = ''){
     return $where;
 }
 
+
+add_action('woocommerce_after_order_notes', 'wps_add_select_checkout_field');
+function wps_add_select_checkout_field( $checkout ) {
+    woocommerce_form_field( 'salesperson', array(
+        'type'          => 'select',
+        'class'         => array( 'wps-drop' ),
+        'label'         => __( 'Did someone help you today?' ),
+        'options'       => array(
+            ''     => _('Select Sales Person', 'wps'),
+            'Adam'     => __( 'Adam', 'wps' ),
+            'Mark'   => __( 'Mark', 'wps' ),
+            'Mike' => __( 'Mike', 'wps' ),
+            'Paul'   => __( 'Paul', 'wps' ),
+            'Peter'   => __( 'Peter', 'wps' )
+        )
+ ),
+    $checkout->get_value( 'salesperson' ));
+}
+
+
+ add_action('woocommerce_checkout_update_order_meta', 'wps_select_checkout_field_update_order_meta');
+ function wps_select_checkout_field_update_order_meta( $order_id ) {
+   if ($_POST['salesperson']) update_post_meta( $order_id, 'salesperson', esc_attr($_POST['salesperson']));
+ }
+
+
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'wps_select_checkout_field_display_admin_order_meta', 10, 1 );
+function wps_select_checkout_field_display_admin_order_meta($order){
+    $salesperson = get_post_meta( $order->id, 'salesperson');
+    if(!empty($salesperson)):
+        echo '<p><strong>'.__('Salesperson').':</strong> ' . get_post_meta( $order->id, 'salesperson', true ) . '</p>';
+    endif;
+}
+
+
+add_filter( 'manage_edit-shop_order_columns', 'wc_new_order_column' );
+function wc_new_order_column( $columns ) {
+    $columns['salesperson'] = 'Salesperson';
+    return $columns;
+}
+
+
+add_action( 'manage_shop_order_posts_custom_column', 'salesperson_column_content', 10, 2 );
+function salesperson_column_content( $column, $post_id ) {    
+    if ( 'salesperson' === $column ) {
+        $salesperson = get_post_meta( $post_id, 'salesperson', true );
+        echo $salesperson;
+    }
+}
+
+add_filter( 'manage_edit-shop_order_sortable_columns', 'my_wc_column_sort' );
+function my_wc_column_sort( $columns ) {
+    $custom = array(
+        'salesperson'    => '_salesperson'
+    );
+    return wp_parse_args( $custom, $columns );
+}
+
+add_action( 'pre_get_posts', 'manage_wp_posts_be_qe_pre_get_posts', 1 );
+function manage_wp_posts_be_qe_pre_get_posts( $query ) {
+
+   /**
+    * We only want our code to run in the main WP query
+    * AND if an orderby query variable is designated.
+    */
+   if ( $query->is_main_query() && ( $orderby = $query->get( 'orderby' ) ) ) {
+
+      switch( $orderby ) {
+
+         case 'salesperson':
+
+            // set our query's meta_key, which is used for custom fields
+            $query->set( 'meta_key', '_salesperson' );
+
+            $query->set( 'orderby', 'meta_value' );
+
+            break;
+
+      }
+
+   }
+
+}
+
+/**
+ * Only copy the <?php if needed
+ * 
+ * Hide coupon field at checkout until coupon link clicked
+ * Tutorial: http://www.sellwithwp.com/move-the-woocommerce-coupon-field/
+**/
+
+/**
+ * Show a coupon link above the order details.
+**/
+function cw_show_coupon() {
+    global $woocommerce;
+
+    if ($woocommerce->cart->needs_payment()) {
+        echo '<p style="padding-bottom: 5px;"> Have a coupon? <a href="#" id="show-coupon-form">Click here to enter your coupon code</a>.</p><div id="coupon-anchor"></div>';
+    }
+}
+add_action('woocommerce_checkout_order_review', 'cw_show_coupon');
+
+
+function cw_scripts() {
+    wp_enqueue_script('jquery-ui-dialog');
+}
+add_action('wp_enqueue_scripts', 'cw_scripts');
+
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form');
+add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
+
+function cw_show_coupon_js() {
+    wc_enqueue_js('$("a.showcoupon").parent().hide();');
+    wc_enqueue_js('dialog = $("form.checkout_coupon").dialog({
+                       autoOpen: false,
+                       width: 500,
+                       open: function(event, ui) {
+                        $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+                        },
+                       minHeight: 0,
+                       modal: false,
+                       appendTo: "#coupon-anchor",
+                       position: { my: "left", at: "left", of: "#coupon-anchor"},
+                       draggable: false,
+                       resizable: false,
+                       dialogClass: "coupon-special",
+                       buttons: {}});');
+    wc_enqueue_js('$("#show-coupon-form").click( function() {
+                       if (dialog.dialog("isOpen")) {
+                           $(".checkout_coupon").hide();
+                           dialog.dialog( "close" );
+                       } else {
+                           $(".checkout_coupon").show();
+                           dialog.dialog( "open" );
+                       }
+                       return false;});');
+}
+add_action('woocommerce_before_checkout_form', 'cw_show_coupon_js');
+
+
+
+add_action('woocommerce_before_checkout_form','returning_customer_prompt');
+
+function returning_customer_prompt(){
+    echo '<p style="padding-bottom: 5px;"> Returning Customer? <a href="#" class="showlogin">Click here to login</a></p>';
+}
+
+
 ?>

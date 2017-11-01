@@ -916,7 +916,15 @@ a:focus,.focus a{
 			width: 100%;
 		}
 	}
+	.woocommerce{
+		.woocommerce-info{
+			&:first-child{
+				display: none;
+			}
+		}
+	}
 }
+
 
 .woocommerce-breadcrumb{
 	padding: 10px 20px;
