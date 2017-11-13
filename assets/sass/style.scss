@@ -27,7 +27,7 @@ Images License: GNU General Public License v2 or later
 
 
 
- $blue-color: #1b2e84;
+ $blue-color: #00358E;
 
  @mixin flexbox() {
   display: -webkit-box;
@@ -559,6 +559,9 @@ a:focus,.focus a{
 					@media all and (max-width: 1023px){
 						height: calc(100% - 185px) !important;
 				    	margin-top: 109px !important;
+					}
+					.overlap{
+						position: relative;
 					}
 					.probox{
 						background: none;
