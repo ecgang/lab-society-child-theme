@@ -25,14 +25,14 @@ get_header(); ?>
 			<a class="mobile-absolute-bottom-arrow" href="#About"></a>
 		</div>	
 	</section>
-	<section class="section" id="section1">
+	<section class="section" id="section1" style="background-repeat: no-repeat;">
 	<a class="bg-overlay-link" href="/lab-equipment-category/short-path-distillation/"></a>
 		<div class="text left mobile-top text-center">
 			<h1><span class="mobile_hidden">Purchase your custom </span>Short Path Distillation<span class="mobile_hidden"> kit online today.</span></h1>
-			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
+			<a class="button add_to_cart_button mobile_hidden" href="/lab-equipment-category/short-path-distillation/">Shop Short Path Distillation</a>
 		</div>
 		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Catalog"></a>-->
-		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment-category/short-path-distillation/">Shop Now</a>
+		<a class="button add_to_cart_button mobile-absolute-bottom" href="/lab-equipment-category/short-path-distillation/">Shop Short Path Distillation</a>
 	</section>
 	<section class="section" id="section2">
 		<div class="text">
@@ -43,20 +43,28 @@ get_header(); ?>
 		</div>
 		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Short-Path-Distillation"></a>-->
 	</section>	
+	<section class="section" id="section3">
+		<div class="text" style="text-align:center;">
+			<a href="/price-match/"><img style="margin: auto; width: 60%;" src="https://labsociety.com/wp-content/uploads/vectors/laboratory-supply-co-lab-equipment.svg" alt="Lab Equipment & Laboratory Supply Co. - Fractional Distillation" width=60%></a>
+			<br><h2>We'll match <strong>ANY</strong> product's price!</h2>
+			<p><i>(With a valid quote for the same model - some restrictions apply.)</i></p>
+				</div>
+		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Short-Path-Distillation"></a>-->
+	</section>	
 	<section class="section">
 		<div class="text wide text-center">
-			<h1>Browse our catalog</h1>
+			<h1>Browse our lab supplies:</h1>
 			<div class="columns">
 				<div class="one-third">
 					<img class="mobile_hidden" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/rotary-evaporators-category.jpg'; ?>" alt="Buy Rotovap Supplies Online from Lab Society Rotary Evaporators" />
 					<a class="button add_to_cart_button" href="/lab-equipment-category/rotary-evaporators/">Shop Rotary Evaporators</a>
 				</div>
 				<div class="one-third">
-					<img class="mobile_hidden" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/short-path-distillation-category.jpg'; ?>" alt="Shop for Vacuum Distillation Kits and Fractional Distillation Gear Online" />
-					<a class="button add_to_cart_button" href="/lab-equipment-category/short-path-distillation/">Shop Short Path Distillation</a>
+					<img class="mobile_hidden" src="https://labsociety.com/wp-content/uploads/2017/11/lab-supplies-laboratory-glassware.jpg" alt="Shop for Lab Supplies and Laboratory Glassware Online" />
+					<a class="button add_to_cart_button" href="/lab-equipment-category/scientific-glassware/">Shop Laboratory Glassware</a>
 				</div>
 				<div class="one-third">
-					<img class="mobile_hidden" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/vacuum-pumps-category.jpg'; ?>" alt="Purchase Vacuum Pumps and Vacuum Pump Accessories" />
+					<img class="mobile_hidden" src="https://labsociety.com/wp-content/uploads/2017/11/vacuum-pumps-vacuum-pump.jpg" alt="Purchase Vacuum Pumps and Vacuum Pump Accessories" />
 					<a class="button add_to_cart_button" href="/lab-equipment-category/vacuum-pumps/">Shop Vacuum Pumps</a>
 				</div>
 

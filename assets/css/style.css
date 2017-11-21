@@ -378,7 +378,7 @@ a:focus, .focus a {
               height: calc(100% - 185px) !important;
               margin-top: 109px !important; } }
           .site-header .site-search .widget_product_search.active #ajaxsearchpro1_1.ajaxsearchpro .overlap {
-            position: relative; }
+            position: relative !important; }
           .site-header .site-search .widget_product_search.active #ajaxsearchpro1_1.ajaxsearchpro .probox {
             background: none; }
             .site-header .site-search .widget_product_search.active #ajaxsearchpro1_1.ajaxsearchpro .probox .proinput form:before {
