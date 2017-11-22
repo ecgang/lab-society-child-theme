@@ -2418,6 +2418,14 @@ dt .right {
     border: 1px solid #2f47dd !important;
     color: white !important; }
 
+.price-match {
+  border-bottom: 0;
+  margin: 5px 0 15px 0; }
+  .price-match:before {
+    background: none; }
+  .price-match:hover:before {
+    background: none; }
+
 .hover-card {
   max-width: 100%;
   margin: 0 25px;
