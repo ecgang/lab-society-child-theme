@@ -1381,5 +1381,6 @@ function returning_customer_prompt(){
     echo '<p style="padding-bottom: 5px;"> Returning Customer? <a href="#" class="showlogin">Click here to login</a></p>';
 }
 
+add_filter( 'woocommerce_apply_base_tax_for_local_pickup', '__return_false' );
 
 ?>
