@@ -2207,7 +2207,10 @@ dt .right {
 
 .input-text.qty.text {
   position: relative;
-  transform: none; }
+  transform: none;
+  width: 4.235801032em;
+  top: auto;
+  left: auto; }
 
 .dark {
   color: #000 !important; }
