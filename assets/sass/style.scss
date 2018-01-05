@@ -794,7 +794,7 @@ a:focus,.focus a{
 	    	margin-left: 0;
 	    }
 		li.product{
-			@media (min-width: 768px) {
+			@media (min-width: 1024px) {
 				width:29% !important;
 				margin-right: 4.33% !important;
 				@include flexbox;
@@ -808,7 +808,45 @@ a:focus,.focus a{
 						margin-bottom: 0;
 						margin-top: auto;
 						.variations{
-							display: none;	
+							display: none !important;	
+						}
+						.quantity{
+							display: none !important;
+						}
+						.woocommerce-variation{
+							display: none !important;
+						}
+						.price{
+								display: none;
+							}
+						.stock{
+							display: none;
+						}
+					}
+				}
+
+				.woocommerce-LoopProduct-link{
+					display: flex;
+    				flex-direction: column;
+    				flex: 1;
+    				.price{
+						margin-top: auto;
+						ins{
+							font-weight: 400;
+							margin-left: 0;
+
+						}
+					}
+				}
+				
+			}
+			@media (max-width: 1023px) {
+				&.one-fifth{
+					.variations_form{
+						margin-bottom: 0;
+						margin-top: auto;
+						.variations{
+							display: none !important;	
 						}
 						.quantity{
 							display: none !important;
@@ -1917,6 +1955,22 @@ a:focus,.focus a{
 		.options-button{
 			display: none !important;
 		}
+		.component{
+			&.single{
+				margin-top: 50px;
+			}
+			.step_title_wrapper{
+				&.component_title{
+					margin-bottom: 0 !important;
+				}
+			}
+			.component_section_title{
+				margin: 0;
+				.select_label{
+					display: none;
+				}
+			}
+		}
 		.accordion-container{
 			margin-bottom: 0 !important;
 			margin-left: 0 !important;
@@ -2869,10 +2923,13 @@ dt .right{
 	opacity: 1;
 	background: #000;
 	display: block;
+	border-radius: 3px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); 
 	&:hover{	
 		img{
 			z-index:0;
-			border-radius: 0;
+			
 			transition: opacity .2s ease-out;
 		  -moz-transition: opacity .2s ease-out;
 		  -webkit-transition: opacity .2s ease-out;
@@ -2946,6 +3003,14 @@ dt .right{
 	}
 
 }
+.input-text{
+	&.qty{
+		&.text{
+			position: relative;
+			transform: none;
+		}
+	}
+}	
 .dark{
 	color: #000 !important; 
 }

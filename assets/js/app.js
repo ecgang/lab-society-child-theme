@@ -110,10 +110,22 @@
 	    $('body').removeClass('fade-out');
 	    setTimeout(function(){
 		    $(".woocommerce-message").fadeOut(1000);
-		},3000);
+		},5000);
 	});
 
 
+	$(document).ready(function(){
+  
+		$(document).on('DOMNodeInserted', function(e) {
+	        if ($(e.target).is('.woocommerce-message')) {
+	           
+	           setTimeout(function() {
+	             $('.woocommerce-message').fadeOut('slow');
+	           }, 5000);
+	        }
+	    });
+
+	});
 
 	$(window).on("scroll", function() {
 	    if($(window).scrollTop() > 25) {
