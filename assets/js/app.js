@@ -124,6 +124,7 @@
 	           }, 5000);
 	        }
 	    });
+	    
 
 	});
 
@@ -229,10 +230,11 @@ $(document).ready(function(){
 		$('#fullPage').fullpage({
 			navigation: true,
 			navigationPosition: 'right',
-			anchors:['Home', 'Short-Path-Distillation', 'About', 'Catalog', 'Need-Help'],
+			anchors:['Home', 'Short-Path-Distillation', 'About', 'Price-Match','Catalog', 'Need-Help'],
 			scrollOverflow: true
 		});
 		// Hide all panels
+		/*
 		$('.description').each(function () {
 	    	if ($('p', this).length > 1) $(this).append('<a href="#" class="read-more"><span>Read more</span></a>');
 	    	$('p:gt(0)', this).hide();
@@ -243,6 +245,7 @@ $(document).ready(function(){
 	        	$('p:gt(0)', paras).slideToggle();
 	    	});
 		});
+		*/
 		var ToC =
 	  	"<nav role='navigation' class='table-of-contents'>" +
 	    "<ul>";
@@ -356,11 +359,11 @@ $(document).ready(function(){
 
 
 
-		var accordion = $('.accordion > dd').hide();
-		var submenu = $('.accordion-sub > dd').hide();				
+		var accordion = $('.accordion > dd');
+		var submenu = $('.accordion-sub > dd');				
 		// Show first panel by default
 		
-		var submenu = $('.accordion-sub > dd').hide();
+		var submenu = $('.accordion-sub > dd');
 
 	  $(document).on('click','.open', function(e) {
 	    e.preventDefault();
@@ -369,11 +372,19 @@ $(document).ready(function(){
 	    if(!$this.hasClass('close')){
 	      $('dt').find('small.right').html('<span class="down-angle"></span>');
 	      $('.open').removeClass('close');
-	      accordion.slideUp();
+	      $target.slideUp();
 	      $this.addClass('close');
-	      $target.slideDown();
+	      
 	      $(this).parent('dt').find('small.right').html('<span class="up-angle"></span>');
-	    }else{
+
+	    }
+	    else if($this.hasClass('open')){
+	      $target.slideDown();
+	      $(this).parent('dt').find('small.right').html('<span class="down-angle"></span>');
+	      $this.removeClass('close');
+	    }
+	    else{
+	    	console.log('here!');
 	      $target.slideUp();
 	      $this.removeClass('close');
 	      $('dt').find('small.right').html('<span class="down-angle"></span>');
