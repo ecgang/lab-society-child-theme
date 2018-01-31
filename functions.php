@@ -70,9 +70,7 @@ function add_google_fonts() { ?>
           })();
       </script>
     
-    <script type="text/JavaScript">
-        
-    </script> 
+    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0072/8188.js" async="async"></script> 
    
     
 <?php 
@@ -205,10 +203,10 @@ function child_remove_parent_functions() {
     remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );  
     remove_action( 'homepage', 'storefront_best_selling_products', 70 );
     remove_action( 'homepage', 'storefront_product_categories', 20 );
-	remove_action( 'homepage', 'storefront_recent_products', 30 );
-	remove_action( 'homepage', 'storefront_featured_products', 40 );
-	remove_action( 'homepage', 'storefront_popular_products', 50 );
-	remove_action( 'homepage', 'storefront_on_sale_products', 60 );
+    remove_action( 'homepage', 'storefront_recent_products', 30 );
+    remove_action( 'homepage', 'storefront_featured_products', 40 );
+    remove_action( 'homepage', 'storefront_popular_products', 50 );
+    remove_action( 'homepage', 'storefront_on_sale_products', 60 );
     add_action( 'storefront_before_header', 'woocommerce_demo_store' );
     add_action('storefront_before_header','page_load_script');
     add_action('woocommerce_single_variation','woocommerce_single_variation', 50);
