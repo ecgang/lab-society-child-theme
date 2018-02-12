@@ -17,7 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-?><div id="composite_data_<?php echo $product_id; ?>" class="cart composite_data <?php echo isset( $_REQUEST[ 'add-to-cart' ] ) ? 'composite_added_to_cart' : ''; ?>" data-item_id="review" data-composite_settings="<?php echo esc_attr( json_encode( $product->add_to_cart_form_settings() ) ); ?>" data-nav_title="<?php echo esc_attr( __( 'Review Configuration', 'woocommerce-composite-products' ) ); ?>" data-scenario_data="<?php echo esc_attr( json_encode( $product->get_current_scenario_data() ) ); ?>" data-price_data="<?php echo esc_attr( json_encode( $product->get_composite_price_data() ) ); ?>" data-container_id="<?php echo $product_id; ?>" style="display:none;"><?php
+?><div id="composite_data_<?php echo $product_id; ?>" class="cart composite_data <?php echo isset( $_REQUEST[ 'add-to-cart' ] ) ? 'composite_added_to_cart' : ''; ?>" data-item_id="review" data-composite_settings="<?php echo esc_attr( json_encode( $product->add_to_cart_form_settings() ) ); ?>" data-nav_title="<?php echo esc_attr( __( 'Review Configuration', 'woocommerce-composite-products' ) ); ?>" data-scenario_data="<?php echo esc_attr( json_encode( $product->get_current_scenario_data() ) ); ?>" data-price_data="<?php echo esc_attr( json_encode( $product->get_composite_price_data() ) ); ?>" data-container_id="<?php echo $product_id; ?>" style="display:none;">
+	<div class="composite_message" style="display:none;"><ul class="msg woocommerce-info"></ul></div>
+	<?php
 
 	/**
 	 * Action 'woocommerce_before_add_to_cart_button'.
@@ -28,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	?><div class="composite_wrap" style="<?php echo apply_filters( 'woocommerce_composite_button_behaviour', 'new', $product ) === 'new' ? '' : 'display:none'; ?>">
 		
-		<div class="composite_message" style="display:none;"><ul class="msg woocommerce-info"></ul></div>
+		
 		<div class="composite_availability"><?php
 			// Availability html.
 			echo $availability_html;
@@ -44,7 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			?><h3 class="composite_price white"></h3><input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product_id ); ?>" />
 		</div>
-	</div><?php
+	</div>
+	</div>
+	<?php
 
 	do_action( 'woocommerce_after_add_to_cart_button' );
 

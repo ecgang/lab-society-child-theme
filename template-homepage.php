@@ -20,7 +20,7 @@ get_header(); ?>
 			<div class="text text-center">
 				<h1>Welcome to Lab Society!</h1>
 				<h2>We offer professional lab supplies and laboratory equipment.<br/><strong>American made and manufactured.</strong></h2>
-				<a class="button add_to_cart_button" href="/shop">Discover</a>
+				<a class="button add_to_cart_button" href="/shop">Shop Lab Equipment</a>
 			</div>
 			<a class="mobile-absolute-bottom-arrow" href="#About"></a>
 		</div>	
@@ -57,20 +57,20 @@ get_header(); ?>
 			<div class="columns">
 				<div class="one-third">
 					<img class="mobile_hidden" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/rotary-evaporators-category.jpg'; ?>" alt="Buy Rotovap Supplies Online from Lab Society Rotary Evaporators" />
-					<a class="button add_to_cart_button" href="/lab-equipment-category/rotary-evaporators/">Shop Rotary Evaporators</a>
+					<a class="button add_to_cart_button" href="/lab-equipment-category/rotary-evaporators/">Rotary Evaporators</a>
 				</div>
 				<div class="one-third">
 					<img class="mobile_hidden" src="https://labsociety.com/wp-content/uploads/2017/11/lab-supplies-laboratory-glassware.jpg" alt="Shop for Lab Supplies and Laboratory Glassware Online" />
-					<a class="button add_to_cart_button" href="/lab-equipment-category/scientific-glassware/">Shop Laboratory Glassware</a>
+					<a class="button add_to_cart_button" href="/lab-equipment-category/scientific-glassware/">Laboratory Glassware</a>
 				</div>
 				<div class="one-third">
 					<img class="mobile_hidden" src="https://labsociety.com/wp-content/uploads/2017/11/vacuum-pumps-vacuum-pump.jpg" alt="Purchase Vacuum Pumps and Vacuum Pump Accessories" />
-					<a class="button add_to_cart_button" href="/lab-equipment-category/vacuum-pumps/">Shop Vacuum Pumps</a>
+					<a class="button add_to_cart_button" href="/lab-equipment-category/vacuum-pumps/">Vacuum Pumps</a>
 				</div>
 
 			</div>	
 		</div>
-		<!--<a class="mobile-absolute-bottom-arrow mobile_hidden" href="#Need-Help"></a>-->
+		
 	</section>
 	<section class="section">
 		<div class="text">

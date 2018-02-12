@@ -18,8 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<h2 class="options-title">Select Options</h2>
-<form method="post" enctype="multipart/form-data" class="cart cart_group composite_form cp-no-js"><?php
+
+<form method="post" enctype="multipart/form-data" class="cart cart_group composite_form cp-no-js">
+	<h3 class="options-title">Select Options</h3>
+
+	<?php
 
 	$loop 	= 0;
 	$steps 	= count( $components );
@@ -63,3 +66,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	do_action( 'woocommerce_composite_after_components', $components, $product );
 
 ?></form>
+	<script>
+		jQuery(document).ready(function($){
+			$('.component:first-child').prepend('<div class="component-container">');
+			$('.component:last-child').append('</div>');
+		});
+	</script>

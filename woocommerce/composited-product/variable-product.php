@@ -15,6 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+global $product;
+
+
+
 ?><div class="details component_data" data-price="0" data-regular_price="0" data-product_type="variable" data-product_variations="<?php echo esc_attr( json_encode( $product_variations ) ); ?>" data-custom="<?php echo esc_attr( json_encode( $custom_data ) ); ?>"><?php
 
 	/**
@@ -27,40 +31,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 	do_action( 'woocommerce_composited_product_details', $product, $component_id, $composite_product );
 
 	?><table class="variations" cellspacing="0">
+			<?php $attribute_keys = array_keys( $attributes ); ?>
+			<tbody>
+				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+					<?php 
+					$i = substr($attribute_name, -1);
+						$attribute_name_num = '_cmb2_attribute_'.$i;
 
-		<?php 
-		 
-		 $variation_id = json_decode($product_variations[0]['variation_id']);
-		 $int = (int)$variation_id-1;
-		?>
+						$custom_name = get_post_meta( $product->id,$attribute_name_num,true);
 
-		<tbody><?php
-
-			foreach ( $attributes as $attribute_name => $options ) {?>
-			<?php
-				$i = substr($attribute_name, -1);
-				$custom_name = '_cmb2_attribute_'.$i;
-			?>	
-
-			<tr class="attribute-options" data-attribute_label="<?php echo wc_attribute_label( $attribute_name ); ?>">
-					<td class="label">
-						<label for="<?php echo sanitize_title( $attribute_name ); ?>">
-							<?php 
-								$post->ID = $int;
-								$custom_attribute = get_post_meta($post->ID, $custom_name, true); 
-								if ($custom_attribute) {
-									    echo $custom_attribute;
+					?>
+					<tr>
+						<td class="label">
+							<label for="<?php echo sanitize_title( $attribute_name ); ?>">
+								<?php 
+								    
+									if ($custom_name != '') {
+									    echo $custom_name;
 									}
 									else{
 										echo wc_attribute_label( $attribute_name );
+										
 									}
-							?>
-							<abbr class="required" title="<?php _e( 'Required option', 'woocommerce-composite-products' ); ?>">*</abbr>
-						</label>
-					</td>
+								?>
+								
+							</label>
+						</td>
+						</td>
 					<td class="value"><?php
 
-						$selected = isset( $_REQUEST[ 'wccp_attribute_' . sanitize_title( $attribute_name ) ][ $component_id ] ) ? wc_clean( $_REQUEST[ 'wccp_attribute_' . sanitize_title( $attribute_name ) ][ $component_id ] ) : WC_CP_Core_Compatibility::wc_get_variation_default_attribute( $product, $attribute_name );
+						$selected = isset( $_REQUEST[ 'wccp_attribute_' . sanitize_title( $attribute_name ) ][ $component_id ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'wccp_attribute_' . sanitize_title( $attribute_name ) ][ $component_id ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
 
 						wc_dropdown_variation_attribute_options( array(
 							'options'   => $options,
@@ -73,11 +73,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 						echo end( $attribute_keys ) === $attribute_name ? '<a class="reset_variations" href="#">' . __( 'Clear', 'woocommerce-composite-products' ) . '</a>' : '';
 
 					?></td>
-				</tr><?php
-			}
-
-		?></tbody>
-	</table><?php
+					</tr>
+				<?php endforeach;?>
+			</tbody>
+		</table><?php
 
 	/**
 	 * woocommerce_composited_product_add_to_cart hook.
