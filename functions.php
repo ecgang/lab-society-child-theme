@@ -88,24 +88,6 @@ function storefront_custom_logo() {
 }
 
 
-/*
-add_action( 'storefront_page_after', 'iframe_css' );
-function iframe_css() {
-    if (is_page( 9686 ) ):
-    ?>
-        <script>
-            jQuery(document).ready(function(){
-               $('iframe').load( function() {
-                $('iframe').contents().find("head").append($("<style type='text/css'>  input{display:none;}</style>"));
-                });
-                console.log('hello');
-            });
-        </script>
-    <?php
-    endif;
-}
-*/
-
 function storefront_display_custom_logo() {
     ?>
     <div class="site-branding">
@@ -225,6 +207,10 @@ function child_remove_parent_functions() {
     add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close',100);
     remove_theme_support( 'wc-product-gallery-zoom' ); 
     
+    add_theme_support( 'woocommerce', array(
+        'single_image_width'    => 1024,
+        'thumbnail_image_width' => 500,
+    ) );
 }
 
 
@@ -302,11 +288,6 @@ function dequeue_woocommerce_styles_scripts() {
     }
 }
 
-
-function wpdocs_dequeue_script() {
- wp_dequeue_script( 'woocombinator' );
-}
-//add_action( 'wp_print_scripts', 'wpdocs_dequeue_script', 100 );
 
 
 function themeslug_postmeta_form_keys() {
@@ -1602,5 +1583,8 @@ TrustLogo("https://labsociety.com/wp-content/uploads/2018/02/secure-lab-supplies
 </script>
 <a href="https://ssl.comodo.com/ev-ssl-certificates.php" id="comodoTL">EV SSL</a></span><a class="price-match" href="/price-match"><img src="https://labsociety.com/wp-content/uploads/vectors/laboratory-supply-co-lab-equipment.svg" alt="Lab Equipment &amp; Laboratory Supply Co. - Fractional Distillation" width="100" /></a></div>';
 }
+
+
+
 
 ?>
