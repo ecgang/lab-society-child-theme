@@ -3037,14 +3037,14 @@ li.add_to_cart_button a, button.add_to_cart_button, a.add_to_cart_button, .singl
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
 
-.woocommerce-mini-cart__buttons.buttons .wc-forward:first-child, .actions .button, .checkout_coupon button, .upsells .add_to_cart_button, .comment-form .submit, .bordered-button {
+.woocommerce-mini-cart__buttons.buttons .wc-forward:first-child, .actions .button, .checkout_coupon button, .upsells .add_to_cart_button, .comment-form .submit, .bordered-button, .upsells .single_add_to_cart_button {
   border: 1px solid rgba(47, 71, 221, 0.7) !important;
   border-radius: 2px;
   background: transparent !important;
   color: rgba(47, 71, 221, 0.7) !important;
   -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
   transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1); }
-  .woocommerce-mini-cart__buttons.buttons .wc-forward:first-child:hover:before, .actions .button:hover:before, .checkout_coupon button:hover:before, .upsells .add_to_cart_button:hover:before, .comment-form .submit:hover:before, .bordered-button:hover:before {
+  .woocommerce-mini-cart__buttons.buttons .wc-forward:first-child:hover:before, .actions .button:hover:before, .checkout_coupon button:hover:before, .upsells .add_to_cart_button:hover:before, .comment-form .submit:hover:before, .bordered-button:hover:before, .upsells .single_add_to_cart_button:hover:before {
     opacity: 0.15;
     -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
     transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
@@ -3446,6 +3446,10 @@ dl.variation {
   @media (max-width: 1023px) {
     .single-product section.upsells li.product {
       width: 46% !important; } }
+  .single-product section.upsells li.product .single_add_to_cart_button {
+    margin-bottom: 0; }
+  .single-product section.upsells .variant_selection_container {
+    display: none; }
 
 .shadow-divider {
   float: left;

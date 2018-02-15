@@ -337,8 +337,8 @@ function storefront_primary_navigation() {
             wp_nav_menu( array('menu' => 'Home Anchors')); 
         else:
             ?><ul id="menu-home-anchors" class="menu"><li class="menu-item">Need Help? Call: <a class="call-number" href="tel:7206002037" onclick="_gaq.push(['_trackEvent','Phone Call Tracking','Click/Touch','Header']);" name='Call Lab Society (720) 600-2037'><strong>(720) 600-2037</strong></a></li>
-                <li class="menu-item"><a href="/my-account" name='Call Lab Society (720) 600-2037'>Log in</a></li>
-                <li class="menu-item"><a href="/shop" class="add_to_cart_button" name='Call Lab Society (720) 600-2037'>Shop</a></li>
+                <li class="menu-item"><a href="/my-account" name='Log in'>Log in</a></li>
+                <li class="menu-item"><a href="/shop" class="add_to_cart_button" name='Explore Lab Society'>Explore</a></li>
                 <!--<li class="menu-item"><a href="javascript:$zopim.livechat.window.show();">Live Chat Now!</a></li>--></ul>
                 <?php
             endif;

@@ -4033,7 +4033,7 @@ li.add_to_cart_button a, button.add_to_cart_button,a.add_to_cart_button,.single_
 	}
 }
 
-.woocommerce-mini-cart__buttons.buttons .wc-forward:first-child, .actions .button,.checkout_coupon button, .upsells .add_to_cart_button,.comment-form .submit,.bordered-button{
+.woocommerce-mini-cart__buttons.buttons .wc-forward:first-child, .actions .button,.checkout_coupon button, .upsells .add_to_cart_button,.comment-form .submit,.bordered-button, .upsells .single_add_to_cart_button{
 	border: 1px solid rgba(47,71,221,0.7) !important;
 	border-radius: 2px;
 	background: transparent !important;
@@ -4569,9 +4569,16 @@ dl.variation{
 			@media(max-width: 1023px){
 				width: 46% !important;
 			}
+			.single_add_to_cart_button{
+				margin-bottom: 0;
+			}
+		}
+		.variant_selection_container{
+			display: none;
 		}
 	}
 }
+
 
 .shadow-divider{
 	float: left;
