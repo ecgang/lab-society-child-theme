@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <script type="text/template" id="tmpl-wc_cp_component_selection_title">
-<?php /*
+
 	<# if ( data.show_title ) { #>
 		
 		<# if ( data.show_selection_ui ) { #>
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<# } #>
 		<h4 class="composited_product_title product_title">{{{ data.selection_title }}}</h4>
 	<# } #>
-<?php */ ?>
+
 	<# if ( data.show_selection_ui && data.show_reset_ui ) { #>
 		<p class="component_section_title clear_component_options_wrapper">
 			<a class="clear_component_options" href="#"><?php echo __( 'Clear selection', 'woocommerce-composite-products' ); ?></a>

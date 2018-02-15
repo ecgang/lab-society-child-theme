@@ -20,7 +20,9 @@ get_header(); ?>
 			<div class="text text-center">
 				<h1>Welcome to Lab Society!</h1>
 				<h2>We offer professional lab supplies and laboratory equipment.<br/><strong>American made and manufactured.</strong></h2>
+				
 				<a class="button add_to_cart_button" href="/shop">Shop Lab Equipment</a>
+
 			</div>
 			<a class="mobile-absolute-bottom-arrow" href="#About"></a>
 		</div>	

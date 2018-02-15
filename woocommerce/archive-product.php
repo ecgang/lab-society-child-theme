@@ -186,7 +186,7 @@ get_header( 'shop' ); ?>
     		<div class="text">
 				<h1>Safe, Fast, Secure. The Lab Society Guarantee!</h1>
 			</div>
-    		<img class="mobile_hidden" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/scientific-supplies.jpg" />
+    		<img class="mobile_hidden" width="100%" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/scientific-supplies.jpg" />
     		<img class="desktop_hidden" src="<?php echo get_stylesheet_directory_uri();?>/assets/images/shop-page/trust-lab-society-mobile-2.jpg" />
     	</div>
     </div>

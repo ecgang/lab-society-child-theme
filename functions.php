@@ -1440,54 +1440,46 @@ function single_product_variable_customization() {
         $string1 = "The selected Variation ID is: ";
         $string2 = "Please select all Variations ";
         ?>
-        <script>
-            jQuery(document).ready(function($) {
+    <script>
+        jQuery(document).ready(function($) {           
+            function updateData () {
+                var missing = false;
+                var divs = []
+                // Iterate over all the items
+                $('#ivpa-content').first().children('.ivpa_attribute.ivpa_text').each(function() {
+                    console.log(" in the iteration")
+                    var $element = $(this)
+                    var title = ($element.find('.ivpa_title').text() || '').trim()
+                    var value = ($element.find('.ivpa_term.ivpa_clicked').text() || '').trim()
+
+                    if (!value) {
+                        missing = true;
+                        value = 'Select Option'
+                    }
+                    // Create the new Div to add, with their attributes
+                    var $title = $('<span>', {"class": 'selection_title', text:title});
+                    var $value = $('<span>', {"class": 'selection_value', text:value});
+                    var $newDiv = $('<div>', {"class": 'current_selection'});
+                    $newDiv.append($title, $value);
+                    divs.push($newDiv);
+                });
+                var $wrapper = $('.variant_selection');
+                $wrapper.empty();
                 
-               function updateData () {
-                 var missing = false;
-                 var divs = []
-
-       // Iterate over all the items
-       $('.ivpa_attribute.ivpa_text').each(function() {
-           var $element = $(this)
-           var title = ($element.find('.ivpa_title').text() || '').trim()
-           var value = ($element.find('.ivpa_term.ivpa_clicked').text() || '').trim()
-
-           if (!value) {
-             missing = true;
-             value = 'Select Option'
-         }
-
-         // Create the new Div to add, with their attributes
-         var $title = $('<span>', {"class": 'selection_title', text:title});
-         var $value = $('<span>', {"class": 'selection_value', text:value});
-         var $newDiv = $('<div>', {"class": 'current_selection'});
-         $newDiv.append($title, $value);
-         divs.push($newDiv);
-     });
-
-       var $wrapper = $('.variant_selection');
-       $wrapper.empty();
-
-       
-       for (var i=0; i < divs.length; i++) {
-           $wrapper.append(divs);
-       }
-   }
-
-
-   updateData();
-   $('.ivpa_term.ivpa_active').click(function () {
-    if ($(".woocommerce-variation-add-to-cart").hasClass("woocommerce-variation-add-to-cart-disabled")) {
-        console.log('here!');
-        $(this).closest(".single_variation").addClass("price-disabled");
-    }
-    setTimeout(updateData, 100);
-    })
-});
-
-
-</script>
+                    $wrapper.append(divs);
+                
+            }
+            updateData();
+   
+            $('.ivpa_term.ivpa_active').click(function () {
+                if ($(".woocommerce-variation-add-to-cart").hasClass("woocommerce-variation-add-to-cart-disabled")) {
+                    console.log('here!');
+                    $(this).closest(".single_variation").addClass("price-disabled");
+                }
+                setTimeout(updateData, 100);
+            })
+        });
+    </script>
 <?php
 }
 }

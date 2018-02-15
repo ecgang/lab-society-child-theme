@@ -130,4 +130,4 @@ jQuery(function ($) {
             thisForm.trigger('woocommerce_variation_has_changed');
         });
     }, 100);
-});
+}); 
