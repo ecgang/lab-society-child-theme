@@ -1577,6 +1577,14 @@ TrustLogo("https://labsociety.com/wp-content/uploads/2018/02/secure-lab-supplies
 }
 
 
+function ld_wc_filter_billing_fields( $address_fields ) {
+    $address_fields['billing_email']['priority'] = 8;
+ 
+    $address_fields['billing_phone']['required'] = false;
+    $address_fields['billing_phone']['priority'] = 98;
+    return $address_fields;
+}
+add_filter( 'woocommerce_billing_fields', 'ld_wc_filter_billing_fields', 10, 1 );
 
 
 ?>
