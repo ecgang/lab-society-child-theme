@@ -3448,8 +3448,14 @@ dl.variation {
       width: 46% !important; } }
   .single-product section.upsells li.product .single_add_to_cart_button {
     margin-bottom: 0; }
+  .single-product section.upsells li.product form.cart {
+    padding: 0; }
+  .single-product section.upsells li.product .button {
+    margin-bottom: 0 !important; }
   .single-product section.upsells .variant_selection_container {
     display: none; }
+  .single-product section.upsells .variations_button {
+    padding-top: 0; }
 
 .shadow-divider {
   float: left;

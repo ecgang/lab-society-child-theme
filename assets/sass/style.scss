@@ -1339,6 +1339,7 @@ a:focus,.focus a{
 				    align-items: center;
 				    z-index: 999;
 				    flex-direction: row-reverse;
+
 					}
 				}
 				.bundle_price{
@@ -4572,10 +4573,20 @@ dl.variation{
 			.single_add_to_cart_button{
 				margin-bottom: 0;
 			}
+			form.cart{
+				padding: 0;
+			}
+			.button{
+				margin-bottom: 0 !important;
+			}
 		}
 		.variant_selection_container{
 			display: none;
 		}
+		.variations_button{
+			padding-top: 0;
+		}
+
 	}
 }
 
