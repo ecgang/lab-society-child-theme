@@ -1783,6 +1783,7 @@ a:focus,.focus a{
 					.quantity{
 						margin-right: .875em;
 						margin-left: auto;
+						display: none;
 						@media(min-width: 1024px){
 						order: 2;
 						}

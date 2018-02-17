@@ -1321,7 +1321,8 @@ a:focus, .focus a {
           flex-direction: row-reverse; } }
       .single-product .content-area .product.product-type-simple .cart .quantity {
         margin-right: .875em;
-        margin-left: auto; }
+        margin-left: auto;
+        display: none; }
         @media (min-width: 1024px) {
           .single-product .content-area .product.product-type-simple .cart .quantity {
             order: 2; } }

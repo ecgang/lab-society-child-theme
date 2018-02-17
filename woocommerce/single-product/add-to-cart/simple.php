@@ -55,7 +55,26 @@ echo wc_get_stock_html( $product );
 			do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
 
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt" <?php if ( !$product->is_in_stock() ) :?>disabled <?php endif; ?> ><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<?php 
+		echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+    sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>',
+        esc_url( $product->add_to_cart_url() ),
+        esc_attr( $product->id ),
+        esc_attr( $product->get_sku() ),
+        implode( ' ', array_filter( array(
+                        'button',
+                        'product_type_' . $product->product_type,
+                        $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+                        $product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : ''
+                ) ) ),
+        esc_attr( $product->product_type ),
+        $product->get_price_html(),
+        esc_attr( isset( $class ) ? $class : 'button' ),
+        esc_html( $product->add_to_cart_text() )
+    ),
+$product );
+
+		 ?>
 
 		<?php
 			/**
