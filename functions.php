@@ -218,8 +218,30 @@ add_action( 'woocommerce_after_single_product_summary', 'section_divider', 10 );
 
 function section_divider(){
     global $product;
-     if ( $product->get_upsells() ) {
+     if ( $product->get_upsells() && $product->product_type == 'composite' ) {
+        echo '</div><div class="shadow-divider"></div>';
+    }else if($product->get_upsells()){
         echo '<div class="shadow-divider"></div>';
+    }
+    
+}
+
+add_action( 'woocommerce_before_single_product_summary', 'composite_product_container_open', 10 );
+
+function composite_product_container_open(){
+    global $product;
+     if ( $product->get_upsells() && $product->product_type == 'composite' ) {
+        echo '<div class="product_container">';
+    }   
+    
+}
+
+add_action( 'woocommerce_after_single_product_summary', 'add_white_spacer', 50 );
+
+function add_white_spacer(){
+    global $product;
+     if ( $product->get_upsells()) {
+        echo '<div class="white-spacer"></div>';
     }   
     
 }
