@@ -4574,8 +4574,8 @@ dl.variation{
 			form.cart{
 				padding: 0;
 				position: relative !important;
-				right: inherit;
-				top: inherit;
+				right: inherit !important;
+				top: inherit !important;
 			}
 			.button{
 				margin-bottom: 0 !important;
