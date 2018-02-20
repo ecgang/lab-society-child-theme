@@ -1775,6 +1775,7 @@ a:focus,.focus a{
 						    top: 15px;
 						    right: 130px;
 						    /* flex-direction: inherit; */
+						    align-items: center;
 						    z-index: 999;
 						    flex-direction: row-reverse;
 					}
@@ -1787,13 +1788,12 @@ a:focus,.focus a{
 						}
 					}
 					.price{
-						margin-top: 2px;
 						@media(min-width: 1024px){
 							order: 3;
 							margin-right: 25px;
 							position: relative;
 							margin-bottom: 0;
-							margin-right: auto;
+							margin-right: 25px;
 						}
 						@media(max-width:1023px){
 							margin-bottom: 0;
