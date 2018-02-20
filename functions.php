@@ -236,16 +236,6 @@ function composite_product_container_open(){
     
 }
 
-add_action( 'woocommerce_after_single_product_summary', 'add_white_spacer', 50 );
-
-function add_white_spacer(){
-    global $product;
-     if ( $product->get_upsells()) {
-        echo '<div class="white-spacer"></div>';
-    }   
-    
-}
-
 add_filter('gettext', 'translate_like');
 add_filter('ngettext', 'translate_like');
 function translate_like($translated) {
@@ -316,14 +306,6 @@ function themeslug_postmeta_form_keys() {
     return false;
 }
 add_filter('postmeta_form_keys', 'themeslug_postmeta_form_keys');
-
-
-add_action( 'storefront_loop_post', 'shop_landing_page_content', 99 );
-
-function shop_landing_page_content() {
-    echo 'test';
-}
-
 
 
 function mobile_menu(){
@@ -429,7 +411,9 @@ function custom_woocommerce_product_add_to_cart_text() {
     global $product;
 
     $product_type = $product->product_type;
+    $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
 
+    
     switch ( $product_type ) {
         case 'external':
         return __( 'Buy product', 'woocommerce' );
@@ -1607,6 +1591,72 @@ function ld_wc_filter_billing_fields( $address_fields ) {
     return $address_fields;
 }
 add_filter( 'woocommerce_billing_fields', 'ld_wc_filter_billing_fields', 10, 1 );
+
+
+add_action( 'woocommerce_product_options_general_product_data', 'custom_general_product_data_custom_fields' );
+/**
+ * Add `Not Ready to Sell` field in the Product data's General tab.
+ */
+function custom_general_product_data_custom_fields() {
+    // Checkbox.
+    woocommerce_wp_checkbox(
+        array(
+            'id'            => '_not_ready_to_sell',
+            'wrapper_class' => 'show_if_simple',
+            'label'         => __( 'Call To Order', 'woocommerce' ),
+            'description'   => __( '', 'woocommerce' )
+            )
+    );
+}
+
+add_action( 'woocommerce_process_product_meta', 'custom_save_general_proddata_custom_fields' );
+/**
+ * Save the data values from the custom fields.
+ * @param  int $post_id ID of the current product.
+ */
+function custom_save_general_proddata_custom_fields( $post_id ) {
+    // Checkbox.
+    $woocommerce_checkbox = isset( $_POST['_not_ready_to_sell'] ) ? 'yes' : 'no';
+    update_post_meta( $post_id, '_not_ready_to_sell', $woocommerce_checkbox );
+}
+
+add_filter( 'woocommerce_is_purchasable', 'custom_woocommerce_set_purchasable' );
+/**
+ * Mark "Not ready to sell" products as not purchasable.
+ */
+function custom_woocommerce_set_purchasable() {
+    $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
+
+    return ( 'yes' === $not_ready_to_sell ? false : true );
+}
+
+
+add_filter( 'woocommerce_loop_add_to_cart_link', 'custom_product_add_to_cart_text', 10, 3);
+/**
+ * Change "Read More" button text for non-purchasable products.
+ */
+function custom_product_add_to_cart_text() {
+    $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
+
+    if ( 'yes' === $not_ready_to_sell ) {
+        return __( 'Call to Order', 'woocommerce' );
+    } else {
+        return __( 'Add to cart', 'woocommerce' );
+    }
+}
+
+add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_call_to_order_text', 10, 3 );
+/**
+ * Add calling instructions for non-purchasable products.
+ */
+function custom_woocommerce_call_to_order_text() {
+    $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
+
+    if ( 'yes' === $not_ready_to_sell ) {
+        echo '<div class="call_to_order_button_container"><a href="tel:7206002037" class="call_to_order_button add_to_cart_button button">Call to order: (720) 600-2037 </a></div>';
+    }
+
+}
 
 
 
