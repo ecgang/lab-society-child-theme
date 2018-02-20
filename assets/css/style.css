@@ -1333,7 +1333,8 @@ a:focus, .focus a {
           order: 3;
           margin-right: 25px;
           position: relative;
-          margin-bottom: 0;
+          margin-bottom: auto;
+          margin-top: auto;
           margin-right: 25px; } }
       @media (max-width: 1023px) {
         .single-product .content-area .product.product-type-simple .cart .price {
