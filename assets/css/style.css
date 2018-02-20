@@ -3451,7 +3451,9 @@ dl.variation {
     margin-bottom: 0; }
   .single-product section.upsells li.product form.cart {
     padding: 0;
-    position: relative !important; }
+    position: relative !important;
+    right: inherit;
+    top: inherit; }
   .single-product section.upsells li.product .button {
     margin-bottom: 0 !important; }
   .single-product section.upsells li.product.outofstock .button:before {
