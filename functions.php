@@ -1593,7 +1593,7 @@ function ld_wc_filter_billing_fields( $address_fields ) {
 add_filter( 'woocommerce_billing_fields', 'ld_wc_filter_billing_fields', 10, 1 );
 
 
-//add_action( 'woocommerce_product_options_general_product_data', 'custom_general_product_data_custom_fields' );
+add_action( 'woocommerce_product_options_general_product_data', 'custom_general_product_data_custom_fields' );
 /**
  * Add `Not Ready to Sell` field in the Product data's General tab.
  */
@@ -1609,7 +1609,7 @@ function custom_general_product_data_custom_fields() {
     );
 }
 
-//add_action( 'woocommerce_process_product_meta', 'custom_save_general_proddata_custom_fields' );
+add_action( 'woocommerce_process_product_meta', 'custom_save_general_proddata_custom_fields' );
 /**
  * Save the data values from the custom fields.
  * @param  int $post_id ID of the current product.
@@ -1620,7 +1620,7 @@ function custom_save_general_proddata_custom_fields( $post_id ) {
     update_post_meta( $post_id, '_not_ready_to_sell', $woocommerce_checkbox );
 }
 
-//add_filter( 'woocommerce_is_purchasable', 'custom_woocommerce_set_purchasable' );
+add_filter( 'woocommerce_is_purchasable', 'custom_woocommerce_set_purchasable' );
 /**
  * Mark "Not ready to sell" products as not purchasable.
  */
@@ -1631,21 +1631,26 @@ function custom_woocommerce_set_purchasable() {
 }
 
 
-//add_filter( 'woocommerce_loop_add_to_cart_link', 'custom_product_add_to_cart_text', 10, 3);
+add_filter( 'woocommerce_product_add_to_cart_text', 'custom_product_add_to_cart_text', 10, 3);
 /**
  * Change "Read More" button text for non-purchasable products.
  */
 function custom_product_add_to_cart_text() {
+    global $product;
     $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
-
+    $availability = $product->get_availability();
+    $stock_status = $availability['class'];
     if ( 'yes' === $not_ready_to_sell ) {
         return __( 'Call to Order', 'woocommerce' );
-    } else {
+    } else if ( is_product() && $stock_status == 'out-of-stock') {
+        return __( 'Sold Out', 'woocommerce' );
+    }
+    else {
         return __( 'Add to cart', 'woocommerce' );
     }
 }
 
-//add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_call_to_order_text', 10, 3 );
+add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_call_to_order_text', 10, 3 );
 /**
  * Add calling instructions for non-purchasable products.
  */
