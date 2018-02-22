@@ -2882,7 +2882,7 @@ dt .right {
 .chimpy_popup_content .icon-append {
   border-left: 0 !important; }
 
-p a:not(.shipping-calculator-button, .bordered-button) {
+p a:not(.shipping-calculator-button, .bordered-button, .star-1, .star-2, .star-3, .star-4, .star-5) {
   color: #00358E;
   text-decoration: none;
   border-bottom: 1px dashed #0052db;
@@ -2890,7 +2890,7 @@ p a:not(.shipping-calculator-button, .bordered-button) {
   position: relative;
   padding: 0 .2em;
   transition: all 250ms; }
-  p a:not(.shipping-calculator-button, .bordered-button):not(.shipping-calculator-button, .bordered-button):before {
+  p a:not(.shipping-calculator-button, .bordered-button, .star-1, .star-2, .star-3, .star-4, .star-5):not(.shipping-calculator-button, .bordered-button, .star-1, .star-2, .star-3, .star-4, .star-5):before {
     content: '';
     width: 100%;
     height: 0%;
@@ -2899,9 +2899,9 @@ p a:not(.shipping-calculator-button, .bordered-button) {
     left: 0;
     position: absolute;
     transition: height 250ms; }
-  p a:not(.shipping-calculator-button, .bordered-button):hover {
+  p a:not(.shipping-calculator-button, .bordered-button, .star-1, .star-2, .star-3, .star-4, .star-5):hover {
     border-color: transparent; }
-    p a:not(.shipping-calculator-button, .bordered-button):hover:before {
+    p a:not(.shipping-calculator-button, .bordered-button, .star-1, .star-2, .star-3, .star-4, .star-5):hover:before {
       height: 100%; }
 
 .section-header a {
