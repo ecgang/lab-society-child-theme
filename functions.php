@@ -434,7 +434,7 @@ function custom_woocommerce_product_add_to_cart_text() {
         return __( 'Select options', 'woocommerce' );
         break;
         default:
-        return __( 'Add To Cart', 'woocommerce' );
+        return __( 'Add to cart', 'woocommerce' );
     }
 
 }
@@ -1514,7 +1514,7 @@ function customizing_add_to_cart_button_text( $button_text, $product ) {
 
     elseif ( $product->is_type('variable') && is_product() && $stock_status == 'in-stock') {
         
-       $button_text = 'Add To Cart';
+       $button_text = 'Add to Cart';
     }
 
     else if ( $product->is_type('variable') && is_product() )
@@ -1639,12 +1639,18 @@ function custom_product_add_to_cart_text() {
     global $product;
     $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
     $availability = $product->get_availability();
+    $product_type = $product->product_type;
     $stock_status = $availability['class'];
     if ( 'yes' === $not_ready_to_sell ) {
         return __( 'Call to Order', 'woocommerce' );
-    } else if ( is_product() && $stock_status == 'out-of-stock') {
+    } 
+    else if ($product_type == 'variable' ){
+        return __( 'Select Options', 'woocommerce' );
+    }
+    else if ( is_product() && $stock_status == 'out-of-stock') {
         return __( 'Sold Out', 'woocommerce' );
     }
+        
     else {
         return __( 'Add to cart', 'woocommerce' );
     }
