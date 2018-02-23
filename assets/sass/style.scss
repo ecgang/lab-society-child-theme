@@ -3827,7 +3827,7 @@ dt .right{
 	}
 }
 p{
-	a:not(.shipping-calculator-button, .bordered-button,.star-1, .star-2, .star-3, .star-4, .star-5){
+	a:not(.shipping-calculator-button, .bordered-button,.star-1, .star-2, .star-3, .star-4, .star-5, .img-link){
 	  color:$blue-color;
 	  text-decoration:none;
 	  border-bottom:1px dashed lighten($blue-color, 15%);
@@ -3836,7 +3836,7 @@ p{
 	  padding:0 .2em;
 	  transition:all 250ms;
 	  
-	  &:not(.shipping-calculator-button, .bordered-button,.star-1, .star-2, .star-3, .star-4, .star-5):before{
+	  &:not(.shipping-calculator-button, .bordered-button,.star-1, .star-2, .star-3, .star-4, .star-5,.img-link):before{
 	  	content: '';
 	    width:100%;
 	    height:0%;
