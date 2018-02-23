@@ -653,7 +653,7 @@ a:focus, .focus a {
     .site-main ul.products li.product.product-type-variable .quantity {
       display: none !important; }
     .site-main ul.products li.product.product-type-variable .variations {
-      display: none; }
+      display: none !important; }
     .site-main ul.products li.product.product-type-variable .woocommerce-variation {
       display: none; }
     .site-main ul.products li.product.product-type-variable .variations_form {
