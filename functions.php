@@ -197,7 +197,6 @@ function child_remove_parent_functions() {
     add_action( 'storefront_before_header', 'woocommerce_demo_store' );
     add_action('storefront_before_header','page_load_script');
     add_action('woocommerce_single_variation','woocommerce_single_variation', 50);
-    add_action( 'storefront_single_post', 'storefront_post_meta',40);
     add_action( 'storefront_before_content', 'wc_print_notices' );
     add_action('storefront_after_footer', 'mobile_menu');
     add_action( 'woocommerce_after_add_to_cart_button', 'woocommerce_template_single_price', 10);  

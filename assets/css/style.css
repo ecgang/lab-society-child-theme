@@ -912,6 +912,7 @@ a:focus, .focus a {
       flex-direction: column; } }
 
 .single-post .entry-content {
+  width: 100% !important;
   float: left !important; }
 .single-post .entry-meta {
   float: right !important;
