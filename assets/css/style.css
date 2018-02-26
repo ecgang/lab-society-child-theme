@@ -1561,8 +1561,10 @@ a:focus, .focus a {
             position: relative;
             max-height: 600px;
             margin-bottom: 0; }
-            .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form.options-open .composite_message {
+            .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form.options-open .composite_message.options-open {
               display: block !important; }
+              .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form.options-open .composite_message.options-open.inactive {
+                display: none !important; }
             .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form.options-open .clear_component_options {
               display: block; }
           .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form .variations_form {

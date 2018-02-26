@@ -2071,7 +2071,12 @@ a:focus,.focus a{
 						    max-height: 600px;
 						    margin-bottom: 0;
 						    .composite_message{
-						    	display:block !important;
+						    	&.options-open{
+						    		display:block !important;
+						    		&.inactive{
+						    			display: none !important;
+						    		}
+						    	}
 						    }
 						    .clear_component_options{
 						    	display: block;
