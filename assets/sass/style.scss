@@ -2044,7 +2044,7 @@ a:focus,.focus a{
 				    	
 				    	background: transparent;
 				    	.composite_message{
-						    display:none;
+						    display:none !important;
 						    padding: 10px;
 
 						    .validation_message{
@@ -2071,7 +2071,7 @@ a:focus,.focus a{
 						    max-height: 600px;
 						    margin-bottom: 0;
 						    .composite_message{
-						    	display:block;
+						    	display:block !important;
 						    }
 						    .clear_component_options{
 						    	display: block;
@@ -4507,6 +4507,9 @@ dl.variation{
     	top: 15px;
     	right: 130px;
     	width: auto;
+	}
+	#ivpa-content{
+		display: none !important;
 	}
     .options-button{
     	float: left;

@@ -140,7 +140,7 @@
 
     	$(document).on('click touchstart', '.close-overlay', function(e){
 	  		$(this).remove();
-	  		$('.component, .options-title, .composite_form').removeClass('options-open');
+	  		$('.component, .options-title, .composite_form, .composite_message').removeClass('options-open');
 	  		$('.options-button').find('span:first-child').text($(this).find('span:first-child').text() == 'Show Options' ? 'Hide Options' : 'Show Options');
 	  		$('#ivpa-content').removeClass('open');
     	});
@@ -203,7 +203,7 @@
 		var closeOverlay = $('<div class="close-overlay"></div>');
 		e.preventDefault();
 		$('.close-overlay').remove();
-		$('.component, .options-title, .composite_form').toggleClass('options-open');
+		$('.component, .options-title, .composite_form,.composite_message').toggleClass('options-open');
 		$(this).find('span:first-child').text($(this).find('span:first-child').text() == 'Show Options' ? 'Hide Options' : 'Show Options');
         
         $(this).parent().parent().parent().parent('.summary').prepend(closeOverlay);

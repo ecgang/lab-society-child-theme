@@ -1541,7 +1541,7 @@ a:focus, .focus a {
         .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form {
           background: transparent; }
           .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form .composite_message {
-            display: none;
+            display: none !important;
             padding: 10px; }
             .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form .composite_message .validation_message {
               margin-bottom: 0 !important; }
@@ -1562,7 +1562,7 @@ a:focus, .focus a {
             max-height: 600px;
             margin-bottom: 0; }
             .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form.options-open .composite_message {
-              display: block; }
+              display: block !important; }
             .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form.options-open .clear_component_options {
               display: block; }
           .single-product.page-template-template-fullwidth-php .content-area main .product-type-composite .summary .composite_form .variations_form {
@@ -3399,6 +3399,8 @@ dl.variation {
     top: 15px;
     right: 130px;
     width: auto; } }
+.composite_options_container #ivpa-content {
+  display: none !important; }
 .composite_options_container .options-button {
   float: left;
   font-size: 1.1em;
