@@ -503,6 +503,8 @@ a:focus, .focus a {
       padding: 0;
       background: transparent;
       float: left; }
+    .site-header .title-and-breadcrumbs p {
+      margin: 0 !important; }
 
 .site-content .col-full {
   max-width: 100%;
