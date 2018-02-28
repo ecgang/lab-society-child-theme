@@ -1668,7 +1668,14 @@ function custom_woocommerce_call_to_order_text() {
 
 }
 
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+if(is_single()) {
+return '';
+} else
 
+return $html;
+}
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
 
 ?>
