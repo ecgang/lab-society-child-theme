@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-
+<?php /* ?>
 	<div id="primary" class="content-area"> 
 		<main id="main" class="site-main" role="main">
 			<header class="woocommerce-products-header">
@@ -75,7 +75,7 @@ get_header(); ?>
 					-->
 				</ul>
 			</div>
-	    </header>
+	    </header><?php /* ?>
 		<?php if ( have_posts() ) : ?>
 <?php /*
 			<header class="page-header">
