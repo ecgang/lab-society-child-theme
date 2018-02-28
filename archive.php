@@ -8,9 +8,10 @@
  */
 
 get_header(); ?>
-<?php /* ?>
+
 	<div id="primary" class="content-area"> 
 		<main id="main" class="site-main" role="main">
+			<?php /* ?>
 			<header class="woocommerce-products-header">
 			<div class="flexslider">
 				<ul class="slides">
@@ -75,7 +76,7 @@ get_header(); ?>
 					-->
 				</ul>
 			</div>
-	    </header><?php /* ?>
+	    </header><?php */ ?>
 		<?php if ( have_posts() ) : ?>
 <?php /*
 			<header class="page-header">
