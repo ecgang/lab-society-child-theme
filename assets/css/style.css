@@ -36,13 +36,11 @@ body.fade-out {
 h1, h2, h3, h4, h5, h6, body, button, input, textarea {
   font-family: 'Montserrat', sans-serif; }
 
-ol {
+ol ul {
   list-style: none; }
-  ol ul {
-    list-style: none; }
-    ol ul ul {
-      margin-bottom: 20px;
-      margin-left: 2em; }
+  ol ul ul {
+    margin-bottom: 20px;
+    margin-left: 2em; }
 
 .white {
   color: #fff; }
