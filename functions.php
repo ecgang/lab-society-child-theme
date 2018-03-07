@@ -1569,16 +1569,13 @@ function add_payment_note(){
 }
 
 add_filter('storefront_footer', 'add_div_conatiner', 0);
-add_filter('storefront_footer', 'add_ssl_cert_info', 40);
+add_filter('storefront_footer', 'add_price_match_info', 40);
 function add_div_conatiner(){
     echo '<div class="flex-left">';
 }
 
-function add_ssl_cert_info(){
-    echo '</div><div class="flex-right"><span class="trustlogo"><script language="JavaScript" type="text/javascript">
-TrustLogo("https://labsociety.com/wp-content/uploads/2018/02/secure-lab-supplies-comodo.png", "SC5", "none");
-</script>
-<a href="https://ssl.comodo.com/ev-ssl-certificates.php" id="comodoTL">EV SSL</a></span><a class="price-match" href="/price-match"><img src="https://labsociety.com/wp-content/uploads/vectors/laboratory-supply-co-lab-equipment.svg" alt="Lab Equipment &amp; Laboratory Supply Co. - Fractional Distillation" width="100" /></a></div>';
+function add_price_match_info(){
+    echo '</div><div class="flex-right"><a class="price-match" href="/price-match"><img src="https://labsociety.com/wp-content/uploads/vectors/laboratory-supply-co-lab-equipment.svg" alt="Lab Equipment &amp; Laboratory Supply Co. - Fractional Distillation" width="100" /></a></div>';
 }
 
 
