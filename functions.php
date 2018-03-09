@@ -1673,5 +1673,12 @@ if(is_single() && !is_product()) {
 }
 add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
+add_filter( 'woocommerce_register_post_type_product', 'wpse_modify_product_post_type' );
+
+function wpse_modify_product_post_type( $args ) {
+     $args['supports'][] = 'revisions';
+
+     return $args;
+}
 
 ?>
