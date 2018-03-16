@@ -376,12 +376,13 @@ $(document).ready(function(){
 			$( '.woocommerce-store-notice' ).show();
 
 			$(window).on("scroll", function() {
-	    		if($(window).scrollTop() > 25) {
-	    			$('body').removeClass('woocommerce-demo-store');
-				}else{
-					$('body').addClass('woocommerce-demo-store');
+				if ( 'hidden' === Cookies.get( 'store_notice' ) ) {
+		    		if($(window).scrollTop() > 25) {
+		    			$('body').removeClass('woocommerce-demo-store');
+					}else{
+						$('body').addClass('woocommerce-demo-store');
+					}
 				}
-
 			});
 		}			
 

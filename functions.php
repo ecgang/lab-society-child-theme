@@ -1598,7 +1598,6 @@ function custom_general_product_data_custom_fields() {
     woocommerce_wp_checkbox(
         array(
             'id'            => '_not_ready_to_sell',
-            'wrapper_class' => 'show_if_simple',
             'label'         => __( 'Call To Order', 'woocommerce' ),
             'description'   => __( '', 'woocommerce' )
             )
@@ -1663,6 +1662,16 @@ function custom_woocommerce_call_to_order_text() {
         echo '<div class="call_to_order_button_container"><a href="tel:7206002037" class="call_to_order_button add_to_cart_button button">Call to order: (720) 600-2037 </a></div>';
     }
 
+}
+
+add_filter( 'body_class', 'call_to_order_body_class' );
+
+function call_to_order_body_class($classes){
+   $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
+    if ( 'yes' === $not_ready_to_sell ) {
+        $classes[] = 'call-to-order';
+    }
+    return $classes;
 }
 
 function my_post_image_html( $html, $post_id, $post_image_id ) {
