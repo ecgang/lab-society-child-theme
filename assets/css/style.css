@@ -3317,7 +3317,8 @@ p.stars.selected a.active:before {
   .outofstock .single_variation_wrap .woocommerce-variation-add-to-cart-disabled .button {
     position: relative;
     color: #00358E !important;
-    content: ''; }
+    content: '';
+    background: #D42D2F !important; }
     .outofstock .single_variation_wrap .woocommerce-variation-add-to-cart-disabled .button:before {
       content: 'Sold Out' !important;
       opacity: 1;
@@ -3326,6 +3327,8 @@ p.stars.selected a.active:before {
       top: auto;
       color: #fff !important;
       z-index: 9999; }
+.outofstock .button {
+  background: #D42D2F !important; }
 
 .instock .single_variation_wrap .woocommerce-variation-add-to-cart-disabled {
   display: flex !important; }
