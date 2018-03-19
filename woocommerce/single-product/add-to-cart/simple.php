@@ -57,7 +57,7 @@ echo wc_get_stock_html( $product );
 
 		<?php 
 		echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-    sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>',
+    sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button product_type_simple add_to_cart_button ajax_add_to_cart">' . esc_html( $product->single_add_to_cart_text() ).'</a>',
         esc_url( $product->add_to_cart_url() ),
         esc_attr( $product->id ),
         esc_attr( $product->get_sku() ),

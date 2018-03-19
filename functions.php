@@ -403,42 +403,6 @@ function my_login_logo_one() {
 } 
 
 
-add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_woocommerce_product_add_to_cart_text' );
-
-function custom_woocommerce_product_add_to_cart_text() {
-
-    global $product;
-
-    $product_type = $product->product_type;
-    $not_ready_to_sell = get_post_meta( get_the_ID(), '_not_ready_to_sell', true );
-
-    
-    switch ( $product_type ) {
-        case 'external':
-        return __( 'Buy product', 'woocommerce' );
-        break;
-        case 'grouped':
-        return __( 'View products', 'woocommerce' );
-        break;
-        case 'simple' && !$product->is_in_stock():
-        return __( 'Sold Out', 'woocommerce' );
-        break;
-        case 'variable':
-        return __( 'Select options', 'woocommerce' );
-        break;
-        case 'variable' && !$product->is_in_stock():
-        return __( 'Sold Out', 'woocommerce' );
-        break;
-        case 'composite':
-        return __( 'Select options', 'woocommerce' );
-        break;
-        default:
-        return __( 'Add to cart', 'woocommerce' );
-    }
-
-}
-
-
 
 function addWooCommerceProductBodyClasses($classes){
    
@@ -1452,7 +1416,6 @@ function single_product_variable_customization() {
                 var divs = []
                 // Iterate over all the items
                 $('#ivpa-content').first().children('.ivpa_attribute.ivpa_text').each(function() {
-                    console.log(" in the iteration")
                     var $element = $(this)
                     var title = ($element.find('.ivpa_title').text() || '').trim()
                     var value = ($element.find('.ivpa_term.ivpa_clicked').text() || '').trim()
@@ -1478,7 +1441,6 @@ function single_product_variable_customization() {
    
             $('.ivpa_term.ivpa_active').click(function () {
                 if ($(".woocommerce-variation-add-to-cart").hasClass("woocommerce-variation-add-to-cart-disabled")) {
-                    console.log('here!');
                     $(this).closest(".single_variation").addClass("price-disabled");
                 }
                 setTimeout(updateData, 100);
@@ -1496,71 +1458,6 @@ function add_empty_div(){
     echo "<div class='variant_selection_container'><span class='down-angle'></span><div class='variant_selection'></div></div>";
 }
 
-add_filter( 'woocommerce_product_add_to_cart_text', 'customizing_add_to_cart_button_text', 10, 2 );
-add_filter( 'woocommerce_product_single_add_to_cart_text', 'customizing_add_to_cart_button_text', 10, 2 );
-function customizing_add_to_cart_button_text( $button_text, $product ) {
-    global $product;
-    $sold_out = __( "Sold Out", "woocommerce" );
-
-    $availability = $product->get_availability();
-    $stock_status = $availability['class'];
-
-    // Only for variable products on single product pages
-    if ( $product->is_type('variable') && is_product() && $stock_status == 'out-of-stock') {
-                
-               $button_text = $sold_out;
-            }
-
-    elseif ( $product->is_type('variable') && is_product() && $stock_status == 'in-stock') {
-        
-       $button_text = 'Add to Cart';
-    }
-
-    else if ( $product->is_type('variable') && is_product() )
-    {
-        
-        
-        ?>
-
-        <script>
-            jQuery(document).ready(function($) {
-                if( $('.single_add_to_cart_button').closest('p.stock').hasClass('out-of-stock') ){
-                    $('button.single_add_to_cart_button').html('<?php echo $sold_out; ?>');
-                }
-                $('select').blur( function(){
-                    if( '' != $('input.variation_id').val() && $('p.stock').hasClass('out-of-stock') )
-                        $('button.single_add_to_cart_button').html('<?php echo $sold_out; ?>');
-                    else 
-                        $('button.single_add_to_cart_button').html('<?php echo $button_text; ?>');
-
-                    console.log($('input.variation_id').val());
-               
-                });
-            });
-        </script>
-        <?php
-    }
-    // For all other cases (not a variable product on single product pages)
-
-    elseif ( ! $product->is_type('variable') && is_product() ) 
-    {
-        if($stock_status == 'out-of-stock')
-            $button_text = $sold_out;
-        else
-            $button_text.='';
-    }
-
-
-    return $button_text;
-}
-
-add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text',1 );
-
-function woo_custom_cart_button_text() {
- 
-        return __( 'Add To Cart', 'woocommerce' );
- 
-}
 
 add_filter('woocommerce_review_order_before_payment', 'add_payment_note');
 
@@ -1627,6 +1524,9 @@ function custom_woocommerce_set_purchasable() {
 
 
 add_filter( 'woocommerce_product_add_to_cart_text', 'custom_product_add_to_cart_text', 10, 3);
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_product_add_to_cart_text', 10, 3);
+
+
 /**
  * Change "Read More" button text for non-purchasable products.
  */
@@ -1639,13 +1539,22 @@ function custom_product_add_to_cart_text() {
     if ( 'yes' === $not_ready_to_sell ) {
         return __( 'Call to Order', 'woocommerce' );
     } 
-    else if ($product_type == 'variable' ){
+    else if ($product_type == 'variable' && $stock_status == 'in-stock' ){
         return __( 'Select Options', 'woocommerce' );
     }
-    else if ( is_product() && $stock_status == 'out-of-stock') {
+
+    else if ($product_type == 'variable' && $stock_status == 'out-of-stock') {
         return __( 'Sold Out', 'woocommerce' );
     }
-        
+
+    else if ( $product_type == 'simple' && $stock_status == 'out-of-stock') {
+        return __( 'Sold Out', 'woocommerce' );
+    }
+
+    else if ( $product_type == 'composite') {
+        return __( 'Select Options', 'woocommerce' );
+    }
+    
     else {
         return __( 'Add to cart', 'woocommerce' );
     }
@@ -1662,6 +1571,33 @@ function custom_woocommerce_call_to_order_text() {
         echo '<div class="call_to_order_button_container"><a href="tel:7206002037" class="call_to_order_button add_to_cart_button button">Call to order: (720) 600-2037 </a></div>';
     }
 
+}
+
+
+add_filter( 'woocommerce_product_add_to_cart_text', 'customizing_add_to_cart_button_text', 10, 2 );
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'customizing_add_to_cart_button_text', 10, 2 );
+function customizing_add_to_cart_button_text( $button_text, $product ) {
+    global $product;
+    $sold_out = __( "Sold Out", "woocommerce" );
+
+    $availability = $product->get_availability();
+    $stock_status = $availability['class'];
+
+    // Only for variable products on single product pages
+    if ( $product->is_type('variable') && is_product() && $stock_status == 'out-of-stock') {
+                
+               $button_text = $sold_out;
+            }
+
+    elseif ( $product->is_type('variable') && is_product() && $stock_status == 'in-stock') {
+        
+       $button_text = 'Add to cart';
+    }
+
+   
+
+
+    return $button_text;
 }
 
 add_filter( 'body_class', 'call_to_order_body_class' );
