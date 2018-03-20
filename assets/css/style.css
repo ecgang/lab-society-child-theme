@@ -595,7 +595,8 @@ a:focus, .focus a {
           opacity: 0.5; }
         .site-main ul.products li.product.outofstock .product_type_variable {
           pointer-events: none;
-          opacity: 0.5; }
+          opacity: 0.5;
+          background: #D42D2F !important; }
         .site-main ul.products li.product.outofstock .product_type_composite {
           pointer-events: none;
           opacity: 0.5; }
