@@ -3328,7 +3328,9 @@ p.stars.selected a.active:before {
       color: #fff !important;
       z-index: 9999; }
 .outofstock .button {
-  background: #D42D2F !important; }
+  background: #D42D2F !important;
+  pointer-events: none;
+  opacity: 0.5; }
 
 .instock .single_variation_wrap .woocommerce-variation-add-to-cart-disabled {
   display: flex !important; }

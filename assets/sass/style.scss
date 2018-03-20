@@ -4437,7 +4437,7 @@ iframe{
 			position: relative;
 			color: $blue-color !important;
 			content: '';
-			background: #D42D2F !important;
+			background: #D42D2F !important;			
 			&:before{
 				content: 'Sold Out' !important;
 				opacity: 1;
@@ -4451,10 +4451,10 @@ iframe{
 		}
 	}
 	.button{
-	
-			background: #D42D2F !important;
-		
-		}
+		background: #D42D2F !important;
+		pointer-events: none;
+		opacity: 0.5;
+	}
 }
 
 .instock{
