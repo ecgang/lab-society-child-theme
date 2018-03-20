@@ -3845,7 +3845,7 @@ p{
 	  padding:0 .2em;
 	  transition:all 250ms;
 	  
-	  &:not(.shipping-calculator-button):before, a:not(.bordered-button):before,a:not(.star-1):before, a:not(.star-2):before, a:not(.star-3):before, a:not(.star-4):before, a:not(.star-5):before,a:not(.img-link):before{
+	  &:not(.shipping-calculator-button:before), a:not(.bordered-button:before),a:not(.star-1:before), a:not(.star-2:before), a:not(.star-3:before), a:not(.star-4:before), a:not(.star-5:before),a:not(.img-link:before){
 	  	content: '';
 	    width:100%;
 	    height:0%;
