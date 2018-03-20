@@ -3326,7 +3326,7 @@ p.stars.selected a.active:before {
       top: auto;
       color: #fff !important;
       z-index: 9999; }
-.outofstock .button {
+.outofstock .cart .button {
   background: #D42D2F !important;
   pointer-events: none;
   opacity: 0.5; }

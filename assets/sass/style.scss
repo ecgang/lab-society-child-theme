@@ -4449,10 +4449,12 @@ iframe{
 			}
 		}
 	}
-	.button{
-		background: #D42D2F !important;
-		pointer-events: none;
-		opacity: 0.5;
+	.cart{
+		.button{
+			background: #D42D2F !important;
+			pointer-events: none;
+			opacity: 0.5;
+		}
 	}
 }
 
