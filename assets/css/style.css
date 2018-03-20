@@ -3317,8 +3317,7 @@ p.stars.selected a.active:before {
   .outofstock .single_variation_wrap .woocommerce-variation-add-to-cart-disabled .button {
     position: relative;
     color: #00358E !important;
-    content: '';
-    background: #D42D2F !important; }
+    content: ''; }
     .outofstock .single_variation_wrap .woocommerce-variation-add-to-cart-disabled .button:before {
       content: 'Sold Out' !important;
       opacity: 1;
