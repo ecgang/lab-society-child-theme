@@ -37,6 +37,7 @@ get_header( 'shop' ); ?>
 		<header class="woocommerce-products-header">
 			<div class="flexslider">
 				<ul class="slides">
+					<?php /* ?>
 					<li class="slide1">
 						<div class="text left">
 							<h1 class="no-wrap-mobile">More Output. Less Time.</h1>
@@ -49,6 +50,7 @@ get_header( 'shop' ); ?>
 							
 						</a>
 					</li>
+					<?php */ ?>
 					<li class="slide2">
 						<div class="text right">
 							<h1>Fresh From The Lab</h1>
