@@ -542,15 +542,20 @@ function header_title(){
                 single_term_title();
             elseif (is_search()):
                 echo 'Results for: ' . get_search_query();
-            elseif (is_product()):
-               echo str_replace('- Web Kit', '', the_title('', false));
+            elseif (is_single()):
+                if(!empty(get_post_meta( get_the_ID(), '_cmb2_new_title', true ))):
+                    $new_title = get_post_meta( get_the_ID(), '_cmb2_new_title', true );
+                         echo $new_title;
+                    else:
+                    the_title();
+                endif;
            elseif (is_shop()):
             printf( Shop );
-        elseif (is_page() || is_single()):
-            the_title();
-        elseif (is_archive()):
-            the_archive_title();
-        endif;    
+            elseif (is_page() || is_single()):
+                    the_title();
+            elseif (is_archive()):
+                the_archive_title();
+            endif;    
         ?>
     </h1>
     <?php if (is_single() && !is_product()): ?>
@@ -643,6 +648,17 @@ function cmb2_sample_metaboxes() {
         // 'closed'     => true, // Keep the metabox closed by default
     ) );
 
+    $cmb_title = new_cmb2_box( array(
+        'id'            => 'new_title_metabox',
+        'title'         => __( 'Replace Title Fields', 'title_metabox' ),
+        'object_types'  => array( 'product'), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
     $cmb_cat->add_field( array(
         'name'       => __( 'Category Footer Subtitle', 'category_metabox' ),
         'desc'       => __( '(optional)', 'category_metabox' ),
@@ -672,6 +688,30 @@ function cmb2_sample_metaboxes() {
         'id'         => $prefix . 'cat_subheader_content',
         'type'       => 'wysiwyg',
         'show_on_cb' => 'cmb2_hide_if_no_cats', 
+         // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+
+    $cmb_title->add_field( array(
+        'name'       => __( 'Title Replace', 'title_metabox' ),
+        'desc'       => __( '(optional)', 'title_metabox' ),
+        'id'         => $prefix . 'new_title',
+        'type'       => 'text',
+         // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+
+    $cmb_title->add_field( array(
+        'name'       => __( 'Subtitle', 'title_metabox' ),
+        'desc'       => __( '(optional)', 'title_metabox' ),
+        'id'         => $prefix . 'new_subtitle',
+        'type'       => 'text',
          // function should return a bool value
         // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
         // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
@@ -1618,6 +1658,13 @@ function wpse_modify_product_post_type( $args ) {
      $args['supports'][] = 'revisions';
 
      return $args;
+}
+
+add_filter( 'woocommerce_product_subcategories_args', 'remove_uncategorized_category' );
+function remove_uncategorized_category( $args ) {
+  $uncategorized = get_option( 'default_product_cat' );
+  $args['exclude'] = $uncategorized;
+  return $args;
 }
 
 ?>
