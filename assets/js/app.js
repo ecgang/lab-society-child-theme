@@ -161,9 +161,9 @@
 
 	$(window).on("scroll", function() {
 	    if($(window).scrollTop() > 25) {
-	        $("header, .woocommerce-cart-tab").addClass("active");
+	        $("header, .woocommerce-cart-tab, .variations_form, .product-type-simple .cart").addClass("active");
 	    } else {
-	       $("header, .woocommerce-cart-tab").removeClass("active");
+	       $("header, .woocommerce-cart-tab, .variations_form, .product-type-simple .cart").removeClass("active");
 	    }
 	});
 
